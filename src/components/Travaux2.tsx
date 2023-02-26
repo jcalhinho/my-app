@@ -9,7 +9,7 @@ import pic2 from "../02-GEORGE ORWELL/GEORGE ORWELL_03.jpg";
 import {Divider} from "@mui/material";
 
 
-const Travaux1 = () => {
+const Travaux2 = () => {
   return (
       <motion.div className="container"
                   initial={{opacity: 0}}
@@ -52,4 +52,4 @@ const Travaux1 = () => {
       </motion.div>
   );
 };
-export default Travaux1;
+export default Travaux2;

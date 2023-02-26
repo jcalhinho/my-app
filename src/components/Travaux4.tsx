@@ -11,7 +11,7 @@ import pic5 from "../01-MR PAON/MR PAON_06.png";
 import {Divider} from "@mui/material";
 
 
-const Travaux1 = () => {
+const Travaux4 = () => {
   return (
       <motion.div className="container"
                   initial={{opacity: 0}}
@@ -56,4 +56,4 @@ const Travaux1 = () => {
       </motion.div>
   );
 };
-export default Travaux1;
+export default Travaux4;
