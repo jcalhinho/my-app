@@ -1,6 +1,8 @@
 import React from "react";
+/*
 import {Route, Routes, useLocation} from "react-router-dom";
 import {AnimatePresence} from "framer-motion";
+import SlideRoutes from 'react-slide-routes';
 // Importer les composants pour chaque route
 import Travaux from "./Travaux";
 import Travaux1 from "./Travaux1";
@@ -27,21 +29,22 @@ import Nicocarmine from "./Nicocarmine";
 import Contact from "./Contact";
 
 const AnimatedRoutes = () => {
-    const location = useLocation();
+
     return (
         <AnimatePresence>
-        <Routes location={location} key={location.pathname}>
+
+            <SlideRoutes duration={800}>
             <Route  path="/" element={<Nicocarmine />} />
                 <Route  path="/travaux" element={<Travaux />} />
-                    <Route path="/travaux/1"  element={<Travaux1 />} />
-                    <Route path="/travaux/2"  element={<Travaux2 />} />
-                    <Route path="/travaux/3"  element={<Travaux3 />} />
-                    <Route path="/travaux/4"  element={<Travaux4 />} />
-                    <Route path="/travaux/5"  element={<Travaux5 />} />
-                    <Route path="/travaux/6"  element={<Travaux6 />} />
-                    <Route path="/travaux/7"  element={<Travaux7 />} />
-                    <Route path="/travaux/8"  element={<Travaux8 />} />
-                    <Route path="/travaux/9"  element={<Travaux9 />} />
+                    <Route path="/travaux/1"   element={<Travaux1 /> } />
+                    <Route path="/travaux/2"  element={<Travaux2 /> } />
+                    <Route path="/travaux/3"  element={<Travaux3 /> } />
+                    <Route path="/travaux/4"  element={<Travaux4 /> } />
+                    <Route path="/travaux/5"  element={<Travaux5 /> } />
+                    <Route path="/travaux/6"  element={<Travaux6 /> } />
+                    <Route path="/travaux/7"  element={<Travaux7 /> } />
+                    <Route path="/travaux/8"  element={<Travaux8 /> } />
+                    <Route path="/travaux/9"  element={<Travaux9 /> } />
                     <Route path="/travaux/10" element={<Travaux10 />} />
                     <Route path="/travaux/11" element={<Travaux11 />} />
                     <Route path="/travaux/12" element={<Travaux12 />} />
@@ -54,9 +57,9 @@ const AnimatedRoutes = () => {
                     <Route path="/travaux/19" element={<Travaux19 />} />
                     <Route path="/travaux/20" element={<Travaux20 />} />
 
-                <Route  path="/contact" element={<Contact />} />
-            </Routes></AnimatePresence>
+                <Route  path="/contact" element={<Contact />} /></SlideRoutes>
+           </AnimatePresence>
     );
 };
 
-export default AnimatedRoutes;
+export default AnimatedRoutes;*/

@@ -6,11 +6,12 @@ import {Link} from "react-router-dom";
 import {MdKeyboardArrowLeft, MdKeyboardArrowRight} from "react-icons/md";
 import {SlArrowLeft, SlArrowRight} from "react-icons/sl";
 import {Data} from "../data";
+import Travaux from "./Travaux";
 
 
 
 
-const Travaux = () => {
+const Container = () => {
 
 
 
@@ -30,32 +31,26 @@ const Travaux = () => {
                     </div>
 
                 </div>
-
-                    <div className="central">
-                    <div className="central-travaux">
-                        {Data.map((pic, index) => (
-                            <div key={index} className="thumb">
-                               <Link to={`/travaux/${pic.id}`}><img src={pic.vignette} className="pixThumb" alt="" /></Link>
-                                <p className="firstPixP">{pic.titre}</p>
-                                <p className="secondPixP">{pic.subtitle}</p>
-                            </div>
-                        ))}
-
-
-
-
-                    </div>
-                </div>
+                <Link to="/travaux/1">
+            <div className="top-left-icon">
+              <p className="top-left-iconleft"><SlArrowLeft /></p>
+            </div>
+          </Link>
+ {/* <Travaux /> */}
 
                 <div className="top-right">
                 <div className="top-left-ensemble">
                     <Link className="top-left-travaux" to="/travaux">travaux</Link>
                 </div>
                 </div>
-
-
-            {/* </motion.div>  */}
+                <Link to="/travaux/3">
+            <div className="top-right-icon">
+              <p className="top-left-iconright"><SlArrowRight /></p>
             </div>
+          </Link>
+
+
+            {/* </motion.div>*/} </div> 
     );
 };
-export default Travaux;
+export default Container;

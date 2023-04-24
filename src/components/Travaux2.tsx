@@ -2,54 +2,57 @@ import * as React from "react";
 import "../index.css";
 
 import { motion } from "framer-motion";
-import pic from "../02-GEORGE ORWELL/GEORGE ORWELL_01.jpg";
-import pic1 from "../02-GEORGE ORWELL/GEORGE ORWELL_02.jpg";
-import pic2 from "../02-GEORGE ORWELL/GEORGE ORWELL_03.jpg";
-
+import { Data } from "../data";
 import {Divider} from "@mui/material";
-
+import {Link} from "react-router-dom";
+import {SlArrowLeft, SlArrowRight} from "react-icons/sl";
 
 const Travaux2 = () => {
+  const url : number = parseInt(window.location.href.slice(30)) -1;
+  const dataWithoutFirst = Data[url].pics.slice(1);
+  console.log(url)
   return (
-      <motion.div className="container"
-                  initial={{opacity: 0}}
-                  animate={{opacity: 1, transition: {duration:1}}}
-                  exit={{opacity: 0}}
-      >
+      
         <div className="container">
-          <div className="top-left">
-            <p className="top-left-contact">contact</p>
-            <p className="top-left-nico">nicocarmine</p>
-          </div>
+
+        
+
           <div className="central">
             <div className="central-pix">
-              <img src={pic} className="pix" alt="" />
+              <img src={Data[url].pics[0]} className="pix" alt="" />
               <div className="text">
                 <div className="text-left">
                   <p className="text-content">
-                    It's always a hassle to correctly position a rotated text.
+                    {Data[url].titre}-{Data[url].subtitle}
+                  </p>
+                  <p className="text-content">
+                    {Data[url].credit}
                   </p>
                 </div>
                 <div className="text-right">
                   <p className="text-content">
-                    It's always a hassle to correctly position a rotated text.
-                    width or height is needed (hover to change the text direction)
+                    {Data[url].desc}
                   </p>
                 </div>
               </div>
               <Divider className="divider1-white2" />
-              <img src={pic1} className="pixFirst" alt="" />
-              <img src={pic2} className="pix" alt="" />
+              {dataWithoutFirst.map((pic, index) => (
+                  <img key={index} src={pic} className={index === 0 ? "pixFirst" : "pix"} alt="" />
+              ))}
 
 
             </div>
           </div>
 
-          <div className="top-right">
-            <p className="top-left-travaux">travaux</p>
-          </div>
+
+         
+          
+
+
+
+
         </div>
-      </motion.div>
+
   );
 };
 export default Travaux2;
