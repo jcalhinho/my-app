@@ -63,7 +63,7 @@ plus adéquate.</div>
                    
                 </div>
             </div>
-            <Outlet /> </> 
+            </> 
     );
 };
 

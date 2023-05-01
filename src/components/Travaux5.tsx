@@ -13,7 +13,7 @@ const Travaux5 = () => {
 
   return (
       
-        <div className="container">
+        <div >
           
           <div className="central">
             <div className="central-pix">

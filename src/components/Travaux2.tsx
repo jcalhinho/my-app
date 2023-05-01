@@ -13,7 +13,7 @@ const Travaux2 = () => {
   console.log(url)
   return (
       
-        <div className="container">
+        <div >
 
         
 

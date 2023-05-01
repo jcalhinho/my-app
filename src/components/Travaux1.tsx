@@ -13,19 +13,11 @@ const Travaux1 = () => {
   const dataWithoutFirst = Data[url].pics.slice(1);
 console.log(url)
   return (
-      <div className="container">
+      <div >
 
 
 
-          {/* <div className="top-left">
-            <Link to="/contact"><p className="top-left-contact">contact</p></Link>
-            <Link to="/"><p className="top-left-nico">nicocarmine</p></Link>
-          </div>
-          <Link to="/travaux/20">
-            <div className="top-left-icon">
-            <p className="top-left-iconleft"><SlArrowLeft /></p>
-          </div>
-            </Link> */}
+        
 
           <div className="central">
             <div className="central-pix">
@@ -54,15 +46,7 @@ console.log(url)
             </div>
           </div>
 
-          {/* <div className="top-right">
-            <Link to="/travaux"><p className="top-left-travaux">travaux</p></Link>
-          </div>
-          <Link to="/travaux/2">
-          <div className="top-right-icon">
-            <p className="top-left-iconright"><SlArrowRight /></p>
-          </div>
-          </Link> */}
-
+        
 
        </div>
   );
