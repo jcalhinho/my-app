@@ -105,10 +105,12 @@ a{
   font-size: 50px;
   z-index: 11;
   position: fixed;
+  display: flex;
   color: white;
   font-weight: lighter;
   z-index: 10000;
 }
+
 
 .top-left-icon {
   color: white;

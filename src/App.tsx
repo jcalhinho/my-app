@@ -1,10 +1,14 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React from "react";
+import { url } from "inspector";
+import React, { useEffect, useMemo } from "react";
+import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import {
   Routes,
   Route,
   Outlet,
   useLocation,
+  useNavigate,
+  Link,
 } from "react-router-dom";
 import Container from "./components/Container";
 import Nicocarmine from "./components/Nicocarmine";
@@ -32,7 +36,89 @@ import Travaux9 from "./components/Travaux9";
 
 export default function App() {
   const location = useLocation();
- 
+ // const navigate = useNavigate();
+
+ const url0: number = parseInt(window.location.href.slice(30));
+ let url: number | string = parseInt(window.location.href.slice(30)) -1;
+let url2: number | string = parseInt(window.location.href.slice(30))+1;
+
+const calcurl = () => {
+if(url0 === 1 ){
+url = 20;
+url2 = 2;
+
+}
+if(url0 === 20 ){
+  url = 19;
+  url2 = 1;
+  
+    }
+}
+   
+           
+    calcurl();
+    function Layout() {
+      return (
+        <div>
+          <Outlet />
+        </div>
+      );
+    }
+    function Layout2() {
+      return (
+        <div>
+           <div className="container">
+                {/* <motion.div className="container"
+                            initial={{height: 0}}
+                            animate={{height:"100%"}}
+                            exit={{y: window.innerHeight , transition:{duration:0.6}}}
+    
+                > */}
+    
+                    <div className="top-left">
+                        <div className="top-left-ensemble">
+                        <Link className="top-left-contact" to="/contact">contact</Link>
+                        <Link className="top-left-nico" to="/">nicocarmine</Link>
+                        </div>
+    
+                    </div>
+                    { //Check if message failed
+            (location.pathname === '/travaux')
+              ? null
+              : <Link  to={"/travaux/" + url}>
+              <div id="link" className="top-left-icon">
+                <p className="top-left-iconleft"><SlArrowLeft /></p>
+              </div>
+            </Link> 
+          }
+                    
+     
+    
+                    <div className="top-right">
+                    <div className="top-left-ensemble">
+                        <Link className="top-left-travaux" to="/travaux">travaux</Link>
+                    </div>
+                    </div>
+                    { //Check if message failed
+            (location.pathname === '/travaux')
+              ? null
+              : <Link  to={"/travaux/" + url2}>
+              <div id="link" className="top-right-icon">
+                <p className="top-left-iconright"><SlArrowRight /></p>
+              </div>
+            </Link> 
+          }
+    
+    
+                {/* </motion.div>*/} </div> 
+       
+    
+          <Outlet />
+        </div>
+      );
+        }
+ //   console.log(navigate(-1));
+  
   const motionTransition = {
     transition : {duration: 1.2},
     opacity: 1,
@@ -100,20 +186,6 @@ export default function App() {
   );
 }
 
-function Layout() {
-  return (
-    <div>
-      <Outlet />
-    </div>
-  );
-}
-function Layout2() {
-  return (
-    <div>
-      <Container />
 
-      <Outlet />
-    </div>
-  );
-}
+
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../index.css";
 import {Button, Divider, Typography} from "@mui/material";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
@@ -17,13 +17,20 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {FaBehanceSquare, FaInstagram, FaLinkedin} from "react-icons/fa";
 import {SlArrowDown} from "react-icons/sl";
 import Container from "./Container";
+
+
 export default function Nicocarmine() {
    const [scrollDir] = useDetectScroll({});
    const history = useNavigate();
-   console.log(scrollDir)
-   if(scrollDir === "down") {
+   
+   
+
+   useEffect(() => {
+if(scrollDir === "down") {
    history("/travaux");
    }
+   },[history, scrollDir])
+   
 
 
 

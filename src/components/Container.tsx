@@ -7,6 +7,7 @@ import {MdKeyboardArrowLeft, MdKeyboardArrowRight} from "react-icons/md";
 import {SlArrowLeft, SlArrowRight} from "react-icons/sl";
 import {Data} from "../data";
 import Travaux from "./Travaux";
+import { useEffect } from "react";
 
 
 
@@ -16,27 +17,24 @@ const Container = () => {
   const url0: number = parseInt(window.location.href.slice(30));
    let url: number | string = parseInt(window.location.href.slice(30)) -1;
   let url2: number | string = parseInt(window.location.href.slice(30))+1;
-  const link = document.getElementById("link");
+
   const calcurl = () => {
 if(url0 === 1 ){
-url = "";
+url = 20;
 url2 = 2;
 
   }
   if(url0 === 20 ){
     url = 19;
-    url2 = "";
+    url2 = 1;
     
       }
-      if(u.pathname === "/travaux" ){
-        if (link) {
-          link.style.display = "none"
-        }
-        
-        
-          }
-    }
- calcurl();
+}
+     
+             
+      calcurl();
+          
+
 console.log(u.pathname)
 
 
@@ -56,11 +54,16 @@ console.log(u.pathname)
                     </div>
 
                 </div>
-                <Link id="link" to={"/travaux/" + url}>
-            <div className="top-left-icon">
-              <p className="top-left-iconleft"><SlArrowLeft /></p>
-            </div>
-          </Link>
+                { //Check if message failed
+        (u.pathname === '/travaux')
+          ? null
+          : <Link  to={"/travaux/" + url}>
+          <div id="link" className="top-left-icon">
+            <p className="top-left-iconleft"><SlArrowLeft /></p>
+          </div>
+        </Link> 
+      }
+                
  
 
                 <div className="top-right">
@@ -68,11 +71,15 @@ console.log(u.pathname)
                     <Link className="top-left-travaux" to="/travaux">travaux</Link>
                 </div>
                 </div>
-                <Link id="link" to={"/travaux/" + url2}>
-            <div className="top-right-icon">
-              <p className="top-left-iconright"><SlArrowRight /></p>
-            </div>
-          </Link>
+                { //Check if message failed
+        (u.pathname === '/travaux')
+          ? null
+          : <Link  to={"/travaux/" + url2}>
+          <div id="link" className="top-right-icon">
+            <p className="top-left-iconright"><SlArrowRight /></p>
+          </div>
+        </Link> 
+      }
 
 
             {/* </motion.div>*/} </div> 
