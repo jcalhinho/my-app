@@ -216,7 +216,7 @@ margin-right:50px;
   width: 100%;
   font-family: "Inter";font-style:normal;font-weight: 100;
   background: rgb(0, 0, 0);
-  margin: 0 50px 20px 0;
+  margin: 0 0px 20px 0;
 }
 .text-right {
   width: 100%;
@@ -233,11 +233,18 @@ margin-right:50px;
   font-size: 30px;
   font-family: "Inter";font-style:normal;font-weight: bold;
   margin-bottom: 0;
+  margin-right:10px;
 }
 .text-content-soustitre {
   font-size: 30px;
   font-family: "Inter";font-style:normal;font-weight: 100;
   /* margin-top: 0; */
+  margin-bottom: 0;
+}
+.text-content-soustitre2 {
+  font-size: 30px;
+  font-family: "Inter";font-style:normal;font-weight: 100;
+  margin-top: 0;
   margin-bottom: 0;
 }
 .text-content-credit {
@@ -287,7 +294,9 @@ margin-right:50px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
+  width:80%;
+  margin:  auto;
+  margin-top:30px ;
 
 }
 .divider1-white {
@@ -311,14 +320,14 @@ margin-right:50px;
   border-bottom-width: thin!important;
 }
 .divider2-white {
-  margin: auto 0 auto 0 !important;
-  width:85%;
-  -webkit-flex-shrink: 0!important;
-  flex-shrink: 0!important;
-  border-width: 0!important;
-  border-style: solid!important;
-  border-color: rgb(255, 255, 255)!important;
-  border-bottom-width: thin!important;
+  margin: 11px 20px auto 0 !important;
+width: 100%;
+flex-shrink: 0 !important;
+border-width: 0 !important;
+  border-bottom-width: 0px;
+border-style: solid !important;
+border-color: rgb(255, 255, 255) !important;
+border-bottom-width: thin !important;
 }
 .SlideRoutes {
   overflow: auto !important;
@@ -340,6 +349,34 @@ margin-right:50px;
 
 }
 .lien-contact {color: #f58608;}
+.containerContact {
+  display: flex;
+  flex-direction: column;
+  
+}
+.containerRow {
+  display: flex;
+  flex-direction: row;
+  
+margin: auto 10%;
+}
+.containerRow2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+margin: auto 10%;
+}
+.containerRow3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+margin: auto 10%;
+}
+.listcontact {
+  display: flex;
+  flex-direction: column;
+ 
+}
 .button {
   display: -webkit-inline-flex!important;
   display: -ms-inline-flexbox!important;

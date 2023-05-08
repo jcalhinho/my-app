@@ -10,6 +10,7 @@ import {
   useNavigate,
   Link,
 } from "react-router-dom";
+import Contact from "./components/Contact";
 //import Container from "./components/Container";
 import Nicocarmine from "./components/Nicocarmine";
 import Travaux from "./components/Travaux";
@@ -277,6 +278,19 @@ if(nextRoute){
                 </motion.div>
               }
             />
+            <Route
+             path="/contact"
+              element={
+                <motion.div
+                variants={routeVariantsnico}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                >
+                  <><Layout2 /><Contact /></>
+                </motion.div>
+              }
+            />
           </Route>
 
           <Route path="/travaux" element={<Layout2 />}>
@@ -294,25 +308,38 @@ if(nextRoute){
               }
             />
 
-            {[
-              1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-              20,
-            ].map((num) => (
-              <Route
-                key={num}
-                path={`/travaux/${num}`}
-                element={
-                  <motion.div
-                  variants={NEXTRoute()}
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                  >
-                    <Travaux1 />
-                  </motion.div>
-                }
-              />
-            ))}
+            
+              <Route path={`/travaux/1`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux1 /></motion.div>}/>
+              <Route path={`/travaux/2`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux2 /></motion.div>}/>
+              <Route path={`/travaux/3`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux3 /></motion.div>}/>
+              <Route path={`/travaux/4`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux4 /></motion.div>}/>
+              <Route path={`/travaux/5`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux5 /></motion.div>}/>
+              <Route path={`/travaux/6`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux6 /></motion.div>}/>
+              <Route path={`/travaux/7`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux7 /></motion.div>}/>
+              <Route path={`/travaux/8`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux8 /></motion.div>}/>
+              <Route path={`/travaux/9`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux9 /></motion.div>}/>
+              <Route path={`/travaux/10`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux10 /></motion.div>}/>
+              <Route path={`/travaux/11`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux11 /></motion.div>}/>
+              <Route path={`/travaux/12`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux12 /></motion.div>}/>
+              <Route path={`/travaux/13`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux13 /></motion.div>}/>
+              <Route path={`/travaux/14`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux14 /></motion.div>}/>
+              <Route path={`/travaux/15`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux15 /></motion.div>}/>
+              <Route path={`/travaux/16`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux16 /></motion.div>}/>
+              <Route path={`/travaux/17`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux17 /></motion.div>}/>
+              <Route path={`/travaux/18`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux18 /></motion.div>}/>
+              <Route path={`/travaux/19`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux19 /></motion.div>}/>
+              <Route path={`/travaux/20`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux20 /></motion.div>}/>
+
+                  
+                    
+                    
+                    
+                 
+                    
+                  
+                
+              
+            
           </Route>
         </Routes>
       </AnimatePresence>

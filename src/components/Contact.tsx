@@ -13,18 +13,87 @@ import {Divider} from "@mui/material";
 
 const Contact = () => {
   return (
+    
+    <div className="containerContact">
+      <div className="divider-icon">
+        <Divider className="divider2-white" />
+    </div>  
+    <div className="containerRow">
+      <div>NICOLAS CARMINE</div>  
+      <div>- contact@nicocarmine.com -</div>  
+      <div>06 50 55 19 12</div>  
+      </div>  
+      <div className="divider-icon">
+        <Divider className="divider2-white" />
+    </div>
+    {/* <div className="containerRow2">
+      <div>EXPERTISE</div>  
+      <div>CLIENTS</div>  
+      <div></div>  
+    </div> */}
+    <div className="containerRow3">
+      <div className="listcontact">
+      <p>EXPERTISE</p>
+        <p>Direction artistique</p>
+        <p>Illustration</p>
+        <p>Edition</p>
+        <p>Identité visuelle</p>
+        <p>Charte graphique</p>
+        <p>Naming</p>
+        </div>  
+      <div className="listcontact">
+      <p>CLIENTS</p>
+        <p>Ville de Lyon</p>
+        <p>Ville de Paris</p>
+        <p>Biarritz Tourisme</p>
+        <p>Ministere de l'économie</p>
+        <p>et des finances</p>
+        <p>Eram</p>
+        <p>Sanofi</p>
+        <p>Senseo</p>
+        
+        </div>  
+      <div className="listcontact">
+      <p>   </p>
+      <p>Casino</p>
+        <p>Leroy Merlin</p>
+        <p>Quick</p>
+        <p>Mac Donald</p>
+        <p>Institut Gustave Roussy</p>
+        <p>Université Paris Sorbonne</p>
+        <p>Université Paris Descartes</p>
+        <p>Hachette Livre</p>
+        <p>...</p>
+        </div>  
+    </div>
+    <div className="containerRow2">
+      <div>web: Jc Alhinho </div>  
       
-        <div className="container">
-          <div className="top-left">
-            <p className="top-left-contact">contact</p>
-            <p className="top-left-nico">nicocarmine</p>
-          </div>
+    </div>
+    <div className="divider-icon">
+        <Divider className="divider2-white" />
+    </div>
+    
+{/* 
+{/*          
+    // <div className="central">
+    // <div className="central-travaux">
+        
 
 
-          <div className="top-right">
-            <p className="top-left-travaux">travaux</p>
-          </div>
-        </div>
+
+
+    // </div>
+// </div> 
+ <div className="divider-icon">
+        <Divider className="divider2-white" />
+        {/* <a className="lien-contact" href="/contact">contact@gmail.com</a>
+    </div> */}
+
+
+
+
+ </div> 
 
   );
 };

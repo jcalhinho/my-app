@@ -25,7 +25,7 @@ const Travaux1 = () => {
               <div className="text">
                 <div className="text-left">
                   <div style={{display:"flex",flexWrap:"wrap"}}>
-                  <p className="text-content-titre">{Data[url].titre}-</p>
+                  <p className="text-content-titre">{Data[url].titre}</p>
                   <p className="text-content-soustitre">
                   {Data[url].subtitle}</p>
                   </div>
