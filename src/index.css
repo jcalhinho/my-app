@@ -1,3 +1,6 @@
+
+
+
 /* Colors variables - couleur primaire, secondaire, tertiaire... */
 /* Couleurs relatives aux bordures */
 /* Couleurs relatives aux backgrounds */
@@ -23,9 +26,9 @@ body {
   margin: 0;
   padding: 0;
   background: #000;
-  color: #fff;
+  color: #ffffff;
   box-sizing: border-box;
-  font-family: "Inter-Thin", sans-serif;
+  font-family: "Inter";font-style:normal;font-weight: 100;
 }
 #sectionInterdite {
   /* position:absolute; */
@@ -43,7 +46,7 @@ justify-content: space-evenly;
   display: flex;
   width: 10%;
   position: fixed;
-  top: 0;
+  top: 20px;
   background: #000;
   height: 100vh;
   overflow: auto;
@@ -60,7 +63,7 @@ a{
   width: 10%;
   background: #000;
   position: fixed;
-  top: 0;
+  top: 20px;
   height: 100vh;
   overflow: auto;
   left: 0;
@@ -68,16 +71,16 @@ a{
 }
 .top-left-nico {
   color: grey;
-  font-size: 35px;
-  font-family: sans-serif;
-  margin: auto;
+  font-size: 40px;
+  font-family: "Outfit";font-style:normal;font-weight: 900;
+  margin-top: 10px;
  
 
 }
 .top-left-travaux {
   color: rgb(255, 123, 0);
-  font-size: 35px;
-  font-family: Inter,sans-serif;
+  font-size: 40px;
+  font-family: "Outfit";font-style:normal;font-weight: 900;
   margin: auto;
   
 }
@@ -91,10 +94,11 @@ a{
   
 }
 .top-left-contact {
-  color: white;
-  font-size: 35px;
-  font-family: sans-serif;
+  /* color: white; */
+  font-size: 40px;
+  font-family: "Outfit";font-style:normal;font-weight:bold;
   margin: auto;
+  color: rgba(255,88,0,1);
 
 }
 
@@ -128,13 +132,14 @@ a{
   width: 80%;
   /* //height: 100vh; */
   /* //background: rgb(0, 0, 0); */
-  margin: auto;
+  margin: 40px auto;
 
 }
 .central-travaux {
-    display:flex;
-    flex-wrap: wrap;
-    margin:auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 40px;
+  /* grid-auto-rows: minmax(100px, auto); */
   pointer-events: none;
 
  /* height: 1000px;*/
@@ -151,26 +156,26 @@ a{
   opacity: 1;
   transition-property: opacity;
   transition-duration: 0.3s;
-  margin: auto;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   pointer-events: auto;
 }
 
 .pixThumb {
 border-radius: 10px;
-width:320px;
-  height:230px;
+width:100%;
+  height:100%;
 
 }
 
 .firstPixP {
   font-size: 19px;
-margin: 14px auto 5px auto;
-
+margin: 15px auto 2.5px auto;
+text-align: center;font-family: "Inter";font-style: normal;font-weight: bold;font-size: 20px;color: rgba(255,255,255,1);text-transform: uppercase;
 }
 .secondPixP {
   font-size: 12px;
-  margin: 0 auto 8px auto;
+  margin: 2.5px auto 15px auto;
+  font-family: "Inter";font-style:normal;font-weight: 100;
 }
 .central-nicocarmine {
   width: 80vw;
@@ -180,17 +185,17 @@ margin: 14px auto 5px auto;
 }
 .central-pix {
   display: flex;
-  flex-direction: column;
-  width: 75vw;
+flex-direction: column;
 
-  background: rgb(0, 0, 0);
-  margin: 5px auto;
+
+background: rgb(0, 0, 0);
+margin-left:50px;
+margin-right:50px; 
 }
 .pix {
   width: 100%;
   height: 100%;;
 
-  margin: 20px auto;
 }
 .pixFirst {
   width: 100%;
@@ -201,27 +206,48 @@ margin: 14px auto 5px auto;
 .text {
   display: flex;
   flex-direction: row;
-
+  font-family: "Inter";font-style:normal;font-weight: 100;
   width: 100%;
 
   background: rgb(0, 0, 0);
-  margin: 0 auto 20px 0;
+  margin: 20px auto 20px 0;
 }
 .text-left {
   width: 100%;
-
+  font-family: "Inter";font-style:normal;font-weight: 100;
   background: rgb(0, 0, 0);
   margin: 0 50px 20px 0;
 }
 .text-right {
   width: 100%;
-
+  font-family: "Inter";font-style:normal;font-weight: 100;
   background: rgb(0, 0, 0);
   margin: 0 auto 20px 0;
 }
 .text-content {
   background: rgb(0, 0, 0);
   margin: 0 auto 20px 0;
+  font-family: "Inter";font-style:normal;font-weight: 100;
+}
+.text-content-titre {
+  font-size: 30px;
+  font-family: "Inter";font-style:normal;font-weight: bold;
+  margin-bottom: 0;
+}
+.text-content-soustitre {
+  font-size: 30px;
+  font-family: "Inter";font-style:normal;font-weight: 100;
+  /* margin-top: 0; */
+  margin-bottom: 0;
+}
+.text-content-credit {
+  font-size: 14px;
+  font-family: "Inter";font-style:normal;font-weight: 100;
+}
+.text-content-des {
+  margin-top:30px;
+  font-size: 20px;
+  font-family: "Inter";font-style:normal;font-weight: 100;
 }
 
 .Divider {

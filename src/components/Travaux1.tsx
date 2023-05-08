@@ -11,7 +11,7 @@ import {Link} from "react-router-dom";
 const Travaux1 = () => {
   const url : number = parseInt(window.location.href.slice(30)) -1;
   const dataWithoutFirst = Data[url].pics.slice(1);
-console.log(url)
+
   return (
       <div >
 
@@ -24,15 +24,19 @@ console.log(url)
               <img src={Data[url].pics[0]} className="pix" alt="" />
               <div className="text">
                 <div className="text-left">
-                  <p className="text-content">
-                    {Data[url].titre}-{Data[url].subtitle}
-                  </p>
-                  <p className="text-content">
+                  <div style={{display:"flex",flexWrap:"wrap"}}>
+                  <p className="text-content-titre">{Data[url].titre}-</p>
+                  <p className="text-content-soustitre">
+                  {Data[url].subtitle}</p>
+                  </div>
+                 
+                  <p className="text-content-credit">
                     {Data[url].credit}
                   </p>
+                  
                 </div>
                 <div className="text-right">
-                  <p className="text-content">
+                  <p className="text-content-des"> 
                     {Data[url].desc}
                   </p>
                 </div>

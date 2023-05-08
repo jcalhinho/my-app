@@ -16,7 +16,7 @@ import Travaux from "./Travaux";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {FaBehanceSquare, FaInstagram, FaLinkedin} from "react-icons/fa";
 import {SlArrowDown} from "react-icons/sl";
-import Container from "./Container";
+//import Container from "./Container";
 
 
 export default function Nicocarmine() {
@@ -74,6 +74,4 @@ plus adéquate.</div>
     );
 };
 
-function useNaviguate() {
-    throw new Error("Function not implemented.");
-}
+
