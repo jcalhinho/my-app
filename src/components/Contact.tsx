@@ -19,9 +19,11 @@ const Contact = () => {
         <Divider className="divider2-white" />
     </div>  
     <div className="containerRow">
-      <div>NICOLAS CARMINE</div>  
-      <div>- contact@nicocarmine.com -</div>  
-      <div>06 50 55 19 12</div>  
+      <div>NICOLAS CARMINE </div>  
+      <div>-</div>  
+      <div>{""}contact@nicocarmine.com{" "}</div>  
+      <div>-</div>  
+      <div> 06 50 55 19 12</div>  
       </div>  
       <div className="divider-icon">
         <Divider className="divider2-white" />

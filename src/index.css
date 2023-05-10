@@ -78,7 +78,7 @@ a{
 
 }
 .top-left-travaux {
-  color: rgb(255, 123, 0);
+  color: rgba(255,88,0,1);
   font-size: 40px;
   font-family: "Outfit";font-style:normal;font-weight: 900;
   margin: auto;
@@ -96,7 +96,7 @@ a{
 .top-left-contact {
   /* color: white; */
   font-size: 40px;
-  font-family: "Outfit";font-style:normal;font-weight:bold;
+  font-family: "Outfit";font-style:normal;font-weight:900;
   margin: auto;
   color: rgba(255,88,0,1);
 
@@ -276,7 +276,7 @@ margin-right:50px;
   flex-direction: column;
   align-items: center;
   justify-content:center;
-  color: orange
+  color: #f58608;
 }
 
 .textes {
@@ -357,8 +357,8 @@ border-bottom-width: thin !important;
 .containerRow {
   display: flex;
   flex-direction: row;
-  
-margin: auto 10%;
+  color: rgba(255,88,0,1);
+margin: 10px 10%;
 }
 .containerRow2 {
   display: flex;

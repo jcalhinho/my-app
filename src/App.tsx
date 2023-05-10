@@ -93,7 +93,7 @@ const [nextRoute,setnextRoute] =useState(true);
           </div></motion.div>
           {
             //Check if message failed
-            location.pathname === "/travaux" ? null : (
+            location.pathname === "/travaux" || location.pathname === "/contact" ? null : (
               <Link to={"/travaux/" + url}>
                 <div id="link" className="top-left-icon">
                   <p className="top-left-iconleft">
@@ -118,7 +118,7 @@ const [nextRoute,setnextRoute] =useState(true);
           </motion.div>
           {
             //Check if message failed
-            location.pathname === "/travaux" ? null : (
+            location.pathname === "/travaux" || location.pathname === "/contact" ? null : (
               <Link to={"/travaux/" + url2}>
                 <div id="link" className="top-right-icon">
                   <p className="top-left-iconright">
@@ -154,7 +154,7 @@ const [nextRoute,setnextRoute] =useState(true);
             </div>
             {
               //Check if message failed
-              location.pathname === "/travaux" ? null : (
+              location.pathname === "/travaux" || location.pathname === "/contact" ? null : (
                 <Link to={"/travaux/" + url}>
                   <div id="link" className="top-left-icon">
                     <p className="top-left-iconleft">
@@ -177,7 +177,7 @@ const [nextRoute,setnextRoute] =useState(true);
             
             {
               //Check if message failed
-              location.pathname === "/travaux" ? null : (
+              location.pathname === "/travaux" || location.pathname === "/contact" ? null : (
                 <Link to={"/travaux/" + url2}>
                   <div id="link" className="top-right-icon">
                     <p className="top-left-iconright">
