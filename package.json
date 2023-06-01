@@ -31,7 +31,7 @@
     "web-vitals": "^2.1.4",
     "webpack": ">=5.76.0"
   },
-  "homepage": "https://jcalhinho-github.io/my-app",
+  "homepage": "https://jcalhinho.github.io/my-app",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
