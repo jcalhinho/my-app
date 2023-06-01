@@ -31,13 +31,14 @@
     "web-vitals": "^2.1.4",
     "webpack": ">=5.76.0"
   },
+  "homepage": "https://github.com/jcalhinho/my-app",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b main -d build"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
