@@ -31,7 +31,6 @@
     "web-vitals": "^2.1.4",
     "webpack": ">=5.76.0"
   },
-  "homepage": "https://github.com/my-app",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
