@@ -209,7 +209,7 @@ const [nextRoute,setnextRoute] =useState(true);
       x: "0%",
       y: "0%",
     },
-    exit:{y: "-100%"}
+     exit:{y: "-100%"}
   };
  
   const routeVariantstravaux = {
@@ -229,7 +229,7 @@ const [nextRoute,setnextRoute] =useState(true);
   
   function NEXTRoute() {
 if(nextRoute){
-  console.log(nextRoute)
+ 
     const routeVariantstravauxnumber = {
       initial:{x:window.innerWidth}, 
       animate: {
@@ -242,7 +242,7 @@ if(nextRoute){
     };
     return routeVariantstravauxnumber
 }else {
-  console.log(nextRoute)
+  
   const routeVariantstravauxnumber = {
     initial:{x:-window.innerWidth}, 
     animate: {

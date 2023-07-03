@@ -38,30 +38,33 @@ if(scrollDir === "down") {
 
 <div id="sectionInterdite">
             <div className="central-nicocarmine">
+                <div >
                 <div className="column-nicocarmine" style={{display:"flex",flexDirection:"column"}}>
-                    <h2 className="title-nicocarmine">nicocarmine</h2>
-                    <div className="divider-icon">
-                    <Divider className="divider1-white" />
-                        <div className="icon-group">
-                            <FaBehanceSquare className="iconmui" />
-                            <FaLinkedin className="iconmui"  /><FaInstagram className="iconmui" /> </div>
+                <div style={{display:"flex",alignItems:"center"}}>
+                    <h2 className="title-nicocarmine" style={{fontSize:"60px", fontWeight:"bold",
+                    fontFamily: "Futura",fontStyle:"normal"}}>nicocarmine</h2>
+                   
+                   <Divider className="divider2-white22" />
+                        <a className="lien-contact" href="/">contact@gmail.com</a>
                     </div>
+                        
+                   </div>
+                </div>
+
                     <div className="central-text">Concepteur graphique pluridisciplinaire spécialisé dans l’identité de marque, l’édition et
 l’illustration, j’aime développer des concepts explicites avec un design utile et accessible.</div> <div className="central-text">
 De plus, j’ai à cœur d’accompagner les marques et les institutions, depuis leur réflexion
 stratégique jusqu’au design final, dans le but qu’elles obtiennent la solution graphique la
 plus adéquate.</div>
                     <div className="divider-icon">
-                        <Divider className="divider2-white" />
-                        <a className="lien-contact" href="#">contact@gmail.com</a>
-                    </div>
+                        
                     <div className="groupbouton">
                         <Link to="/travaux">
                         <Button className="button">
                             <div>
 
                             <SlArrowDown className="iconButton" />
-                            <div>skip</div>
+                            
                             </div>
                         </Button>
                         </Link>

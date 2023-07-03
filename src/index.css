@@ -8,13 +8,9 @@
 /* variables */
 /* variables : breakpoint - template : Material UI */
 /* Style valable pour toute l'app */
-@font-face {
-  font-family: "Inter";
-  src: url("./Inter/Inter-VariableFont_slnt,wght.ttf") format("ttf");
 
 
 
-}
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -72,7 +68,7 @@ a{
 .top-left-nico {
   color: grey;
   font-size: 40px;
-  font-family: "Outfit";font-style:normal;font-weight: 900;
+  font-family: "Futura";font-style:normal;font-weight: 900;
   margin-top: 10px;
  
 
@@ -80,7 +76,7 @@ a{
 .top-left-travaux {
   color: rgba(255,88,0,1);
   font-size: 40px;
-  font-family: "Outfit";font-style:normal;font-weight: 900;
+  font-family: "Futura";font-style:normal;font-weight: 900;
   margin: auto;
   
 }
@@ -96,7 +92,7 @@ a{
 .top-left-contact {
   /* color: white; */
   font-size: 40px;
-  font-family: "Outfit";font-style:normal;font-weight:900;
+  font-family: "Futura";font-style:normal;font-weight:900;
   margin: auto;
   color: rgba(255,88,0,1);
 
@@ -175,13 +171,13 @@ text-align: center;font-family: "Inter";font-style: normal;font-weight: bold;fon
 .secondPixP {
   font-size: 12px;
   margin: 2.5px auto 15px auto;
-  font-family: "Inter";font-style:normal;font-weight: 100;
+  font-family: "Inter";font-style:normal;font-weight: 200;
 }
 .central-nicocarmine {
   width: 80vw;
   height: 101vh;
   background: rgb(0, 0, 0);
-  margin: auto;
+  margin: 100px auto 0px auto;
 }
 .central-pix {
   display: flex;
@@ -192,21 +188,33 @@ background: rgb(0, 0, 0);
 margin-left:50px;
 margin-right:50px; 
 }
+
+.central-text {
+  
+  margin: 40px auto;
+  font-size: 45px;
+  font-style:normal;
+  line-height: 80px;
+
+  font-family: "Inter", sans-serif;
+  
+}
 .pix {
   width: 100%;
-  height: 100%;;
+  height: 100%;
+  margin-bottom:40px;
 
 }
 .pixFirst {
   width: 100%;
   height: 100%;;
 
-  margin: 40px auto 20px auto;
+  margin: 40px auto 40px auto;
 }
 .text {
   display: flex;
   flex-direction: row;
-  font-family: "Inter";font-style:normal;font-weight: 100;
+  font-family: "Inter";font-style:normal;
   width: 100%;
 
   background: rgb(0, 0, 0);
@@ -214,20 +222,20 @@ margin-right:50px;
 }
 .text-left {
   width: 100%;
-  font-family: "Inter";font-style:normal;font-weight: 100;
+  font-family: "Inter";font-style:normal;
   background: rgb(0, 0, 0);
   margin: 0 0px 20px 0;
 }
 .text-right {
   width: 100%;
-  font-family: "Inter";font-style:normal;font-weight: 100;
+  font-family: "Inter";font-style:normal;
   background: rgb(0, 0, 0);
   margin: 0 auto 20px 0;
 }
 .text-content {
   background: rgb(0, 0, 0);
   margin: 0 auto 20px 0;
-  font-family: "Inter";font-style:normal;font-weight: 100;
+  font-family: "Inter";font-style:normal;
 }
 .text-content-titre {
   font-size: 30px;
@@ -237,24 +245,24 @@ margin-right:50px;
 }
 .text-content-soustitre {
   font-size: 30px;
-  font-family: "Inter";font-style:normal;font-weight: 100;
+  font-family: "Inter";font-style:normal;
   /* margin-top: 0; */
   margin-bottom: 0;
 }
 .text-content-soustitre2 {
   font-size: 30px;
-  font-family: "Inter";font-style:normal;font-weight: 100;
+  font-family: "Inter";font-style:normal;
   margin-top: 0;
   margin-bottom: 0;
 }
 .text-content-credit {
   font-size: 14px;
-  font-family: "Inter";font-style:normal;font-weight: 100;
+  font-family: "Inter";font-style:normal;
 }
 .text-content-des {
   margin-top:30px;
   font-size: 20px;
-  font-family: "Inter";font-style:normal;font-weight: 100;
+  font-family: "Inter";font-style:normal;
 }
 
 .Divider {
@@ -287,8 +295,9 @@ margin-right:50px;
 .title-nicocarmine {
   color: #ff5800;
   font-size: 4.5vh;
-  margin: 10.5vh 0 0 0;
-  line-height: 2px;
+  margin:0;
+  /* //margin: 10.5vh 0 0 0;
+  //line-height: 2px; */
 }
 .divider-icon {
   display: flex;
@@ -320,8 +329,18 @@ margin-right:50px;
   border-bottom-width: thin!important;
 }
 .divider2-white {
-  margin: 11px 20px auto 0 !important;
+  margin: 0 20px auto 0px !important;
 width: 100%;
+flex-shrink: 0 !important;
+border-width: 0 !important;
+  border-bottom-width: 0px;
+border-style: solid !important;
+border-color: rgb(255, 255, 255) !important;
+border-bottom-width: thin !important;
+}
+.divider2-white22 {
+  margin: auto 20px auto 20px !important;
+width: 60%;
 flex-shrink: 0 !important;
 border-width: 0 !important;
   border-bottom-width: 0px;
@@ -336,19 +355,19 @@ border-bottom-width: thin !important;
 
 .icon-group {
   display: flex;
+  justify-content: space-around;
 }
-.iconmui {
-  width: 2.5em!important;
-  height: 2.5em!important;
-}
-.central-text {
-  margin: 4vh 0 4vh 0;
-  height:fit-content;
-  font-size: 6.5vh;
-  font-weight: lighter;
 
+.iconButton {
+  width: 5em!important;
+  height: 5em!important;
+  color: rgba(255,88,0,1);
 }
-.lien-contact {color: #f58608;}
+
+.lien-contact {color: #f58608;
+font-family: "Inter";
+font-weight: bold;
+}
 .containerContact {
   display: flex;
   flex-direction: column;
@@ -358,13 +377,15 @@ border-bottom-width: thin !important;
   display: flex;
   flex-direction: row;
   color: rgba(255,88,0,1);
-margin: 10px 10%;
+margin: auto 10%;
+height: 100px;
 }
 .containerRow2 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 margin: auto 10%;
+
 }
 .containerRow3 {
   display: flex;
