@@ -293,7 +293,7 @@ if(nextRoute){
   
   return (
     <div>
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="sync">
         <Routes location={location} key={location.key}>
           <Route path="/" element={<Layout />}>
             <Route
