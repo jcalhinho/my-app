@@ -7,7 +7,7 @@ import { Data } from "../data";
 import {Divider} from "@mui/material";
 
 const Travaux3 = () => {
-  const url : number = parseInt(window.location.href.slice(30)) -1;
+  const url : number = parseInt(window.location.href.slice(-1)) -1;
   const dataWithoutFirst = Data[url].pics.slice(1);
   const lastPics = dataWithoutFirst.pop();
 

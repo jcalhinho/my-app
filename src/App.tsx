@@ -41,9 +41,9 @@ export default function App() {
 const [nextRoute,setnextRoute] =useState(true);
 
    
-  const url0: number = parseInt(location.pathname.slice(9));
-  let url: number | string = parseInt(location.pathname.slice(9)) - 1;
-  let url2: number | string = parseInt(location.pathname.slice(9)) + 1;
+  const url0: number = parseInt(location.pathname.slice(-1));
+  let url: number | string = parseInt(location.pathname.slice(-1)) - 1;
+  let url2: number | string = parseInt(location.pathname.slice(-1)) + 1;
 
 
   const calcurl = () => {
@@ -58,14 +58,10 @@ const [nextRoute,setnextRoute] =useState(true);
   };
   calcurl();
 
-  const lastVisitedUrl = window.location.href;
-  const history = useNavigate();
+ 
+  
 
-  useEffect(() => {
-    const lastVisitedUrl = history;
-    console.log('Dernière URL visitée :', lastVisitedUrl);
-  }, [history]);
-
+ 
   function Layout() {
     return (
       <div>

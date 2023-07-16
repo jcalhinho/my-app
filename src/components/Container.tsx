@@ -16,7 +16,7 @@ export  {}
 // const Container = () => {
 //   const u =useLocation();
 //   const url0: number = parseInt(window.location.href.slice(30));
-//    let url: number | string = parseInt(window.location.href.slice(30)) -1;
+//    let url: number | string = parseInt(window.location.href.slice(-1)) -1;
 //   let url2: number | string = parseInt(window.location.href.slice(30))+1;
 
 //   const calcurl = () => {
