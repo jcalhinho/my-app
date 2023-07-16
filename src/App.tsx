@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { url } from "inspector";
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import { FaBehanceSquare, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import {
   Routes,
@@ -11,7 +12,7 @@ import {
   Link,
 } from "react-router-dom";
 import Contact from "./components/Contact";
-//import Container from "./components/Container";
+import logobenance from "../pix/behance-svgrepo-com.svg";
 import Nicocarmine from "./components/Nicocarmine";
 import Travaux from "./components/Travaux";
 import Travaux1 from "./components/Travaux1";
@@ -90,7 +91,8 @@ const [nextRoute,setnextRoute] =useState(true);
               </Link>
             </div>
             
-          </div></motion.div>
+          </div>
+          </motion.div>
           {
             //Check if message failed
             location.pathname === "/travaux" || location.pathname === "/contact" ? null : (
@@ -108,10 +110,13 @@ const [nextRoute,setnextRoute] =useState(true);
                           animate={{y: 0 , transition:{duration:0.8}}}
                          // exit={{y: window.innerHeight , transition:{duration:0.8}}}
                 >
-          <div className="top-right">
+           <div className="top-right">
             <div className="top-left-ensemble">
               <Link className="top-left-travaux" to="/travaux">
-                travaux
+                <FaBehanceSquare  className="iconmui" />
+                <FaLinkedin  className="iconmui" />
+                <FaInstagram  className="icommui" style={{margin:"10px 0 40px 0", color:"white",fontSize: "35px"}} />
+                travaux{" "}
               </Link>
             </div>
           </div>
@@ -140,60 +145,59 @@ const [nextRoute,setnextRoute] =useState(true);
       return (
         <div>
           {/* <div className="container"> */}
-           
-            <div className="top-left">
-              <div className="top-left-ensemble">
-                <Link className="top-left-contact" to="/contact">
-                  contact
-                </Link>
-                <Link className="top-left-nico" to="/">
-                  nicocarmine
-                </Link>
-              </div>
-              
+          <div className="top-left">
+            <div className="top-left-ensemble">
+              <Link className="top-left-contact" to="/contact">
+                contact
+              </Link>
+              <Link className="top-left-nico" to="/">
+                nicocarmine
+              </Link>
             </div>
-            {
-              //Check if message failed
-              location.pathname === "/travaux" || location.pathname === "/contact" ? null : (
-                <Link to={"/travaux/" + url}>
-                  <div id="link" className="top-left-icon">
-                    <p className="top-left-iconleft">
-                      <SlArrowLeft 
-                      onClick={()=>setnextRoute(true)}
-                      />
-                    </p>
-                  </div>
-                </Link>
-              )
-            }
-           
-            <div className="top-right">
-              <div className="top-left-ensemble">
-                <Link className="top-left-travaux" to="/travaux">
-                  travaux
-                </Link>
+          </div>
+          {
+            //Check if message failed
+            location.pathname === "/travaux" ||
+            location.pathname === "/contact" ? null : (
+              <Link to={"/travaux/" + url}>
+                <div id="link" className="top-left-icon">
+                  <p className="top-left-iconleft">
+                    <SlArrowLeft onClick={() => setnextRoute(true)} />
+                  </p>
+                </div>
+              </Link>
+            )
+          }
+          <div className="top-right">
+            <div className="top-left-ensemble">
+              <div>
+                <FaBehanceSquare  />
+                <FaLinkedin  />
+                <FaInstagram  />{" "}
               </div>
+
+              <Link className="top-left-travaux" to="/travaux">
+                travaux
+              </Link>
             </div>
-            
-            {
-              //Check if message failed
-              location.pathname === "/travaux" || location.pathname === "/contact" ? null : (
-                <Link to={"/travaux/" + url2}>
-                  <div id="link" className="top-right-icon">
-                    <p className="top-left-iconright">
-                      <SlArrowRight onClick={()=>setnextRoute(false)}/>
-                    </p>
-                  </div>
-                </Link>
-              )
-            }
-           
-            {" "}
+          </div>
+          {
+            //Check if message failed
+            location.pathname === "/travaux" ||
+            location.pathname === "/contact" ? null : (
+              <Link to={"/travaux/" + url2}>
+                <div id="link" className="top-right-icon">
+                  <p className="top-left-iconright">
+                    <SlArrowRight onClick={() => setnextRoute(false)} />
+                  </p>
+                </div>
+              </Link>
+            )
+          }{" "}
           {/* </div> */}
-  
           <Outlet />
         </div>
-      )
+      );
     }
    
   }

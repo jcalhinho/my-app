@@ -69,7 +69,7 @@ a{
   color: grey;
   font-size: 40px;
   font-family: "Futura";font-style:normal;font-weight: 900;
-  margin-top: 10px;
+  margin-top: 25px;
  
 
 }
@@ -124,6 +124,16 @@ a{
   font-weight: lighter;
   z-index: 10000;
 }
+
+.iconmui {
+  font-size: 35px;
+color:white;
+  transform: rotate(-180deg);
+ transform-origin: center center;
+ writing-mode: vertical-lr;
+ margin: 10px auto auto auto ;
+}
+
 .central {
   width: 80%;
   /* //height: 100vh; */
@@ -144,6 +154,7 @@ a{
 
 .central-travaux:hover .thumb:not(:hover) {
   opacity: 0.3;
+ 
 }
 .thumb {
   display: flex;
@@ -154,8 +165,12 @@ a{
   transition-duration: 0.3s;
   /* margin-top: 20px; */
   pointer-events: auto;
-}
 
+}
+.thumb:hover p {
+  
+  color:#ff5800;
+}
 .pixThumb {
 border-radius: 10px;
 width:100%;
@@ -168,14 +183,18 @@ width:100%;
 margin: 15px auto 2.5px auto;
 text-align: center;font-family: "Inter";font-style: normal;font-weight: bold;font-size: 20px;color: rgba(255,255,255,1);text-transform: uppercase;
 }
+
 .secondPixP {
   font-size: 12px;
   margin: 2.5px auto 15px auto;
   font-family: "Inter";font-style:normal;font-weight: 200;
 }
+
 .central-nicocarmine {
-  width: 80vw;
-  height: 101vh;
+  
+  height: 100%;
+  width:80%;
+
   background: rgb(0, 0, 0);
   margin: 100px auto 0px auto;
 }
@@ -185,14 +204,14 @@ flex-direction: column;
 
 
 background: rgb(0, 0, 0);
-margin-left:50px;
-margin-right:50px; 
+/* margin-left:50px;
+margin-right:50px;  */
 }
 
 .central-text {
   
   margin: 40px auto;
-  font-size: 45px;
+  font-size: 5vh;
   font-style:normal;
   line-height: 80px;
 
@@ -291,7 +310,11 @@ margin-right:50px;
   font-weight: bold;
   text-align: center;
 }
-.column-nicocarmine {}
+.column-nicocarmine {
+  display: flex;
+  justify-content: space-between;
+ 
+}
 .title-nicocarmine {
   color: #ff5800;
   font-size: 4.5vh;
@@ -339,14 +362,15 @@ border-color: rgb(255, 255, 255) !important;
 border-bottom-width: thin !important;
 }
 .divider2-white22 {
-  margin: auto 20px auto 20px !important;
-width: 60%;
-flex-shrink: 0 !important;
-border-width: 0 !important;
-  border-bottom-width: 0px;
-border-style: solid !important;
-border-color: rgb(255, 255, 255) !important;
-border-bottom-width: thin !important;
+  margin: 0 20px 20px 20px;
+width: 100%;
+border-bottom: 2px solid white;
+
+
+}
+.doublepara{
+  height:55vh;
+  
 }
 .SlideRoutes {
   overflow: auto !important;
@@ -359,14 +383,17 @@ border-bottom-width: thin !important;
 }
 
 .iconButton {
-  width: 5em!important;
-  height: 5em!important;
+  width: 7em!important;
+  height: 7em!important;
   color: rgba(255,88,0,1);
 }
 
-.lien-contact {color: #f58608;
+.lien-contact {
+  color: #ff5800;
 font-family: "Inter";
 font-weight: bold;
+margin: auto 20px 15px 0 !important;
+width: auto;
 }
 .containerContact {
   display: flex;

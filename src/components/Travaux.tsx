@@ -34,9 +34,11 @@ const Travaux = () => {
                     </div>
                 </div>
                 <div className="divider-icon">
-                        <Divider className="divider2-white" />
-                        <a className="lien-contact" href="/contact">contact@gmail.com</a>
-                    </div>
+                <div className="divider2-white22" />
+                    <a className="lien-contact" href="/">contact@nicocarmine.com</a>
+                   
+                </div>
+                   
             
                 
 

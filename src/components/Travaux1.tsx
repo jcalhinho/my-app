@@ -49,7 +49,11 @@ const Travaux1 = () => {
 
             </div>
           </div>
-
+          <div className="divider-icon">
+                <div className="divider2-white22" />
+                    <a className="lien-contact" href="/">contact@nicocarmine.com</a>
+                   
+                </div>
         
 
        </div>

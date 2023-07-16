@@ -38,24 +38,21 @@ if(scrollDir === "down") {
 
 <div id="sectionInterdite">
             <div className="central-nicocarmine">
-                <div >
-                <div className="column-nicocarmine" style={{display:"flex",flexDirection:"column"}}>
-                <div style={{display:"flex",alignItems:"center"}}>
+               
+                <div className="column-nicocarmine" >
                     <h2 className="title-nicocarmine" style={{fontSize:"60px", fontWeight:"bold",
                     fontFamily: "Futura",fontStyle:"normal"}}>nicocarmine</h2>
+                   <div className="divider2-white22" />
+                    <a className="lien-contact" href="/">contact@nicocarmine.com</a>
                    
-                   <Divider className="divider2-white22" />
-                        <a className="lien-contact" href="/">contact@gmail.com</a>
-                    </div>
-                        
-                   </div>
                 </div>
-
+                
+<div className="doublepara">
                     <div className="central-text">Concepteur graphique pluridisciplinaire spécialisé dans l’identité de marque, l’édition et
 l’illustration, j’aime développer des concepts explicites avec un design utile et accessible.</div> <div className="central-text">
 De plus, j’ai à cœur d’accompagner les marques et les institutions, depuis leur réflexion
 stratégique jusqu’au design final, dans le but qu’elles obtiennent la solution graphique la
-plus adéquate.</div>
+plus adéquate.</div></div>
                     <div className="divider-icon">
                         
                     <div className="groupbouton">
