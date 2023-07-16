@@ -11,7 +11,9 @@ import {Link} from "react-router-dom";
 const Travaux1 = () => {
   const url : number = parseInt(window.location.href.slice(30)) -1;
   const dataWithoutFirst = Data[url].pics.slice(1);
-
+  
+  const lastPics = dataWithoutFirst.pop();
+ 
   return (
       <div >
 
@@ -21,12 +23,12 @@ const Travaux1 = () => {
 
           <div className="central">
             <div className="central-pix">
-              <img src={Data[url].pics[0]} className="pix" alt="" />
+              <img src={Data[url].pics[0]} className="pixHeadHead" alt="" />
               <div className="text">
                 <div className="text-left">
                   <div style={{display:"flex",flexWrap:"wrap"}}>
-                  <p className="text-content-titre">{Data[url].titre}</p>
-                  <p className="text-content-soustitre">
+                  <p className="text-content-titre">{Data[url].titre} -</p>
+                   <p className="text-content-soustitre">
                   {Data[url].subtitle}</p>
                   </div>
                  
@@ -45,14 +47,14 @@ const Travaux1 = () => {
               {dataWithoutFirst.map((pic, index) => (
                   <img key={index} src={pic} className={index === 0 ? "pixFirst" : "pix"} alt="" />
               ))}
-
+              <img  src={lastPics} className={"pixHead"} alt="" />
 
             </div>
           </div>
           <div className="divider-icon">
                 <div className="divider2-white22" />
                     <a className="lien-contact" href="/">contact@nicocarmine.com</a>
-                   
+                    <div className="divider2-white22" style={{marginLeft:"0px"}}/>
                 </div>
         
 

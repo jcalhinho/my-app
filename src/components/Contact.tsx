@@ -10,50 +10,22 @@ import "../index.css";
 // import pic5 from "../01-MR PAON/MR PAON_06.png";
 import {Divider} from "@mui/material";
 import { FaBehanceSquare, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 const Contact = () => {
   return (
     
     <div className="containerContact">
-      <div className="divider-icon">
-        <Divider className="divider2-white" />
-    </div>  
+      
     <div className="containerRow">
-      <div style={{
-        margin:"auto 0",
-        fontSize:"30px", 
-        fontWeight:"bold",
-        fontFamily: "Outfit",
-        fontStyle:"normal"}}>NICOLAS CARMINE </div>  
-      <div style={{
-        margin:"auto 0",
-        fontSize:"20px", 
-        fontWeight:"bold",
-        fontFamily: "Outfit",
-        fontStyle:"normal"}}>-</div>  
-      <div style={{
-        margin:"auto 0",
-        fontSize:"20px", 
-        fontWeight:"bold",
-        fontFamily: "Outfit",
-        fontStyle:"normal"}}>{""}contact@nicocarmine.com{" "}</div>  
-      <div style={{
-        margin:"auto 0",
-        fontSize:"20px", 
-        fontWeight:"bold",
-        fontFamily: "Outfit",
-        fontStyle:"normal"}}>-</div>  
-      <div style={{
-        margin:"auto 0",
-        fontSize:"20px", 
-        fontWeight:"bold",
-        fontFamily: "Outfit",
-        fontStyle:"normal"}}> 06 50 55 19 12</div>  
+      <div className="containerContactNico">NICOLAS CARMINE</div>  
+      <div className="containerContactNico2">-</div>  
+      <div className="containerContactNico3">{""}contact@nicocarmine.com{" "}</div>  
+      <div className="containerContactNico2">-</div>  
+      <div className="containerContactNico3"> 06 50 55 19 12</div>  
       </div>  
-      <div className="divider-icon" style={{marginTop:"0"}}>
-        <Divider className="divider2-white" />
-    </div>
+      
     {/* <div className="containerRow2">
       <div>EXPERTISE</div>  
       <div>CLIENTS</div>  
@@ -61,76 +33,58 @@ const Contact = () => {
     </div> */}
     <div className="containerRow3">
       <div className="listcontact">
-      <p style={{fontSize:"60px", fontWeight:"bold",
-  fontFamily: "Futura",fontStyle:"normal",margin:"30px auto 30px auto"}}>EXPERTISE</p>
-        <p style={{fontSize:"30px", fontWeight:"lighter",lineHeight:"30px",
-  fontFamily: "Inter",fontStyle:"normal", margin:"10px 0"}}>Direction artistique</p>
-        <p style={{fontSize:"30px", fontWeight:"lighter",lineHeight:"30px",
-  fontFamily: "Inter",fontStyle:"normal", margin:"10px 0"}}>Illustration</p>
-        <p style={{fontSize:"30px", fontWeight:"lighter",lineHeight:"30px",
-  fontFamily: "Inter",fontStyle:"normal", margin:"10px 0"}}>Edition</p>
-        <p style={{fontSize:"30px", fontWeight:"lighter",lineHeight:"30px",
-  fontFamily: "Inter",fontStyle:"normal", margin:"10px 0"}}>Identité visuelle</p>
-        <p style={{fontSize:"30px", fontWeight:"lighter",lineHeight:"30px",
-  fontFamily: "Inter",fontStyle:"normal", margin:"10px 0"}}>Charte graphique</p>
-        <p style={{fontSize:"30px", fontWeight:"lighter",lineHeight:"30px",
-  fontFamily: "Inter",fontStyle:"normal", margin:"10px 0"}}>Naming</p>
+      <p className="containerContactexpertise">EXPERTISE</p>
+        <p className="containerContactlist">Direction artistique</p>
+        <p className="containerContactlist">Illustration</p>
+        <p className="containerContactlist">Edition</p>
+        <p className="containerContactlist">Identité visuelle</p>
+        <p className="containerContactlist">Charte graphique</p>
+        <p className="containerContactlist">Naming</p>
         </div>  
       <div className="listcontact">
-      <p style={{fontSize:"60px", fontWeight:"bold",
-  fontFamily: "Futura",fontStyle:"normal",margin:"30px auto 30px 0"}}>CLIENTS</p>
-        <p  style={{fontSize:"30px", fontWeight:"lighter",lineHeight:"30px",
-  fontFamily: "Inter",fontStyle:"normal", margin:"10px auto 10px 0"}}>Ville de Lyon</p>
-        <p style={{fontSize:"30px", fontWeight:"lighter",lineHeight:"30px",
-  fontFamily: "Inter",fontStyle:"normal", margin:"10px 0"}}>Ville de Paris</p>
-        <p style={{fontSize:"30px", fontWeight:"lighter",lineHeight:"30px",
-  fontFamily: "Inter",fontStyle:"normal", margin:"10px 0"}}>Biarritz Tourisme</p>
-        <p style={{fontSize:"30px", fontWeight:"lighter",lineHeight:"30px",
-  fontFamily: "Inter",fontStyle:"normal", margin:"10px 0"}}>Ministere de l'économie</p>
-        <p style={{fontSize:"30px", fontWeight:"lighter",lineHeight:"30px",
-  fontFamily: "Inter",fontStyle:"normal", margin:"10px 0"}}>et des finances</p>
-        <p style={{fontSize:"30px", fontWeight:"lighter",lineHeight:"30px",
-  fontFamily: "Inter",fontStyle:"normal", margin:"10px 0"}}>Eram</p>
-        <p style={{fontSize:"30px", fontWeight:"lighter",lineHeight:"30px",
-  fontFamily: "Inter",fontStyle:"normal", margin:"10px 0"}}>Sanofi</p>
-        <p style={{fontSize:"30px", fontWeight:"lighter",lineHeight:"30px",
-  fontFamily: "Inter",fontStyle:"normal", margin:"10px 0"}}>Senseo</p>
+      <p className="containerContactclient">CLIENTS</p>
+        <p  className="containerContactlist">Ville de Lyon</p>
+        <p className="containerContactlist">Ville de Paris</p>
+        <p className="containerContactlist">Biarritz Tourisme</p>
+        <p className="containerContactlist">Ministere de l'économie</p>
+        <p className="containerContactlist">et des finances</p>
+        <p className="containerContactlist">Eram</p>
+        <p className="containerContactlist">Sanofi</p>
+        <p className="containerContactlist">Senseo</p>
         
         </div>  
       <div className="listcontact">
-      <p style={{fontSize:"60px", fontWeight:"bold",
-  fontFamily: "Outfit",fontStyle:"normal", color:"black",margin:"30px auto 30px 0"}}> |</p>
-      <p style={{fontSize:"30px", fontWeight:"lighter",lineHeight:"30px",
-  fontFamily: "Inter",fontStyle:"normal", margin:"10px 0"}}>Casino</p>
-        <p style={{fontSize:"30px", fontWeight:"lighter",lineHeight:"30px",
-  fontFamily: "Inter",fontStyle:"normal", margin:"10px 0"}}>Leroy Merlin</p>
-        <p style={{fontSize:"30px", fontWeight:"lighter",lineHeight:"30px",
-  fontFamily: "Inter",fontStyle:"normal", margin:"10px 0"}}>Quick</p>
-        <p style={{fontSize:"30px", fontWeight:"lighter",lineHeight:"30px",
-  fontFamily: "Inter",fontStyle:"normal", margin:"10px 0"}}>Mac Donald</p>
-        <p style={{fontSize:"30px", fontWeight:"lighter",lineHeight:"30px",
-  fontFamily: "Inter",fontStyle:"normal", margin:"10px 0"}}>Institut Gustave Roussy</p>
-        <p style={{fontSize:"30px", fontWeight:"lighter",lineHeight:"30px",
-  fontFamily: "Inter",fontStyle:"normal", margin:"10px 0"}}>Université Paris Sorbonne</p>
-        <p style={{fontSize:"30px", fontWeight:"lighter",lineHeight:"30px",
-  fontFamily: "Inter",fontStyle:"normal", margin:"10px 0"}}>Université Paris Descartes</p>
-        <p style={{fontSize:"30px", fontWeight:"lighter",lineHeight:"30px",
-  fontFamily: "Inter",fontStyle:"normal", margin:"10px 0"}}>Hachette Livre</p>
-        <p style={{fontSize:"30px", fontWeight:"lighter",lineHeight:"30px",
-  fontFamily: "Inter",fontStyle:"normal", margin:"10px 0"}}>...</p>
+      <p className="containerContactrien"> |</p>
+      <p className="containerContactlist">Casino</p>
+        <p className="containerContactlist">Leroy Merlin</p>
+        <p className="containerContactlist">Quick</p>
+        <p className="containerContactlist">Mac Donald</p>
+        <p className="containerContactlist">Institut Gustave Roussy</p>
+        <p className="containerContactlist">Université Paris Sorbonne</p>
+        <p className="containerContactlist">Université Paris Descartes</p>
+        <p className="containerContactlist">Hachette Livre</p>
+        <p className="containerContactlist">...</p>
         </div>  
     </div>
-    <div className="containerRow2">
-      <div>web: Jc Alhinho </div>  
-      
-    </div>
-    <div className="divider-icon" style={{marginTop:"0", marginRight:"19%"}}>
+    
+    {/* <div className="divider-icon" style={{marginTop:"0", marginRight:"19%"}}>
         <Divider className="divider2-white" />
         <div className="icon-group">
                             <FaBehanceSquare className="iconmui" />
                             <FaLinkedin className="iconmui"  /><FaInstagram className="iconmui" /> </div>
     
-        </div>
+        </div> */}
+         <div className="divider-icon">
+         <p style={{fontSize:"12px", fontWeight:"lighter",
+  fontFamily: "Inter",fontStyle:"normal", margin:"15px 0",width:"fit-content"}}>dev:JcAlhinho</p>
+                <div className="divider2-white22" />
+                <div className="icon-group">
+                <Link to={"https://www.behance.net/nicocarmine?locale=fr_FR"}>
+                <FaBehanceSquare className="iconmui" />
+                </Link><Link to={"https://www.linkedin.com/in/nicolas-carmine-448b703a/"}>
+                            <FaLinkedin className="iconmui"  /></Link><Link to={"https://www.instagram.com/nico.carmine/"}><FaInstagram className="iconmui" /> </Link></div>
+                   
+                </div>
     
 {/* 
 {/*          

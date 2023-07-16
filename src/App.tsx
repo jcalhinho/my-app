@@ -58,8 +58,13 @@ const [nextRoute,setnextRoute] =useState(true);
   };
   calcurl();
 
-  
+  const lastVisitedUrl = window.location.href;
+  const history = useNavigate();
 
+  useEffect(() => {
+    const lastVisitedUrl = history;
+    console.log('Dernière URL visitée :', lastVisitedUrl);
+  }, [history]);
 
   function Layout() {
     return (
@@ -76,16 +81,25 @@ const [nextRoute,setnextRoute] =useState(true);
           <motion.div 
                            initial={{y:window.innerHeight}}
                             animate={{y: 0 , transition:{duration:0.8}}}
-                           // exit={{y: window.innerHeight , transition:{duration:0.8}}}
+                          //  exit={{opacity:0 , transition:{duration:0.8}}}
                             
                          
     
                 >
           <div className="top-left">
             <div className="top-left-ensemble">
-              <Link className="top-left-contact" to="/contact">
+
+
+<Link className="top-left-contact-white" to="/contact">
                 contact
               </Link>
+
+
+
+
+              
+
+
               <Link className="top-left-nico" to="/">
                 nicocarmine
               </Link>
@@ -105,19 +119,26 @@ const [nextRoute,setnextRoute] =useState(true);
               </Link>
             )
           }
+
           <motion.div 
                           initial={{y:window.innerHeight}}
                           animate={{y: 0 , transition:{duration:0.8}}}
-                         // exit={{y: window.innerHeight , transition:{duration:0.8}}}
+                        //  exit={{opacity:0 , transition:{duration:0.8}}}
                 >
            <div className="top-right">
             <div className="top-left-ensemble">
+
+
+
               <Link className="top-left-travaux" to="/travaux">
                 <FaBehanceSquare  className="iconmui" />
                 <FaLinkedin  className="iconmui" />
                 <FaInstagram  className="icommui" style={{margin:"10px 0 40px 0", color:"white",fontSize: "35px"}} />
                 travaux{" "}
               </Link>
+
+
+
             </div>
           </div>
           </motion.div>
@@ -141,15 +162,21 @@ const [nextRoute,setnextRoute] =useState(true);
       </div>
     );
     }
+    
     else {
       return (
         <div>
           {/* <div className="container"> */}
           <div className="top-left">
             <div className="top-left-ensemble">
-              <Link className="top-left-contact" to="/contact">
+              {location.pathname === "/contact" ? <Link className="top-left-contact" to="/contact">
+                contact
+              </Link> 
+              :<Link className="top-left-contact-white" to="/contact">
                 contact
               </Link>
+              }
+              
               <Link className="top-left-nico" to="/">
                 nicocarmine
               </Link>
@@ -170,15 +197,15 @@ const [nextRoute,setnextRoute] =useState(true);
           }
           <div className="top-right">
             <div className="top-left-ensemble">
-              <div>
-                <FaBehanceSquare  />
-                <FaLinkedin  />
-                <FaInstagram  />{" "}
-              </div>
-
-              <Link className="top-left-travaux" to="/travaux">
+            {location.pathname === "/contact" ? <Link className="top-left-travaux-white" to="/travaux">
                 travaux
               </Link>
+              :<Link className="top-left-travaux" to="/travaux">
+              travaux
+            </Link>
+              }
+
+            
             </div>
           </div>
           {
@@ -213,7 +240,7 @@ const [nextRoute,setnextRoute] =useState(true);
       x: "0%",
       y: "0%",
     },
-     exit:{y: "-100%"}
+     exit:{ opacity:0,}
   };
  
   const routeVariantstravaux = {
@@ -235,27 +262,27 @@ const [nextRoute,setnextRoute] =useState(true);
 if(nextRoute){
  
     const routeVariantstravauxnumber = {
-      initial:{x:window.innerWidth}, 
+      initial:{x:-window.innerWidth}, 
       animate: {
         transition: { duration: 0.8 },
         opacity: 1,
         x: "0%",
         y: "0%",
       },
-      exit:{ transition: { duration: 0.4 },x:-window.innerWidth}
+      exit:{ transition: { duration: 0.4 },x:window.innerWidth}
     };
     return routeVariantstravauxnumber
 }else {
   
   const routeVariantstravauxnumber = {
-    initial:{x:-window.innerWidth}, 
+    initial:{x:window.innerWidth}, 
     animate: {
       transition: { duration: 0.8 },
       opacity: 1,
       x: "0%",
       y: "0%",
     },
-    exit:{ transition: { duration: 0.4 },x:window.innerWidth}
+    exit:{ transition: { duration: 0.4 },x:-window.innerWidth}
   };
   return routeVariantstravauxnumber
 }
