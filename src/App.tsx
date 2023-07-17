@@ -39,19 +39,21 @@ import Travaux9 from "./components/Travaux9";
 export default function App() {
   const location = useLocation();
 const [nextRoute,setnextRoute] =useState(true);
-
-   
-  const url0: number = parseInt(location.pathname.slice(-1));
-  let url: number | string = parseInt(location.pathname.slice(-1)) - 1;
-  let url2: number | string = parseInt(location.pathname.slice(-1)) + 1;
+const url0 = location.pathname;
+const numero = parseInt(url0.slice(url0.lastIndexOf('/') + 1));
+  
+  let url: number | string = numero - 1;
+  let url2: number | string = numero + 1;
 
 
   const calcurl = () => {
-    if (url0 === 1) {
+    if (numero === 1) {
       url = 20;
       url2 = 2;
     }
-    if (url0 === 20) {
+
+
+    if (numero === 20) {
       url = 19;
       url2 = 1;
     }
