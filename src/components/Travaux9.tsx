@@ -48,7 +48,13 @@ const Travaux9 = () => {
             </div>
           </div>
 
+          <div className="divider-icon">
+                <div className="divider2-white22" />
+                    <a className="lien-contact" href="/">contact@nicocarmine.com</a>
+                    <div className="divider2-white22" style={{marginLeft:"0px"}}/>
+                </div>
           
+       
         </div>
 
   );
