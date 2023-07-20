@@ -11,7 +11,7 @@ import {Link} from "react-router-dom";
 const Travaux1 = () => {
   const url : number = parseInt(window.location.href.slice(-1))-1 ;
   const dataWithoutFirst = Data[url].pics.slice(1);
-  console.log(url)
+  
   const lastPics = dataWithoutFirst.pop();
  
   return (

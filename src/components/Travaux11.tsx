@@ -21,9 +21,9 @@ const Travaux11 = () => {
               <img src={Data[url].pics[0]} className="pixHead" alt="" />
               <div className="text">
                 <div className="text-left">
-                  <div style={{display:"flex",flexWrap:"wrap"}}>
-                  <p className="text-content-titre">{Data[url].titre} -</p>
-                   <p className="text-content-soustitre" >
+                  <div style={{display:"flex",flexDirection:"column"}}>
+                  <p className="text-content-titre">{Data[url].titre}</p>
+                   <p className="text-content-soustitre" style={{marginTop:"0px"}}>
                   {Data[url].subtitle}</p>
                   </div>
                  

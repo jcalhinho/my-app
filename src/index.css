@@ -112,8 +112,8 @@ a{
 
 .top-right-icon {
   transform-origin: top right;
-  right: 6.8%;
-  top: 60vh;
+  right: 12.5%;
+  top: 73vh;
   font-size: 90px;
   z-index: 11;
   position: fixed;
@@ -121,14 +121,20 @@ a{
   color: white;
   font-weight: lighter;
   z-index: 10000;
+  width: 50px;
+  height: 50px;
+  transform: rotate(225deg);
+  border: solid 0.5px rgb(255, 255, 255);
+  border-top:none;
+  border-right:none
 }
 
 
 .top-left-icon {
   color: white;
   transform-origin: top left;
-  left: 6.8%;
-  top: 60vh;
+  left: 10.5%;
+  top: 70vh;
 
   display: flex;
   z-index: 11;
@@ -136,22 +142,28 @@ a{
   font-size: 90px;
   font-weight: lighter;
   z-index: 10000;
+  width: 50px;
+  height: 50px;
+  transform: rotate(45deg);
+  border: solid 0.5px rgb(255, 255, 255);
+  border-top:none;
+  border-right:none
 }
 
 .iconmui {
-  font-size: 35px;
+  font-size: 25px;
 color:white;
   transform: rotate(-180deg);
  transform-origin: center center;
  writing-mode: vertical-lr;
- margin: 10px auto auto auto ;
+ margin: 10px 10px auto auto ;
 }
 
 .central {
   width: 80%;
   /* height: 101vh; 
   //background: rgb(0, 0, 0); */
-  margin: 40px auto;
+  margin: 40px auto 20px auto;
 
 }
 .central-travaux {
@@ -315,7 +327,8 @@ margin-right:50px;
 .text-content-des {
   margin-top:30px;
   font-size: 20px;
-  font-family: "Inter";font-style:normal;font-weight: 400;
+  line-height: 1.75!important;
+  font-family: "Inter";font-style:normal;font-weight: 300;
 }
 @media (min-width: 1925px) {
   .text-content-soustitre {
@@ -340,7 +353,8 @@ margin-right:50px;
   .text-content-des {
     margin-top:30px;
     font-size: 20px;
-    font-family: "Inter";font-style:normal;font-weight: 400;
+    line-height: 1.75!important;
+    font-family: "Inter";font-style:normal;font-weight: 300;
   }
 }
 
@@ -388,7 +402,8 @@ margin-right:50px;
   justify-content: space-between;
   width:80%;
   margin:  auto;
-  margin-top:40px ;
+  margin-top:25px ;
+  margin-bottom: 20px
 
 }
 .divider1-white {
@@ -448,9 +463,13 @@ border-bottom: 2px solid white;
 }
 
 .iconButton {
-  width: 7em!important;
-  height: 7em!important;
-  color: rgba(255,88,0,1);
+  width: 50px;
+  height: 50px;
+  transform: rotate(-45deg);
+  border: solid 0.5px rgba(255,88,0,1);
+  border-top:none;
+  border-right:none
+         
 }
 
 .lien-contact {
@@ -603,7 +622,7 @@ display: flex;
 
 .fade-enter-active {
   opacity: 1;
-  transition: opacity 500ms ease-in;
+  transition: opacity 800ms ease-in;
 }
 
 .fade-exit {
@@ -612,7 +631,7 @@ display: flex;
 
 .fade-exit-active {
   opacity: 0;
-  transition: opacity 500ms ease-in;
+  transition: opacity 800ms ease-in;
 }
 
 .slide-enter {
@@ -621,7 +640,7 @@ display: flex;
 
 .slide-enter-active {
   transform: translateX(0%);
-  transition: transform 500ms ease-in;
+  transition: transform 800ms ease-in;
 }
 
 .slide-exit {
@@ -630,5 +649,5 @@ display: flex;
 
 .slide-exit-active {
   transform: translateX(100%);
-  transition: transform 500ms ease-in;
+  transition: transform 800ms ease-in;
 }

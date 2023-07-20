@@ -10,7 +10,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { motion } from "framer-motion";
 import {Link, Outlet, useLocation, useNavigate} from "react-router-dom";
 import { useDetectScroll } from "@smakss/react-scroll-direction";
-
+import { TfiAngleDown } from "react-icons/tfi";
 
 import Travaux from "./Travaux";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -58,9 +58,9 @@ plus adéquate.</div></div>
                     <div className="groupbouton">
                         <Link to="/travaux">
                         <Button className="button">
-                            <div>
+                            <div className="iconButton">
 
-                            <SlArrowDown className="iconButton" />
+                            
                             
                             </div>
                         </Button>

@@ -60,7 +60,21 @@ const numero = parseInt(url0.slice(url0.lastIndexOf('/') + 1));
   };
   calcurl();
 
- 
+  // const navigate = useNavigate();
+  // const { pathname } = useLocation();
+
+  // useEffect(() => {
+  //   const handleRouteChange = () => {
+  //     window.scrollTo(0);
+  //   };
+
+  //   navigate(pathname); // Effectuer la navigation
+  //   handleRouteChange(); // Appeler la fonction de défilement vers le haut
+
+  //   return () => {
+  //     // Nettoyer si nécessaire
+  //   };
+  // }, [navigate, pathname]);
   
 
  
@@ -111,7 +125,7 @@ const numero = parseInt(url0.slice(url0.lastIndexOf('/') + 1));
               <Link to={"/travaux/" + url}>
                 <div id="link" className="top-left-icon">
                   <p className="top-left-iconleft">
-                    <SlArrowLeft />
+                 
                   </p>
                 </div>
               </Link>
@@ -131,7 +145,7 @@ const numero = parseInt(url0.slice(url0.lastIndexOf('/') + 1));
               <Link className="top-left-travaux" to="/travaux">
                 <FaBehanceSquare  className="iconmui" />
                 <FaLinkedin  className="iconmui" />
-                <FaInstagram  className="icommui" style={{margin:"10px 0 40px 0", color:"white",fontSize: "35px"}} />
+                <FaInstagram  className="icommui" style={{margin:"10px 10px 20px 0", color:"white",fontSize: "25px"}} />
                 travaux{" "}
               </Link>
 
@@ -146,7 +160,7 @@ const numero = parseInt(url0.slice(url0.lastIndexOf('/') + 1));
               <Link to={"/travaux/" + url2}>
                 <div id="link" className="top-right-icon">
                   <p className="top-left-iconright">
-                    <SlArrowRight />
+                  
                   </p>
                 </div>
               </Link>
@@ -186,9 +200,10 @@ const numero = parseInt(url0.slice(url0.lastIndexOf('/') + 1));
             location.pathname === "/contact" ? null : (
               <Link to={"/travaux/" + url}>
                 <div id="link" className="top-left-icon">
-                  <p className="top-left-iconleft">
-                    <SlArrowLeft onClick={() => setnextRoute(true)} />
-                  </p>
+                  
+                 
+                    <SlArrowLeft  style={{color:"transparent"}}className="top-left-iconright" onClick={(params) => setnextRoute(true)} />
+                  
                 </div>
               </Link>
             )
@@ -212,9 +227,14 @@ const numero = parseInt(url0.slice(url0.lastIndexOf('/') + 1));
             location.pathname === "/contact" ? null : (
               <Link to={"/travaux/" + url2}>
                 <div id="link" className="top-right-icon">
-                  <p className="top-left-iconright">
-                    <SlArrowRight onClick={() => setnextRoute(false)} />
-                  </p>
+                  
+                  
+                    <SlArrowRight style={{color:"transparent"}}className="top-left-iconright" onClick={(params) => setnextRoute(false)} />
+                            
+                            
+
+                    
+                 
                 </div>
               </Link>
             )
@@ -255,19 +275,19 @@ const numero = parseInt(url0.slice(url0.lastIndexOf('/') + 1));
     exit:{opacity:0}
   };
   
-  
+  console.log(nextRoute)
   function NEXTRoute() {
 if(nextRoute){
  
     const routeVariantstravauxnumber = {
       initial:{x:-window.innerWidth}, 
       animate: {
-        transition: { duration: 0.8 },
+        transition: { duration: 1 },
         opacity: 1,
-        x: "0%",
-        y: "0%",
+        x: 0,
+        y: 0,
       },
-      exit:{ transition: { duration: 0.4 },x:window.innerWidth}
+      exit:{ transition: { duration: 1 },x:window.innerWidth}
     };
     return routeVariantstravauxnumber
 }else {
@@ -275,12 +295,12 @@ if(nextRoute){
   const routeVariantstravauxnumber = {
     initial:{x:window.innerWidth}, 
     animate: {
-      transition: { duration: 0.8 },
+      transition: { duration: 1 },
       opacity: 1,
       x: "0%",
       y: "0%",
     },
-    exit:{ transition: { duration: 0.4 },x:-window.innerWidth}
+    exit:{ transition: { duration: 1 },x:-window.innerWidth}
   };
   return routeVariantstravauxnumber
 }
