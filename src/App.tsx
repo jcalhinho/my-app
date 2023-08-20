@@ -35,7 +35,11 @@ import Travaux6 from "./components/Travaux6";
 import Travaux7 from "./components/Travaux7";
 import Travaux8 from "./components/Travaux8";
 import Travaux9 from "./components/Travaux9";
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
+export const handleRouteChange = () => {
+  window.scrollTo(0,0);
+};
 export default function App() {
   const location = useLocation();
 const [nextRoute,setnextRoute] =useState(true);
@@ -45,8 +49,9 @@ const numero = parseInt(url0.slice(url0.lastIndexOf('/') + 1));
   let url: number | string = numero - 1;
   let url2: number | string = numero + 1;
 
-
+handleRouteChange();
   const calcurl = () => {
+    console.log(url2)
     if (numero === 1) {
       url = 20;
       url2 = 2;
@@ -60,21 +65,7 @@ const numero = parseInt(url0.slice(url0.lastIndexOf('/') + 1));
   };
   calcurl();
 
-  // const navigate = useNavigate();
-  // const { pathname } = useLocation();
-
-  // useEffect(() => {
-  //   const handleRouteChange = () => {
-  //     window.scrollTo(0);
-  //   };
-
-  //   navigate(pathname); // Effectuer la navigation
-  //   handleRouteChange(); // Appeler la fonction de défilement vers le haut
-
-  //   return () => {
-  //     // Nettoyer si nécessaire
-  //   };
-  // }, [navigate, pathname]);
+  
   
 
  
@@ -181,6 +172,18 @@ const numero = parseInt(url0.slice(url0.lastIndexOf('/') + 1));
           {/* <div className="container"> */}
           <div className="top-left">
             <div className="top-left-ensemble">
+            {/* <BurgerNav>
+            <Button
+                id="demo-positioned-button"
+                aria-controls={open ? 'demo-positioned-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? 'true' : undefined}
+                onClick={handleClick}
+            >
+                <MenuIcon />
+            </Button>
+            
+        </BurgerNav> */}
               {location.pathname === "/contact" ? <Link className="top-left-contact" to="/contact">
                 contact
               </Link> 
@@ -198,14 +201,7 @@ const numero = parseInt(url0.slice(url0.lastIndexOf('/') + 1));
             //Check if message failed
             location.pathname === "/travaux" ||
             location.pathname === "/contact" ? null : (
-              <Link to={"/travaux/" + url}>
-                <div id="link" className="top-left-icon">
-                  
-                 
-                    <SlArrowLeft  style={{color:"transparent"}}className="top-left-iconright" onClick={(params) => setnextRoute(true)} />
-                  
-                </div>
-              </Link>
+              null
             )
           }
           <div className="top-right">
@@ -225,18 +221,7 @@ const numero = parseInt(url0.slice(url0.lastIndexOf('/') + 1));
             //Check if message failed
             location.pathname === "/travaux" ||
             location.pathname === "/contact" ? null : (
-              <Link to={"/travaux/" + url2}>
-                <div id="link" className="top-right-icon">
-                  
-                  
-                    <SlArrowRight style={{color:"transparent"}}className="top-left-iconright" onClick={(params) => setnextRoute(false)} />
-                            
-                            
-
-                    
-                 
-                </div>
-              </Link>
+              null
             )
           }{" "}
           {/* </div> */}
@@ -275,7 +260,7 @@ const numero = parseInt(url0.slice(url0.lastIndexOf('/') + 1));
     exit:{opacity:0}
   };
   
-  console.log(nextRoute)
+  
   function NEXTRoute() {
 if(nextRoute){
  
@@ -287,7 +272,7 @@ if(nextRoute){
         x: 0,
         y: 0,
       },
-      exit:{ transition: { duration: 1 },x:window.innerWidth}
+     // exit:{ transition: { duration: 1 },x:window.innerWidth}
     };
     return routeVariantstravauxnumber
 }else {
@@ -300,7 +285,7 @@ if(nextRoute){
       x: "0%",
       y: "0%",
     },
-    exit:{ transition: { duration: 1 },x:-window.innerWidth}
+   // exit:{ transition: { duration: 1 },x:-window.innerWidth}
   };
   return routeVariantstravauxnumber
 }
@@ -342,7 +327,9 @@ if(nextRoute){
             />
           </Route>
 
-          <Route path="/travaux" element={<Layout2 />}>
+          <Route path="/travaux" element={<motion.div
+                
+                ><Layout2 /></motion.div>}>
             <Route
               index
               element={
@@ -358,26 +345,30 @@ if(nextRoute){
             />
 
             
-              <Route path={`/travaux/1`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux1 /></motion.div>}/>
-              <Route path={`/travaux/2`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux2 /></motion.div>}/>
-              <Route path={`/travaux/3`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux3 /></motion.div>}/>
-              <Route path={`/travaux/4`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux4 /></motion.div>}/>
-              <Route path={`/travaux/5`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux5 /></motion.div>}/>
-              <Route path={`/travaux/6`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux6 /></motion.div>}/>
-              <Route path={`/travaux/7`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux7 /></motion.div>}/>
-              <Route path={`/travaux/8`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux8 /></motion.div>}/>
-              <Route path={`/travaux/9`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux9 /></motion.div>}/>
-              <Route path={`/travaux/10`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux10 /></motion.div>}/>
-              <Route path={`/travaux/11`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux11 /></motion.div>}/>
-              <Route path={`/travaux/12`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux12 /></motion.div>}/>
-              <Route path={`/travaux/13`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux13 /></motion.div>}/>
-              <Route path={`/travaux/14`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux14 /></motion.div>}/>
-              <Route path={`/travaux/15`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux15 /></motion.div>}/>
-              <Route path={`/travaux/16`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux16 /></motion.div>}/>
-              <Route path={`/travaux/17`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux17 /></motion.div>}/>
-              <Route path={`/travaux/18`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux18 /></motion.div>}/>
-              <Route path={`/travaux/19`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux19 /></motion.div>}/>
-              <Route path={`/travaux/20`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux20 /></motion.div>}/>
+              <Route path={`/travaux/1`} element={
+              <motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" >
+                <Travaux1 url={url} url2={url2} />
+              </motion.div>}
+              />
+              <Route path={`/travaux/2`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux1 url={url} url2={url2} /></motion.div>}/>
+              <Route path={`/travaux/3`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux1 url={url} url2={url2} /></motion.div>}/>
+              <Route path={`/travaux/4`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux1 url={url} url2={url2} /></motion.div>}/>
+              <Route path={`/travaux/5`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux1 url={url} url2={url2} /></motion.div>}/>
+              <Route path={`/travaux/6`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux1 url={url} url2={url2} /></motion.div>}/>
+              <Route path={`/travaux/7`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux1 url={url} url2={url2} /></motion.div>}/>
+              <Route path={`/travaux/8`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux1 url={url} url2={url2} /></motion.div>}/>
+              <Route path={`/travaux/9`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux9 url={url} url2={url2} /></motion.div>}/>
+              <Route path={`/travaux/10`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux10 url={url} url2={url2} /></motion.div>}/>
+              <Route path={`/travaux/11`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux10 url={url} url2={url2} /></motion.div>}/>
+              <Route path={`/travaux/12`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux10 url={url} url2={url2} /></motion.div>}/>
+              <Route path={`/travaux/13`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux10 url={url} url2={url2} /></motion.div>}/>
+              <Route path={`/travaux/14`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux10 url={url} url2={url2} /></motion.div>}/>
+              <Route path={`/travaux/15`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux10 url={url} url2={url2} /></motion.div>}/>
+              <Route path={`/travaux/16`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux10 url={url} url2={url2} /></motion.div>}/>
+              <Route path={`/travaux/17`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux10 url={url} url2={url2} /></motion.div>}/>
+              <Route path={`/travaux/18`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux10 url={url} url2={url2} /></motion.div>}/>
+              <Route path={`/travaux/19`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux10 url={url} url2={url2} /></motion.div>}/>
+              <Route path={`/travaux/20`} element={<motion.div variants={NEXTRoute()} initial="initial"animate="animate"exit="exit" ><Travaux20 url={url} url2={url2} /></motion.div>}/>
 
                   
                     

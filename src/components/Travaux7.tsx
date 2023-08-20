@@ -7,7 +7,7 @@ import {Divider} from "@mui/material";
 import {Link} from "react-router-dom";
 import {SlArrowLeft, SlArrowRight} from "react-icons/sl";
 
-const Travaux7 = () => {
+const Travaux7 = (props) => {
   const url : number = parseInt(window.location.href.slice(-1)) -1;
   const dataWithoutFirst = Data[url].pics.slice(1);
   const lastPics = dataWithoutFirst.pop();

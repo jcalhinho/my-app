@@ -36,12 +36,11 @@ if(scrollDir === "down") {
 
     return (<>
 
-<div id="sectionInterdite">
+
             <div className="central-nicocarmine">
                
                 <div className="column-nicocarmine" >
-                    <h2 className="title-nicocarmine" style={{fontSize:"60px", fontWeight:"bold",
-                    fontFamily: "Futura",fontStyle:"normal"}}>nicocarmine</h2>
+                    <h2 className="title-nicocarmine" >nicocarmine</h2>
                    <div className="divider2-white22" />
                     <a className="lien-contact" href="/">contact@nicocarmine.com</a>
                    
@@ -69,7 +68,7 @@ plus adéquate.</div></div>
                     </div>
                    
                 </div>
-            </div>
+           
             </> 
     );
 };

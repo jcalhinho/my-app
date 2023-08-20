@@ -180,7 +180,7 @@ export const Data = [
         type: "Identité de marque",
         titre: "MONSIEUR PAON",
         subtitle: "Bière Craft",
-        desc: "Identité de marque et étiquette créées pour cette brasserie Lilloise composée de passionnés,appliqués à développer et rechercher des goûts uniques dans un souci de précision et desavoir-faire artisanal.",
+        desc: "Identité de marque et étiquette créées pour cette brasserie Lilloise composée de passionnés,appliqués à développer et rechercher des goûts uniques dans un souci de précision et de savoir-faire artisanal.",
         pics: [paon, paon1, paon2, paon3, paon4, paon5],
         vignette: pic,
     },

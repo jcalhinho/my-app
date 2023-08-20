@@ -75,16 +75,19 @@ const Contact = () => {
     
         </div> */}
          <div className="divider-icon">
-         <p style={{fontSize:"12px", fontWeight:"lighter",
-  fontFamily: "Inter",fontStyle:"normal", margin:"15px 0",width:"fit-content"}}>dev:JcAlhinho</p>
-                <div className="divider2-white22" />
-                <div className="icon-group">
+         
+                <div className="divider2-white222">
+                <p style={{fontSize:"12px", fontWeight:"lighter",
+  fontFamily: "Inter",fontStyle:"normal", margin:"auto 0px",width:"fit-content"}}>dev:Jc Alhinho</p>
+                <div className="icon-group2">
                 <Link to={"https://www.behance.net/nicocarmine?locale=fr_FR"}>
-                <FaBehanceSquare className="iconmui" />
+                <FaBehanceSquare className="iconmuiContact" />
                 </Link><Link to={"https://www.linkedin.com/in/nicolas-carmine-448b703a/"}>
-                            <FaLinkedin className="iconmui"  /></Link><Link to={"https://www.instagram.com/nico.carmine/"}><FaInstagram className="iconmui" /> </Link></div>
+                            <FaLinkedin className="iconmuiContact"  /></Link><Link to={"https://www.instagram.com/nico.carmine/"}><FaInstagram className="iconmuiContact" style={{marginLeft:"0px"}}/> </Link></div>
                    
                 </div>
+                </div>
+                
     
 {/* 
 {/*          
