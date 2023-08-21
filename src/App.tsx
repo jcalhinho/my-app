@@ -66,7 +66,7 @@ handleRouteChange();
   calcurl();
 
   
-  
+  console.log(window.innerWidth)
 
  
   function Layout() {

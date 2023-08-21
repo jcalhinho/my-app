@@ -66,10 +66,11 @@
   
   .top-left-nico {
     color: grey;
-    font-size: 40px;
+    font-size: 2.2vw;
     font-family: "Futura";
     font-style: normal;
-    font-weight: 900;
+    font-weight: 600;
+   
     margin-top: 25px;
   
   
@@ -77,21 +78,21 @@
   
   .top-left-travaux {
     color: rgba(255, 88, 0, 1);
-    font-size: 40px;
+    font-size: 2.2vw;
     font-family: "Futura";
     font-style: normal;
-    font-weight: 900;
-    margin: auto;
+    font-weight: 600;
+   
   
   }
   
   .top-left-travaux-white {
     color: rgb(255, 255, 255);
-    font-size: 40px;
+    font-size: 2.2vw;
     font-family: "Futura";
     font-style: normal;
-    font-weight: 900;
-    margin: auto;
+    font-weight: 600;
+   
   
   }
   
@@ -107,10 +108,12 @@
   
   .top-left-contact {
     /* color: white; */
-    font-size: 40px;
+    /* color: white; */
+    font-size: 2.2vw;
     font-family: "Futura";
     font-style: normal;
-    font-weight: 900;
+    font-weight: 600;
+   
     margin: auto;
     color: rgba(255, 88, 0, 1);
   
@@ -118,10 +121,11 @@
   
   .top-left-contact-white {
     /* color: white; */
-    font-size: 40px;
+    font-size: 2.2vw;
     font-family: "Futura";
     font-style: normal;
-    font-weight: 900;
+    font-weight: 600;
+   
     margin: auto;
     color: rgb(255, 255, 255);
   
@@ -138,8 +142,8 @@
     color: white;
     font-weight: lighter;
     z-index: 10000;
-    width: 70px;
-    height: 70px;
+    width: 4vw;
+    height: 4vw;
     transform: rotate(45deg);
     border: solid 2px rgb(255, 255, 255);
     border-bottom: none;
@@ -159,8 +163,8 @@
     font-size: 90px;
     font-weight: lighter;
     z-index: 10000;
-    width: 70px;
-    height: 70px;
+    width: 4vw;
+    height: 4vw;
     transform: rotate(45deg);
     border: solid 2px rgb(255, 255, 255);
     border-top: none;
@@ -188,7 +192,7 @@
   
   .central-travaux {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+   
     grid-column-gap: 40px;
     margin: 40px auto 0px auto;
     pointer-events: none;
@@ -343,7 +347,7 @@
   }
   
   .text-content-titre {
-    font-size: 30px;
+    font-size: 2vw;
     font-family: "Inter";
     font-style: normal;
     font-weight: bold;
@@ -352,7 +356,7 @@
   }
   
   .text-content-soustitre {
-    font-size: 20px;
+    font-size: 1.5vw;
     font-family: "Inter";
     font-style: normal;
     margin-top: 5px;
@@ -361,7 +365,7 @@
   }
   
   .text-content-soustitre2 {
-    font-size: 25px;
+    font-size: 1.5vw;
     font-family: "Inter";
     font-style: normal;
     margin-top: 0;
@@ -370,7 +374,7 @@
   }
   
   .text-content-credit {
-    font-size: 14px;
+    font-size: 0.8vw;
     font-weight: 200;
     font-family: "Inter";
     font-style: normal;
@@ -378,11 +382,11 @@
   
   .text-content-des {
     margin-top: 30px;
-    font-size: 20px;
+    font-size: 1vw;
     line-height: 1.75 !important;
     font-family: "Inter";
     font-style: normal;
-    font-weight: 300;
+    font-weight: 100;
   }
   
   
@@ -525,7 +529,7 @@
   }
   
   .iconmuiContact {
-    font-size: 25px;
+  font-size: 1vw;
     color: white;
   
     margin: 10px 0px 10px 5px;
@@ -569,7 +573,7 @@
   
   .containerContactNico {
     margin: auto 10px auto 0;
-    font-size: 30px;
+    font-size:1.5vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -596,7 +600,7 @@
   
   .containerContactexpertise {
     margin: 20px auto 30px auto;
-    font-size: 60px;
+    font-size:4.5vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -605,7 +609,7 @@
   
   .containerContactclient {
     margin: 20px auto 30px 0;
-    font-size: 60px;
+    font-size:4.5vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -614,7 +618,7 @@
   
   .containerContactrien {
     margin: 20px auto 30px 0;
-    font-size: 60px;
+    font-size:4.5vw;
     color: black;
     font-weight: bold;
     font-family: "Futura";
@@ -624,7 +628,7 @@
   
   .containerContactlist {
     margin: 10px 0;
-    font-size: 30px;
+    font-size:1.5vw;
     font-weight: lighter;
     font-family: "inter";
     font-style: "normal";
@@ -793,10 +797,11 @@
   
   .top-left-nico {
     color: grey;
-    font-size: 40px;
+    font-size: 2.2vw;
     font-family: "Futura";
     font-style: normal;
-    font-weight: 900;
+    font-weight: 600;
+   
     margin-top: 25px;
   
   
@@ -804,21 +809,21 @@
   
   .top-left-travaux {
     color: rgba(255, 88, 0, 1);
-    font-size: 40px;
+    font-size: 2.2vw;
     font-family: "Futura";
     font-style: normal;
-    font-weight: 900;
-    margin: auto;
+    font-weight: 600;
+   
   
   }
   
   .top-left-travaux-white {
     color: rgb(255, 255, 255);
-    font-size: 40px;
+    font-size: 2.2vw;
     font-family: "Futura";
     font-style: normal;
-    font-weight: 900;
-    margin: auto;
+    font-weight: 600;
+   
   
   }
   
@@ -834,27 +839,30 @@
   
   .top-left-contact {
     /* color: white; */
-    font-size: 40px;
-    font-family: "Futura";
-    font-style: normal;
-    font-weight: 900;
-    margin: auto;
-    color: rgba(255, 88, 0, 1);
+     /* color: white; */
+     font-size: 2.2vw;
+     font-family: "Futura";
+     font-style: normal;
+     font-weight: 600;
+    
+     margin: auto;
+     color: rgba(255, 88, 0, 1);
+   
+   }
+   
+   .top-left-contact-white {
+     /* color: white; */
+     font-size: 2.2vw;
+     font-family: "Futura";
+     font-style: normal;
+     font-weight: 600;
+    
+     margin: auto;
+     color: rgb(255, 255, 255);
+   
+   }
   
-  }
-  
-  .top-left-contact-white {
-    /* color: white; */
-    font-size: 40px;
-    font-family: "Futura";
-    font-style: normal;
-    font-weight: 900;
-    margin: auto;
-    color: rgb(255, 255, 255);
-  
-  }
-  
-  .top-right-icon {
+   .top-right-icon {
     right: 5%;
   
     font-size: 90px;
@@ -865,8 +873,8 @@
     color: white;
     font-weight: lighter;
     z-index: 10000;
-    width: 70px;
-    height: 70px;
+    width: 4vw;
+    height: 4vw;
     transform: rotate(45deg);
     border: solid 2px rgb(255, 255, 255);
     border-bottom: none;
@@ -886,15 +894,14 @@
     font-size: 90px;
     font-weight: lighter;
     z-index: 10000;
-    width: 70px;
-    height: 70px;
+    width: 4vw;
+    height: 4vw;
     transform: rotate(45deg);
     border: solid 2px rgb(255, 255, 255);
     border-top: none;
     border-right: none;
     margin: 0;
   }
-  
   
   .iconmui {
     font-size: 25px;
@@ -915,7 +922,7 @@
   
   .central-travaux {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 40px;
     margin: 40px auto 0px auto;
     pointer-events: none;
@@ -1070,7 +1077,7 @@
   }
   
   .text-content-titre {
-    font-size: 30px;
+    font-size: 2vw;
     font-family: "Inter";
     font-style: normal;
     font-weight: bold;
@@ -1079,7 +1086,7 @@
   }
   
   .text-content-soustitre {
-    font-size: 20px;
+    font-size: 1.5vw;
     font-family: "Inter";
     font-style: normal;
     margin-top: 5px;
@@ -1088,7 +1095,7 @@
   }
   
   .text-content-soustitre2 {
-    font-size: 25px;
+    font-size: 1.5vw;
     font-family: "Inter";
     font-style: normal;
     margin-top: 0;
@@ -1097,7 +1104,7 @@
   }
   
   .text-content-credit {
-    font-size: 14px;
+    font-size: 0.8vw;
     font-weight: 200;
     font-family: "Inter";
     font-style: normal;
@@ -1105,11 +1112,11 @@
   
   .text-content-des {
     margin-top: 30px;
-    font-size: 20px;
+    font-size: 1vw;
     line-height: 1.75 !important;
     font-family: "Inter";
     font-style: normal;
-    font-weight: 300;
+    font-weight: 100;
   }
   
   
@@ -1252,7 +1259,7 @@
   }
   
   .iconmuiContact {
-    font-size: 25px;
+    font-size: 1vw;
     color: white;
   
     margin: 10px 0px 10px 5px;
@@ -1296,7 +1303,7 @@
   
   .containerContactNico {
     margin: auto 10px auto 0;
-    font-size: 30px;
+    font-size:1.5vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -1323,7 +1330,7 @@
   
   .containerContactexpertise {
     margin: 20px auto 30px auto;
-    font-size: 60px;
+    font-size:4.5vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -1332,7 +1339,7 @@
   
   .containerContactclient {
     margin: 20px auto 30px 0;
-    font-size: 60px;
+    font-size:4.5vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -1341,7 +1348,7 @@
   
   .containerContactrien {
     margin: 20px auto 30px 0;
-    font-size: 60px;
+    font-size:4.5vw;
     color: black;
     font-weight: bold;
     font-family: "Futura";
@@ -1351,7 +1358,7 @@
   
   .containerContactlist {
     margin: 10px 0;
-    font-size: 30px;
+    font-size:1.5vw;
     font-weight: lighter;
     font-family: "inter";
     font-style: "normal";
@@ -1520,10 +1527,11 @@
   
   .top-left-nico {
     color: grey;
-    font-size: 40px;
+    font-size: 2.2vw;
     font-family: "Futura";
     font-style: normal;
-    font-weight: 900;
+    font-weight: 600;
+   
     margin-top: 25px;
   
   
@@ -1531,21 +1539,21 @@
   
   .top-left-travaux {
     color: rgba(255, 88, 0, 1);
-    font-size: 40px;
+    font-size: 2.2vw;
     font-family: "Futura";
     font-style: normal;
-    font-weight: 900;
-    margin: auto;
+    font-weight: 600;
+   
   
   }
   
   .top-left-travaux-white {
     color: rgb(255, 255, 255);
-    font-size: 40px;
+    font-size: 2.2vw;
     font-family: "Futura";
     font-style: normal;
-    font-weight: 900;
-    margin: auto;
+    font-weight: 600;
+   
   
   }
   
@@ -1561,66 +1569,69 @@
   
   .top-left-contact {
     /* color: white; */
-    font-size: 40px;
-    font-family: "Futura";
-    font-style: normal;
-    font-weight: 900;
-    margin: auto;
-    color: rgba(255, 88, 0, 1);
+   /* color: white; */
+   font-size: 2.2vw;
+   font-family: "Futura";
+   font-style: normal;
+   font-weight: 600;
   
-  }
+   margin: auto;
+   color: rgba(255, 88, 0, 1);
+ 
+ }
+ 
+ .top-left-contact-white {
+   /* color: white; */
+   font-size: 2.2vw;
+   font-family: "Futura";
+   font-style: normal;
+   font-weight: 600;
   
-  .top-left-contact-white {
-    /* color: white; */
-    font-size: 40px;
-    font-family: "Futura";
-    font-style: normal;
-    font-weight: 900;
-    margin: auto;
-    color: rgb(255, 255, 255);
+   margin: auto;
+   color: rgb(255, 255, 255);
+ 
+ }
   
-  }
-  
-  .top-right-icon {
-    right: 5%;
-  
-    font-size: 90px;
-  
-    position: fixed;
-  
-    display: flex;
-    color: white;
-    font-weight: lighter;
-    z-index: 10000;
-    width: 70px;
-    height: 70px;
-    transform: rotate(45deg);
-    border: solid 2px rgb(255, 255, 255);
-    border-bottom: none;
-    border-left: none;
-  
-  }
-  
-  
-  .top-left-icon {
-    color: white;
-    /* transform-origin: top left; */
-  
-  
-    display: flex;
-    left: 5%;
-    position: fixed;
-    font-size: 90px;
-    font-weight: lighter;
-    z-index: 10000;
-    width: 70px;
-    height: 70px;
-    transform: rotate(45deg);
-    border: solid 2px rgb(255, 255, 255);
-    border-top: none;
-    border-right: none;
-    margin: 0;
-  }
+ .top-right-icon {
+  right: 5%;
+
+  font-size: 90px;
+
+  position: fixed;
+
+  display: flex;
+  color: white;
+  font-weight: lighter;
+  z-index: 10000;
+  width: 4vw;
+  height: 4vw;
+  transform: rotate(45deg);
+  border: solid 2px rgb(255, 255, 255);
+  border-bottom: none;
+  border-left: none;
+
+}
+
+
+.top-left-icon {
+  color: white;
+  /* transform-origin: top left; */
+
+
+  display: flex;
+  left: 5%;
+  position: fixed;
+  font-size: 90px;
+  font-weight: lighter;
+  z-index: 10000;
+  width: 4vw;
+  height: 4vw;
+  transform: rotate(45deg);
+  border: solid 2px rgb(255, 255, 255);
+  border-top: none;
+  border-right: none;
+  margin: 0;
+}
   
   
   .iconmui {
@@ -1642,7 +1653,7 @@
   
   .central-travaux {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 40px;
     margin: 40px auto 0px auto;
     pointer-events: none;
@@ -1797,7 +1808,7 @@
   }
   
   .text-content-titre {
-    font-size: 30px;
+    font-size: 2vw;
     font-family: "Inter";
     font-style: normal;
     font-weight: bold;
@@ -1806,7 +1817,7 @@
   }
   
   .text-content-soustitre {
-    font-size: 20px;
+    font-size: 1.5vw;
     font-family: "Inter";
     font-style: normal;
     margin-top: 5px;
@@ -1815,7 +1826,7 @@
   }
   
   .text-content-soustitre2 {
-    font-size: 25px;
+    font-size: 1.5vw;
     font-family: "Inter";
     font-style: normal;
     margin-top: 0;
@@ -1824,7 +1835,7 @@
   }
   
   .text-content-credit {
-    font-size: 14px;
+    font-size: 0.8vw;
     font-weight: 200;
     font-family: "Inter";
     font-style: normal;
@@ -1832,13 +1843,12 @@
   
   .text-content-des {
     margin-top: 30px;
-    font-size: 20px;
+    font-size: 1vw;
     line-height: 1.75 !important;
     font-family: "Inter";
     font-style: normal;
-    font-weight: 300;
+    font-weight: 100;
   }
-  
   
   .Divider {
     border: solid 1px white;
@@ -1979,7 +1989,7 @@
   }
   
   .iconmuiContact {
-    font-size: 25px;
+    font-size: 1vw;
     color: white;
   
     margin: 10px 0px 10px 5px;
@@ -2023,7 +2033,7 @@
   
   .containerContactNico {
     margin: auto 10px auto 0;
-    font-size: 30px;
+    font-size:1.5vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -2050,7 +2060,7 @@
   
   .containerContactexpertise {
     margin: 20px auto 30px auto;
-    font-size: 60px;
+    font-size:4.5vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -2059,7 +2069,7 @@
   
   .containerContactclient {
     margin: 20px auto 30px 0;
-    font-size: 60px;
+    font-size:4.5vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -2068,7 +2078,7 @@
   
   .containerContactrien {
     margin: 20px auto 30px 0;
-    font-size: 60px;
+    font-size:4.5vw;
     color: black;
     font-weight: bold;
     font-family: "Futura";
@@ -2078,7 +2088,7 @@
   
   .containerContactlist {
     margin: 10px 0;
-    font-size: 30px;
+    font-size:1.5vw;
     font-weight: lighter;
     font-family: "inter";
     font-style: "normal";
@@ -2247,10 +2257,11 @@
   
   .top-left-nico {
     color: grey;
-    font-size: 40px;
+    font-size: 2.2vw;
     font-family: "Futura";
     font-style: normal;
-    font-weight: 900;
+    font-weight: 600;
+   
     margin-top: 25px;
   
   
@@ -2258,21 +2269,21 @@
   
   .top-left-travaux {
     color: rgba(255, 88, 0, 1);
-    font-size: 40px;
+    font-size: 2.2vw;
     font-family: "Futura";
     font-style: normal;
-    font-weight: 900;
-    margin: auto;
+    font-weight: 600;
+   
   
   }
   
   .top-left-travaux-white {
     color: rgb(255, 255, 255);
-    font-size: 40px;
+    font-size: 2.2vw;
     font-family: "Futura";
     font-style: normal;
-    font-weight: 900;
-    margin: auto;
+    font-weight: 600;
+   
   
   }
   
@@ -2288,66 +2299,68 @@
   
   .top-left-contact {
     /* color: white; */
-    font-size: 40px;
-    font-family: "Futura";
-    font-style: normal;
-    font-weight: 900;
-    margin: auto;
-    color: rgba(255, 88, 0, 1);
+   /* color: white; */
+   font-size: 2.2vw;
+   font-family: "Futura";
+   font-style: normal;
+   font-weight: 600;
   
-  }
+   margin: auto;
+   color: rgba(255, 88, 0, 1);
+ 
+ }
+ 
+ .top-left-contact-white {
+   /* color: white; */
+   font-size: 2.2vw;
+   font-family: "Futura";
+   font-style: normal;
+   font-weight: 600;
   
-  .top-left-contact-white {
-    /* color: white; */
-    font-size: 40px;
-    font-family: "Futura";
-    font-style: normal;
-    font-weight: 900;
-    margin: auto;
-    color: rgb(255, 255, 255);
-  
-  }
-  
-  .top-right-icon {
-    right: 5%;
-  
-    font-size: 90px;
-  
-    position: fixed;
-  
-    display: flex;
-    color: white;
-    font-weight: lighter;
-    z-index: 10000;
-    width: 70px;
-    height: 70px;
-    transform: rotate(45deg);
-    border: solid 2px rgb(255, 255, 255);
-    border-bottom: none;
-    border-left: none;
-  
-  }
-  
-  
-  .top-left-icon {
-    color: white;
-    /* transform-origin: top left; */
-  
-  
-    display: flex;
-    left: 5%;
-    position: fixed;
-    font-size: 90px;
-    font-weight: lighter;
-    z-index: 10000;
-    width: 70px;
-    height: 70px;
-    transform: rotate(45deg);
-    border: solid 2px rgb(255, 255, 255);
-    border-top: none;
-    border-right: none;
-    margin: 0;
-  }
+   margin: auto;
+   color: rgb(255, 255, 255);
+ 
+ }
+ .top-right-icon {
+  right: 5%;
+
+  font-size: 90px;
+
+  position: fixed;
+
+  display: flex;
+  color: white;
+  font-weight: lighter;
+  z-index: 10000;
+  width: 4vw;
+  height: 4vw;
+  transform: rotate(45deg);
+  border: solid 2px rgb(255, 255, 255);
+  border-bottom: none;
+  border-left: none;
+
+}
+
+
+.top-left-icon {
+  color: white;
+  /* transform-origin: top left; */
+
+
+  display: flex;
+  left: 5%;
+  position: fixed;
+  font-size: 90px;
+  font-weight: lighter;
+  z-index: 10000;
+  width: 4vw;
+  height: 4vw;
+  transform: rotate(45deg);
+  border: solid 2px rgb(255, 255, 255);
+  border-top: none;
+  border-right: none;
+  margin: 0;
+}
   
   
   .iconmui {
@@ -2524,7 +2537,7 @@
   }
   
   .text-content-titre {
-    font-size: 30px;
+    font-size: 2vw;
     font-family: "Inter";
     font-style: normal;
     font-weight: bold;
@@ -2533,7 +2546,7 @@
   }
   
   .text-content-soustitre {
-    font-size: 20px;
+    font-size: 1.5vw;
     font-family: "Inter";
     font-style: normal;
     margin-top: 5px;
@@ -2542,7 +2555,7 @@
   }
   
   .text-content-soustitre2 {
-    font-size: 25px;
+    font-size: 1.5vw;
     font-family: "Inter";
     font-style: normal;
     margin-top: 0;
@@ -2551,7 +2564,7 @@
   }
   
   .text-content-credit {
-    font-size: 14px;
+    font-size: 0.8vw;
     font-weight: 200;
     font-family: "Inter";
     font-style: normal;
@@ -2559,13 +2572,12 @@
   
   .text-content-des {
     margin-top: 30px;
-    font-size: 20px;
+    font-size: 1vw;
     line-height: 1.75 !important;
     font-family: "Inter";
     font-style: normal;
-    font-weight: 300;
+    font-weight: 100;
   }
-  
   
   .Divider {
     border: solid 1px white;
@@ -2706,7 +2718,7 @@
   }
   
   .iconmuiContact {
-    font-size: 25px;
+    font-size: 1vw;
     color: white;
   
     margin: 10px 0px 10px 5px;
@@ -2742,15 +2754,15 @@
     display: flex;
     flex-direction: row;
     color: rgba(255, 88, 0, 1);
-    margin: 40px 10%;
+    margin: 40px 10% 0;
     border-top: 2px solid white;
     border-bottom: 2px solid white;
-    height: 200px;
+    height: 20vh;
   }
   
   .containerContactNico {
     margin: auto 10px auto 0;
-    font-size: 30px;
+    font-size: 2vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -2777,7 +2789,7 @@
   
   .containerContactexpertise {
     margin: 20px auto 30px auto;
-    font-size: 60px;
+    font-size:4.5vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -2786,7 +2798,7 @@
   
   .containerContactclient {
     margin: 20px auto 30px 0;
-    font-size: 60px;
+    font-size:4.5vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -2795,7 +2807,7 @@
   
   .containerContactrien {
     margin: 20px auto 30px 0;
-    font-size: 60px;
+    font-size:4.5vw;
     color: black;
     font-weight: bold;
     font-family: "Futura";
@@ -2805,7 +2817,7 @@
   
   .containerContactlist {
     margin: 10px 0;
-    font-size: 30px;
+    font-size:1.5vw;
     font-weight: lighter;
     font-family: "inter";
     font-style: "normal";
@@ -2974,10 +2986,11 @@
   
   .top-left-nico {
     color: grey;
-    font-size: 40px;
+    font-size: 2.2vw;
     font-family: "Futura";
     font-style: normal;
-    font-weight: 900;
+    font-weight: 600;
+   
     margin-top: 25px;
   
   
@@ -2985,21 +2998,21 @@
   
   .top-left-travaux {
     color: rgba(255, 88, 0, 1);
-    font-size: 40px;
+    font-size: 2.2vw;
     font-family: "Futura";
     font-style: normal;
-    font-weight: 900;
-    margin: auto;
+    font-weight: 600;
+   
   
   }
   
   .top-left-travaux-white {
     color: rgb(255, 255, 255);
-    font-size: 40px;
+    font-size: 2.2vw;
     font-family: "Futura";
     font-style: normal;
-    font-weight: 900;
-    margin: auto;
+    font-weight: 600;
+   
   
   }
   
@@ -3015,66 +3028,69 @@
   
   .top-left-contact {
     /* color: white; */
-    font-size: 40px;
-    font-family: "Futura";
-    font-style: normal;
-    font-weight: 900;
-    margin: auto;
-    color: rgba(255, 88, 0, 1);
+   /* color: white; */
+   font-size: 2.2vw;
+   font-family: "Futura";
+   font-style: normal;
+   font-weight: 600;
   
-  }
+   margin: auto;
+   color: rgba(255, 88, 0, 1);
+ 
+ }
+ 
+ .top-left-contact-white {
+   /* color: white; */
+   font-size: 2.2vw;
+   font-family: "Futura";
+   font-style: normal;
+   font-weight: 600;
   
-  .top-left-contact-white {
-    /* color: white; */
-    font-size: 40px;
-    font-family: "Futura";
-    font-style: normal;
-    font-weight: 900;
-    margin: auto;
-    color: rgb(255, 255, 255);
+   margin: auto;
+   color: rgb(255, 255, 255);
+ 
+ }
   
-  }
-  
-  .top-right-icon {
-    right: 5%;
-  
-    font-size: 90px;
-  
-    position: fixed;
-  
-    display: flex;
-    color: white;
-    font-weight: lighter;
-    z-index: 10000;
-    width: 70px;
-    height: 70px;
-    transform: rotate(45deg);
-    border: solid 2px rgb(255, 255, 255);
-    border-bottom: none;
-    border-left: none;
-  
-  }
-  
-  
-  .top-left-icon {
-    color: white;
-    /* transform-origin: top left; */
-  
-  
-    display: flex;
-    left: 5%;
-    position: fixed;
-    font-size: 90px;
-    font-weight: lighter;
-    z-index: 10000;
-    width: 70px;
-    height: 70px;
-    transform: rotate(45deg);
-    border: solid 2px rgb(255, 255, 255);
-    border-top: none;
-    border-right: none;
-    margin: 0;
-  }
+ .top-right-icon {
+  right: 5%;
+
+  font-size: 90px;
+
+  position: fixed;
+
+  display: flex;
+  color: white;
+  font-weight: lighter;
+  z-index: 10000;
+  width: 4vw;
+  height: 4vw;
+  transform: rotate(45deg);
+  border: solid 2px rgb(255, 255, 255);
+  border-bottom: none;
+  border-left: none;
+
+}
+
+
+.top-left-icon {
+  color: white;
+  /* transform-origin: top left; */
+
+
+  display: flex;
+  left: 5%;
+  position: fixed;
+  font-size: 90px;
+  font-weight: lighter;
+  z-index: 10000;
+  width: 4vw;
+  height: 4vw;
+  transform: rotate(45deg);
+  border: solid 2px rgb(255, 255, 255);
+  border-top: none;
+  border-right: none;
+  margin: 0;
+}
   
   
   .iconmui {
@@ -3251,7 +3267,7 @@
   }
   
   .text-content-titre {
-    font-size: 30px;
+    font-size: 2vw;
     font-family: "Inter";
     font-style: normal;
     font-weight: bold;
@@ -3260,7 +3276,7 @@
   }
   
   .text-content-soustitre {
-    font-size: 20px;
+    font-size: 1.5vw;
     font-family: "Inter";
     font-style: normal;
     margin-top: 5px;
@@ -3269,7 +3285,7 @@
   }
   
   .text-content-soustitre2 {
-    font-size: 25px;
+    font-size: 1.5vw;
     font-family: "Inter";
     font-style: normal;
     margin-top: 0;
@@ -3278,7 +3294,7 @@
   }
   
   .text-content-credit {
-    font-size: 14px;
+    font-size: 0.8vw;
     font-weight: 200;
     font-family: "Inter";
     font-style: normal;
@@ -3286,11 +3302,11 @@
   
   .text-content-des {
     margin-top: 30px;
-    font-size: 20px;
+    font-size: 1vw;
     line-height: 1.75 !important;
     font-family: "Inter";
     font-style: normal;
-    font-weight: 300;
+    font-weight: 100;
   }
   
   
@@ -3433,7 +3449,7 @@
   }
   
   .iconmuiContact {
-    font-size: 25px;
+    font-size: 1vw;
     color: white;
   
     margin: 10px 0px 10px 5px;
@@ -3477,7 +3493,7 @@
   
   .containerContactNico {
     margin: auto 10px auto 0;
-    font-size: 30px;
+    font-size: 2vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -3486,7 +3502,7 @@
   
   .containerContactNico2 {
     margin: auto 0;
-    font-size: 20px;
+    font-size: 1vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -3495,7 +3511,7 @@
   
   .containerContactNico3 {
     margin: auto 10px;
-    font-size: 20px;
+    font-size: 1vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -3504,7 +3520,7 @@
   
   .containerContactexpertise {
     margin: 20px auto 30px auto;
-    font-size: 60px;
+    font-size:4.5vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -3513,7 +3529,7 @@
   
   .containerContactclient {
     margin: 20px auto 30px 0;
-    font-size: 60px;
+    font-size:4.5vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -3522,7 +3538,7 @@
   
   .containerContactrien {
     margin: 20px auto 30px 0;
-    font-size: 60px;
+    font-size:4.5vw;
     color: black;
     font-weight: bold;
     font-family: "Futura";
@@ -3532,7 +3548,7 @@
   
   .containerContactlist {
     margin: 10px 0;
-    font-size: 30px;
+    font-size:1.5vw;
     font-weight: lighter;
     font-family: "inter";
     font-style: "normal";
@@ -3701,10 +3717,11 @@
   
   .top-left-nico {
     color: grey;
-    font-size: 40px;
+    font-size: 2.2vw;
     font-family: "Futura";
     font-style: normal;
-    font-weight: 900;
+    font-weight: 600;
+   
     margin-top: 25px;
   
   
@@ -3712,21 +3729,21 @@
   
   .top-left-travaux {
     color: rgba(255, 88, 0, 1);
-    font-size: 40px;
+    font-size: 2.2vw;
     font-family: "Futura";
     font-style: normal;
-    font-weight: 900;
-    margin: auto;
+    font-weight: 600;
+   
   
   }
   
   .top-left-travaux-white {
     color: rgb(255, 255, 255);
-    font-size: 40px;
+    font-size: 2.2vw;
     font-family: "Futura";
     font-style: normal;
-    font-weight: 900;
-    margin: auto;
+    font-weight: 600;
+   
   
   }
   
@@ -3742,10 +3759,11 @@
   
   .top-left-contact {
     /* color: white; */
-    font-size: 40px;
+    font-size: 2.2vw;
     font-family: "Futura";
     font-style: normal;
-    font-weight: 900;
+    font-weight: 600;
+   
     margin: auto;
     color: rgba(255, 88, 0, 1);
   
@@ -3753,10 +3771,11 @@
   
   .top-left-contact-white {
     /* color: white; */
-    font-size: 40px;
+    font-size: 2.2vw;
     font-family: "Futura";
     font-style: normal;
-    font-weight: 900;
+    font-weight: 600;
+   
     margin: auto;
     color: rgb(255, 255, 255);
   
@@ -3773,8 +3792,8 @@
     color: white;
     font-weight: lighter;
     z-index: 10000;
-    width: 70px;
-    height: 70px;
+    width: 4vw;
+    height: 4vw;
     transform: rotate(45deg);
     border: solid 2px rgb(255, 255, 255);
     border-bottom: none;
@@ -3794,8 +3813,8 @@
     font-size: 90px;
     font-weight: lighter;
     z-index: 10000;
-    width: 70px;
-    height: 70px;
+    width: 4vw;
+    height: 4vw;
     transform: rotate(45deg);
     border: solid 2px rgb(255, 255, 255);
     border-top: none;
@@ -3978,7 +3997,7 @@
   }
   
   .text-content-titre {
-    font-size: 30px;
+    font-size: 2vw;
     font-family: "Inter";
     font-style: normal;
     font-weight: bold;
@@ -3987,7 +4006,7 @@
   }
   
   .text-content-soustitre {
-    font-size: 20px;
+    font-size: 1.5vw;
     font-family: "Inter";
     font-style: normal;
     margin-top: 5px;
@@ -3996,7 +4015,7 @@
   }
   
   .text-content-soustitre2 {
-    font-size: 25px;
+    font-size: 1.5vw;
     font-family: "Inter";
     font-style: normal;
     margin-top: 0;
@@ -4005,7 +4024,7 @@
   }
   
   .text-content-credit {
-    font-size: 14px;
+    font-size: 0.8vw;
     font-weight: 200;
     font-family: "Inter";
     font-style: normal;
@@ -4013,11 +4032,11 @@
   
   .text-content-des {
     margin-top: 30px;
-    font-size: 20px;
+    font-size: 1vw;
     line-height: 1.75 !important;
     font-family: "Inter";
     font-style: normal;
-    font-weight: 300;
+    font-weight: 100;
   }
   
   
@@ -4160,7 +4179,7 @@
   }
   
   .iconmuiContact {
-    font-size: 25px;
+    font-size: 1vw;
     color: white;
   
     margin: 10px 0px 10px 5px;
@@ -4197,15 +4216,15 @@
     display: flex;
     flex-direction: row;
     color: rgba(255, 88, 0, 1);
-    margin: 40px 10%;
+    margin: 40px 10% 0;
     border-top: 2px solid white;
     border-bottom: 2px solid white;
-    height: 200px;
+    height: 10vh;
   }
   
   .containerContactNico {
     margin: auto 10px auto 0;
-    font-size: 30px;
+    font-size: 2vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -4214,7 +4233,7 @@
   
   .containerContactNico2 {
     margin: auto 0;
-    font-size: 20px;
+    font-size: 1vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -4223,7 +4242,7 @@
   
   .containerContactNico3 {
     margin: auto 10px;
-    font-size: 20px;
+    font-size: 1vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -4232,7 +4251,7 @@
   
   .containerContactexpertise {
     margin: 20px auto 30px auto;
-    font-size: 60px;
+    font-size: 4.5vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -4241,7 +4260,7 @@
   
   .containerContactclient {
     margin: 20px auto 30px 0;
-    font-size: 60px;
+    font-size: 4.5vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -4250,7 +4269,7 @@
   
   .containerContactrien {
     margin: 20px auto 30px 0;
-    font-size: 60px;
+    font-size: 4.5vw;
     color: black;
     font-weight: bold;
     font-family: "Futura";
@@ -4260,11 +4279,11 @@
   
   .containerContactlist {
     margin: 10px 0;
-    font-size: 30px;
-    font-weight: lighter;
+    font-size: 1.5vw;
+    font-weight: 200;
     font-family: "inter";
     font-style: "normal";
-    line-height: 30px;
+    line-height: 4vh;
   
   }
   

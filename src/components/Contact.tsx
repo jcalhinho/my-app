@@ -77,13 +77,13 @@ const Contact = () => {
          <div className="divider-icon">
          
                 <div className="divider2-white222">
-                <p style={{fontSize:"12px", fontWeight:"lighter",
+                <p style={{fontSize:"0.7vw", fontWeight:"lighter",
   fontFamily: "Inter",fontStyle:"normal", margin:"auto 0px",width:"fit-content"}}>dev:Jc Alhinho</p>
                 <div className="icon-group2">
                 <Link to={"https://www.behance.net/nicocarmine?locale=fr_FR"}>
                 <FaBehanceSquare className="iconmuiContact" />
                 </Link><Link to={"https://www.linkedin.com/in/nicolas-carmine-448b703a/"}>
-                            <FaLinkedin className="iconmuiContact"  /></Link><Link to={"https://www.instagram.com/nico.carmine/"}><FaInstagram className="iconmuiContact" style={{marginLeft:"0px"}}/> </Link></div>
+                            <FaLinkedin className="iconmuiContact"  /></Link><Link to={"https://www.instagram.com/nico.carmine/"}><FaInstagram className="iconmuiContact" style={{marginLeft:"0.1vw"}}/> </Link></div>
                    
                 </div>
                 </div>
