@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence,  motion } from "framer-motion";
 import { url } from "inspector";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { FaBehanceSquare, FaLinkedin, FaInstagram } from "react-icons/fa";
@@ -11,35 +11,78 @@ import {
   useNavigate,
   Link,
 } from "react-router-dom";
+import SearchIcon from "@mui/icons-material/Search";
 import Contact from "./components/Contact";
 import logobenance from "../pix/behance-svgrepo-com.svg";
 import Nicocarmine from "./components/Nicocarmine";
 import Travaux from "./components/Travaux";
 import Travaux1 from "./components/Travaux1";
 import Travaux10 from "./components/Travaux10";
-import Travaux11 from "./components/Travaux11";
-import Travaux12 from "./components/Travaux12";
-import Travaux13 from "./components/Travaux13";
-import Travaux14 from "./components/Travaux14";
-import Travaux15 from "./components/Travaux15";
-import Travaux16 from "./components/Travaux16";
-import Travaux17 from "./components/Travaux17";
-import Travaux18 from "./components/Travaux18";
-import Travaux19 from "./components/Travaux19";
-import Travaux2 from "./components/Travaux2";
+import MenuIcon from "@mui/icons-material/Menu";
 import Travaux20 from "./components/Travaux20";
-import Travaux3 from "./components/Travaux3";
-import Travaux4 from "./components/Travaux4";
-import Travaux5 from "./components/Travaux5";
-import Travaux6 from "./components/Travaux6";
-import Travaux7 from "./components/Travaux7";
-import Travaux8 from "./components/Travaux8";
+import FolderIcon from "@mui/icons-material/Folder";
+import ImageIcon from "@mui/icons-material/Image";
+import DescriptionIcon from "@mui/icons-material/Description";
 import Travaux9 from "./components/Travaux9";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
+import CloseIcon from "@mui/icons-material/Close";
+import { AppBar, Container, Toolbar, Typography, IconButton, Drawer, Divider, ListItemButton, ListItemIcon, ListItemText, Button, Box, styled, alpha, InputBase } from "@mui/material";
 export const handleRouteChange = () => {
   window.scrollTo(0,0);
 };
+const StyledSearch = styled("div")(({ theme }) => ({
+  position: "relative",
+  borderRadius: theme.shape.borderRadius,
+  backgroundColor: alpha(theme.palette.primary.main, 0.15),
+  "&:hover": {
+    backgroundColor: alpha(theme.palette.primary.main, 0.25)
+  },
+  marginRight: theme.spacing(2),
+  marginLeft: 0,
+  width: "100%",
+  [theme.breakpoints.up("sm")]: {
+    marginLeft: theme.spacing(3),
+    width: "auto"
+  }
+}));
+
+const SearchIconWrapper = styled("div")(({ theme }) => ({
+  padding: theme.spacing(0, 2),
+  height: "100%",
+  position: "absolute",
+  pointerEvents: "none",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center"
+}));
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  color: "inherit",
+  "& .MuiInputBase-input": {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      width: "20ch"
+    }
+  }
+}));
+
+//search as JSX
+const search = (
+  <StyledSearch>
+    <SearchIconWrapper>
+      <SearchIcon />
+    </SearchIconWrapper>
+    <StyledInputBase
+      placeholder="Suchen…"
+      inputProps={{ "aria-label": "search" }}
+    />
+  </StyledSearch>
+);
 export default function App() {
   const location = useLocation();
 const [nextRoute,setnextRoute] =useState(true);
@@ -68,10 +111,130 @@ handleRouteChange();
   
   console.log(window.innerWidth)
 
- 
+  const [open, setState] = useState(false);
+
+  //function that is being called every time the drawer should open or close, the keys tab and shift are excluded so the user can focus between the elements with the keys
+  const toggleDrawer = (open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+    //changes the function state according to the value of open
+    setState(open);
+  };
   function Layout() {
     return (
       <div>
+        <AppBar position="static">
+      <Container maxWidth="lg" >
+        <Toolbar>
+          <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 700 }}>
+            Brand
+          </Typography>
+
+          <Box
+            component="div"
+            sx={{
+              display: {
+                xs: "none",
+                sm: "block"
+              }
+            }}
+          >
+            {search}
+          </Box>
+
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            onClick={toggleDrawer(true)}
+            sx={{
+              mr: 2,
+              display: {
+                xs: "block",
+                sm: "none"
+              }
+            }}
+          >
+            <MenuIcon />
+          </IconButton>
+
+          {/* The outside of the drawer */}
+          <Drawer
+            //from which side the drawer slides in
+            anchor="right"
+            //if open is true --> drawer is shown
+            open={open}
+            //function that is called when the drawer should close
+            onClose={toggleDrawer(false)}
+            //function that is called when the drawer should open
+            // onOpen={toggleDrawer(true)}
+          >
+            {/* The inside of the drawer */}
+            <Box
+              sx={{
+                p: 2,
+                height: 1,
+                backgroundColor: "#dbc8ff"
+              }}
+            >
+              {/* when clicking the icon it calls the function toggleDrawer and closes the drawer by setting the variable open to false */}
+              <IconButton sx={{ mb: 2 }}>
+                <CloseIcon onClick={toggleDrawer(false)} />
+              </IconButton>
+
+              <Divider sx={{ mb: 2 }} />
+
+              <Box sx={{ mb: 2 }}>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <ImageIcon sx={{ color: "primary.main" }} />
+                  </ListItemIcon>
+                  <ListItemText primary="Pictures" />
+                </ListItemButton>
+
+                <ListItemButton>
+                  <ListItemIcon>
+                    <DescriptionIcon sx={{ color: "primary.main" }} />
+                  </ListItemIcon>
+                  <ListItemText primary="Documents" />
+                </ListItemButton>
+
+                <ListItemButton>
+                  <ListItemIcon>
+                    <FolderIcon sx={{ color: "primary.main" }} />
+                  </ListItemIcon>
+                  <ListItemText primary="Other" />
+                </ListItemButton>
+              </Box>
+
+              {search}
+
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  position: "absolute",
+                  bottom: "0",
+                  left: "50%",
+                  transform: "translate(-50%, 0)"
+                }}
+              >
+                <Button variant="contained" sx={{ m: 1, width: 0.5 }}>
+                  Register
+                </Button>
+                <Button variant="outlined" sx={{ m: 1, width: 0.5 }}>
+                  Login
+                </Button>
+              </Box>
+            </Box>
+          </Drawer>
+        </Toolbar>
+      </Container>
+    </AppBar>
         <Outlet />
       </div>
     );

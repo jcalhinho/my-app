@@ -1047,7 +1047,7 @@
     z-index: 1000000;
     align-items: center;
     background: rgb(0, 0, 0);
-    margin: 20px auto 20px auto;
+    margin: 0px auto 0px auto;
   }
   
   .text-left {
@@ -2631,6 +2631,7 @@
     flex-direction: row;
     justify-content: space-between;
     width: 80%;
+    align-items: center;
     margin: auto;
     margin-top: 25px;
     margin-bottom: 20px
@@ -2670,7 +2671,7 @@
   }
   
   .divider2-white22 {
-    margin: 0 20px 0px 20px;
+   
     width: 100%;
     border-bottom: 2px solid white;
   
@@ -2738,7 +2739,7 @@
     font-family: "Inter";
     font-size:1vw;
     font-weight: bold;
-    margin: auto 20px 5px 0 !important;
+    margin: auto 20px 5px 20px !important;
     width: auto;
   }
   
