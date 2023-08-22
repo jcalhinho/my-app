@@ -127,7 +127,7 @@ handleRouteChange();
   function Layout() {
     return (
       <div>
-        <AppBar position="static">
+        {/* <AppBar position="static">
       <Container maxWidth="lg" >
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 700 }}>
@@ -162,7 +162,7 @@ handleRouteChange();
             <MenuIcon />
           </IconButton>
 
-          {/* The outside of the drawer */}
+          {/* The outside of the drawer 
           <Drawer
             //from which side the drawer slides in
             anchor="right"
@@ -173,7 +173,7 @@ handleRouteChange();
             //function that is called when the drawer should open
             // onOpen={toggleDrawer(true)}
           >
-            {/* The inside of the drawer */}
+            {/* The inside of the drawer 
             <Box
               sx={{
                 p: 2,
@@ -181,7 +181,7 @@ handleRouteChange();
                 backgroundColor: "#dbc8ff"
               }}
             >
-              {/* when clicking the icon it calls the function toggleDrawer and closes the drawer by setting the variable open to false */}
+              {/* when clicking the icon it calls the function toggleDrawer and closes the drawer by setting the variable open to false 
               <IconButton sx={{ mb: 2 }}>
                 <CloseIcon onClick={toggleDrawer(false)} />
               </IconButton>
@@ -234,7 +234,7 @@ handleRouteChange();
           </Drawer>
         </Toolbar>
       </Container>
-    </AppBar>
+    </AppBar> */}
         <Outlet />
       </div>
     );
