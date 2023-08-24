@@ -17,7 +17,7 @@ const Travaux1 = (props) => {
   const [nextRoute, setnextRoute] = useState(true);
   const lastPics = dataWithoutFirst.pop();
 
-  
+  console.log(props)
 
   // Effectuer la navigation
   // handleRouteChange(); // Appeler la fonction de défilement vers le haut
