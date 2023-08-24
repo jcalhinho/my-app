@@ -48,7 +48,7 @@ if(scrollDir === "down") {
                 
 <div className="doublepara">
                     <div className="central-text">Concepteur graphique pluridisciplinaire spécialisé dans l’identité de marque, l’édition et
-l’illustration, j’aime développer des concepts explicites avec un design utile et accessible.</div> <div className="central-text">
+l’illustration, j’aime développer des concepts explicites avec un design utile et accessible.</div> <div className="central-text" style={{paddingTop:"4vh"}}>
 De plus, j’ai à cœur d’accompagner les marques et les institutions, depuis leur réflexion
 stratégique jusqu’au design final, dans le but qu’elles obtiennent la solution graphique la
 plus adéquate.</div></div>

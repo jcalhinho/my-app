@@ -127,24 +127,16 @@ handleRouteChange();
   function Layout() {
     return (
       <div>
-        {/* <AppBar position="static">
-      <Container maxWidth="lg" >
+        <AppBar className="topappbar" style={{background:"black"}}position="static">
+      <Container className="appbar">
         <Toolbar>
-          <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 700 }}>
-            Brand
-          </Typography>
+         
+          <Link className="top-left-nico" to="/">
+                nicocarmine
+              </Link>
+         
 
-          <Box
-            component="div"
-            sx={{
-              display: {
-                xs: "none",
-                sm: "block"
-              }
-            }}
-          >
-            {search}
-          </Box>
+          
 
           <IconButton
             edge="start"
@@ -155,14 +147,14 @@ handleRouteChange();
               mr: 2,
               display: {
                 xs: "block",
-                sm: "none"
+                sm: "block"
               }
             }}
           >
             <MenuIcon />
           </IconButton>
 
-          {/* The outside of the drawer 
+           {/* The outside of the drawer  */}
           <Drawer
             //from which side the drawer slides in
             anchor="right"
@@ -173,34 +165,34 @@ handleRouteChange();
             //function that is called when the drawer should open
             // onOpen={toggleDrawer(true)}
           >
-            {/* The inside of the drawer 
+             {/* The inside of the drawer  */}
             <Box
               sx={{
                 p: 2,
                 height: 1,
-                backgroundColor: "#dbc8ff"
+                color:"#FFF"
               }}
             >
-              {/* when clicking the icon it calls the function toggleDrawer and closes the drawer by setting the variable open to false 
-              <IconButton sx={{ mb: 2 }}>
+               {/* when clicking the icon it calls the function toggleDrawer and closes the drawer by setting the variable open to false  */}
+              <IconButton sx={{ mb: 2,color:"#FFF" }}>
                 <CloseIcon onClick={toggleDrawer(false)} />
               </IconButton>
 
-              <Divider sx={{ mb: 2 }} />
+              <Divider sx={{ mb: 2,color:"#FFF" }} />
 
               <Box sx={{ mb: 2 }}>
                 <ListItemButton>
                   <ListItemIcon>
                     <ImageIcon sx={{ color: "primary.main" }} />
                   </ListItemIcon>
-                  <ListItemText primary="Pictures" />
+                  <ListItemText primary="TRAVAUX" />
                 </ListItemButton>
 
                 <ListItemButton>
                   <ListItemIcon>
                     <DescriptionIcon sx={{ color: "primary.main" }} />
                   </ListItemIcon>
-                  <ListItemText primary="Documents" />
+                  <ListItemText primary="CONTACT" />
                 </ListItemButton>
 
                 <ListItemButton>
@@ -234,7 +226,7 @@ handleRouteChange();
           </Drawer>
         </Toolbar>
       </Container>
-    </AppBar> */}
+    </AppBar> 
         <Outlet />
       </div>
     );
@@ -247,7 +239,7 @@ handleRouteChange();
           <motion.div 
                            initial={{y:window.innerHeight}}
                             animate={{y: 0 , transition:{duration:0.8}}}
-                          //  exit={{opacity:0 , transition:{duration:0.8}}}
+                           exit={{opacity:0 , transition:{duration:0.8}}}
                             
                          
     
@@ -276,13 +268,13 @@ handleRouteChange();
           {
             //Check if message failed
             location.pathname === "/travaux" || location.pathname === "/contact" ? null : (
-              <Link to={"/travaux/" + url}>
+              
                 <div id="link" className="top-left-icon">
-                  <p className="top-left-iconleft">
-                 
-                  </p>
+                  
+                  <Link to={"/travaux/" + url}></Link>
+                  
                 </div>
-              </Link>
+              
             )
           }
 
@@ -299,7 +291,7 @@ handleRouteChange();
               <Link className="top-left-travaux" to="/travaux">
                 <FaBehanceSquare  className="iconmui" />
                 <FaLinkedin  className="iconmui" />
-                <FaInstagram  className="icommui" style={{margin:"10px 10px 20px 0", color:"white",fontSize: "25px"}} />
+                <FaInstagram  className="icommui" style={{margin:"10px 10px 20px 0", color:"white",fontSize: "1.4vw"}} />
                 travaux{" "}
               </Link>
 
@@ -311,7 +303,7 @@ handleRouteChange();
           {
             //Check if message failed
             location.pathname === "/travaux" || location.pathname === "/contact" ? null : (
-              <Link to={"/travaux/" + url2}>
+              <Link  to={"/travaux/" + url2}>
                 <div id="link" className="top-right-icon">
                   <p className="top-left-iconright">
                   

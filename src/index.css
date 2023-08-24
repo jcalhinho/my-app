@@ -18,7 +18,7 @@
     background: #000;
     color: #ffffff;
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 1vw;
     font-family: "Inter";
     font-style: normal;
     font-weight: 100;
@@ -65,17 +65,73 @@
   }
   
   .top-left-nico {
-    color: grey;
-    font-size: 2.2vw;
-    font-family: "Futura";
-    font-style: normal;
-    font-weight: 600;
-   
-    margin-top: 25px;
+    color: rgba(255, 88, 0, 1);
+font-size: 7.2vw;
+font-family: "Futura";
+font-style: normal;
+font-weight: 600;
   
   
   }
-  
+  .MuiIconButton-root {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+    margin: 0;
+      margin-right: 0px;
+      margin-left: 0px;
+    border-radius: 0;
+    padding: 0;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    vertical-align: middle;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    font-size: 11.2vw;
+    padding: 8px;
+    border-radius: 50%;
+    overflow: visible;
+    color: rgba(0, 0, 0, 0.54);
+    -webkit-transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    margin-left: -12px;
+    color: aquamarine;
+    margin-right: -16px;
+    align-self: auto;
+  }
+  .MuiIconButton-root {
+    cursor: pointer;
+    color: inherit;
+    text-align: center;
+    font-size: 11.2vw;
+    color: rgba(255, 88, 0, 1);
+    color: inherit;
+  }
   .top-left-travaux {
     color: rgba(255, 88, 0, 1);
     font-size: 2.2vw;
@@ -134,7 +190,7 @@
   .top-right-icon {
     right: 5%;
   
-    font-size: 90px;
+    font-size: 2.8vw;
   
     position: fixed;
   
@@ -160,7 +216,7 @@
     display: flex;
     left: 5%;
     position: fixed;
-    font-size: 90px;
+    font-size: 2.8vw;
     font-weight: lighter;
     z-index: 10000;
     width: 4vw;
@@ -174,7 +230,7 @@
   
   
   .iconmui {
-    font-size: 25px;
+    font-size: 1.3vw;
     color: white;
     transform: rotate(-180deg);
     transform-origin: center center;
@@ -231,26 +287,26 @@
   }
   
   .firstPixP {
-    font-size: 19px;
+    font-size: 1.1vw;
     margin: 15px auto 2.5px auto;
     text-align: center;
     font-family: "Inter";
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+   
     color: rgba(255, 255, 255, 1);
     text-transform: uppercase;
   }
   
   .secondPixP {
-    font-size: 12px;
+    font-size: 0.64vw;
     margin: 2.5px auto 15px auto;
     font-family: "Inter";
     font-style: normal;
     font-weight: 200;
   }
   .doublepara {
-    height: 68vh;
+    
     display: flex;
     margin: auto auto;
     flex-direction: column;
@@ -262,7 +318,7 @@
     width: 80%;
   
     background: rgb(0, 0, 0);
-    margin: 110px auto 55px auto;
+    margin: 0px auto 55px auto;
   }
   
   .central-pix {
@@ -277,11 +333,11 @@
   
   .central-text {
   
-    margin: auto auto;
-    font-size:2vw;
-    font-style:normal;
-   line-height: 8vh;
-  /* height: 100%; */
+   
+    font-size: 6vw;
+    font-style: normal;
+    line-height: 4.4vh;
+    height: 100%;
     font-family: "Inter", sans-serif;
   
   }
@@ -419,7 +475,7 @@
   }
   
   .column-nicocarmine {
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items:baseline;
     margin-bottom:4vh;
@@ -443,8 +499,7 @@
     justify-content: space-between;
     width: 80%;
     margin: auto;
-    margin-top: 25px;
-    margin-bottom: 20px
+    
   }
   
   .divider1-white {
@@ -536,12 +591,18 @@
   }
   
   .iconButton {
-    width: 70px;
-    height: 70px;
-    transform: rotate(-45deg);
-    border: solid 2px rgba(255, 88, 0, 1);
-    border-top: none;
-    border-right: none
+    width: 11vw;
+height: 11vw;
+transform: rotate(-45deg);
+border: solid 2px rgba(255, 88, 0, 1);
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: rgb(255, 88, 0);
+  border-right-width: 2px;
+  border-right-style: solid;
+  border-right-color: rgb(255, 88, 0);
+border-top: none;
+border-right: none;
   }
   
   .lien-contact {
@@ -582,7 +643,7 @@
   
   .containerContactNico2 {
     margin: auto 0;
-    font-size: 20px;
+    font-size: 1.1vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -591,7 +652,7 @@
   
   .containerContactNico3 {
     margin: auto 10px;
-    font-size: 20px;
+    font-size: 1.1vw;
     font-weight: bold;
     font-family: "Futura";
     font-style: "normal"
@@ -681,7 +742,7 @@
   
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-weight: 500 !important;
-    font-size: 0.875rem !important;
+    font-size: 0.8vw !important;
     line-height: 1.75 !important;
     letter-spacing: 0.02857em !important;
     text-transform: uppercase !important;
@@ -865,7 +926,7 @@
    .top-right-icon {
     right: 5%;
   
-    font-size: 90px;
+    font-size: 2.8vw;
   
     position: fixed;
   
@@ -891,7 +952,7 @@
     display: flex;
     left: 5%;
     position: fixed;
-    font-size: 90px;
+    font-size: 2.8vw;
     font-weight: lighter;
     z-index: 10000;
     width: 4vw;
@@ -904,7 +965,7 @@
   }
   
   .iconmui {
-    font-size: 25px;
+    font-size: 1.4vw;
     color: white;
     transform: rotate(-180deg);
     transform-origin: center center;
@@ -961,19 +1022,19 @@
   }
   
   .firstPixP {
-    font-size: 19px;
+   
     margin: 15px auto 2.5px auto;
     text-align: center;
     font-family: "Inter";
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.1vw;
     color: rgba(255, 255, 255, 1);
     text-transform: uppercase;
   }
   
   .secondPixP {
-    font-size: 12px;
+    font-size: 0.64vw;
     margin: 2.5px auto 15px auto;
     font-family: "Inter";
     font-style: normal;
@@ -1595,7 +1656,7 @@
  .top-right-icon {
   right: 5%;
 
-  font-size: 90px;
+  font-size: 2.8vw;
 
   position: fixed;
 
@@ -1621,7 +1682,7 @@
   display: flex;
   left: 5%;
   position: fixed;
-  font-size: 90px;
+  font-size: 2.8vw;
   font-weight: lighter;
   z-index: 10000;
   width: 4vw;
@@ -1635,7 +1696,7 @@
   
   
   .iconmui {
-    font-size: 25px;
+    font-size:1.4vw;
     color: white;
     transform: rotate(-180deg);
     transform-origin: center center;
@@ -1692,19 +1753,19 @@
   }
   
   .firstPixP {
-    font-size: 19px;
+    
     margin: 15px auto 2.5px auto;
     text-align: center;
     font-family: "Inter";
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.1vw;
     color: rgba(255, 255, 255, 1);
     text-transform: uppercase;
   }
   
   .secondPixP {
-    font-size: 12px;
+    font-size: 0.64vw;
     margin: 2.5px auto 15px auto;
     font-family: "Inter";
     font-style: normal;
@@ -2364,7 +2425,7 @@
   
   
   .iconmui {
-    font-size: 25px;
+    font-size:1.4vw;
     color: white;
     transform: rotate(-180deg);
     transform-origin: center center;
@@ -2421,19 +2482,19 @@
   }
   
   .firstPixP {
-    font-size: 19px;
+    
     margin: 15px auto 2.5px auto;
     text-align: center;
     font-family: "Inter";
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.1vw;
     color: rgba(255, 255, 255, 1);
     text-transform: uppercase;
   }
   
   .secondPixP {
-    font-size: 12px;
+    font-size: 0.64vw;
     margin: 2.5px auto 15px auto;
     font-family: "Inter";
     font-style: normal;
@@ -3077,7 +3138,7 @@
   color: white;
   /* transform-origin: top left; */
 
-
+top:0px;
   display: flex;
   left: 5%;
   position: fixed;
@@ -3095,7 +3156,7 @@
   
   
   .iconmui {
-    font-size: 25px;
+    font-size: 1.4vw;
     color: white;
     transform: rotate(-180deg);
     transform-origin: center center;
@@ -3152,19 +3213,19 @@
   }
   
   .firstPixP {
-    font-size: 19px;
+    
     margin: 15px auto 2.5px auto;
     text-align: center;
     font-family: "Inter";
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.1vw;
     color: rgba(255, 255, 255, 1);
     text-transform: uppercase;
   }
   
   .secondPixP {
-    font-size: 12px;
+    font-size: 0.64vw;
     margin: 2.5px auto 15px auto;
     font-family: "Inter";
     font-style: normal;
@@ -3670,12 +3731,13 @@
     background: #000;
     color: #ffffff;
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 1vw;
     font-family: "Inter";
     font-style: normal;
     font-weight: 100;
   }
   
+ 
   .container {
     width: 100%;
     /* height: 121%;  */
@@ -3701,6 +3763,8 @@
   a {
     text-decoration: none;
     margin: 0;
+   
+
   }
   
   .top-left {
@@ -3782,13 +3846,12 @@
   
   }
   
-  .top-right-icon {
+  .top-right-icon > a {
     right: 5%;
   
-    font-size: 90px;
-  
+    
     position: fixed;
-  
+    margin-top: -2vw;
     display: flex;
     color: white;
     font-weight: lighter;
@@ -3803,15 +3866,15 @@
   }
   
   
-  .top-left-icon {
+  .top-left-icon > a  {
     color: white;
     /* transform-origin: top left; */
-  
+    margin-top: -2vw;
   
     display: flex;
     left: 5%;
     position: fixed;
-    font-size: 90px;
+   
     font-weight: lighter;
     z-index: 10000;
     width: 4vw;
@@ -3820,12 +3883,13 @@
     border: solid 2px rgb(255, 255, 255);
     border-top: none;
     border-right: none;
-    margin: 0;
+    
   }
+ 
   
   
   .iconmui {
-    font-size: 25px;
+    font-size: 1.4vw;
     color: white;
     transform: rotate(-180deg);
     transform-origin: center center;
@@ -3882,19 +3946,19 @@
   }
   
   .firstPixP {
-    font-size: 19px;
+    
     margin: 15px auto 2.5px auto;
     text-align: center;
     font-family: "Inter";
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.2vw;
     color: rgba(255, 255, 255, 1);
     text-transform: uppercase;
   }
   
   .secondPixP {
-    font-size: 12px;
+    font-size: 0.64vw;
     margin: 2.5px auto 15px auto;
     font-family: "Inter";
     font-style: normal;
@@ -3968,7 +4032,9 @@
     z-index: 1000000;
     align-items: center;
     background: rgb(0, 0, 0);
-    margin: 20px auto 20px auto;
+    margin: 0 auto 0 auto;
+    padding: 20px;
+   
   }
   
   .text-left {
@@ -3978,16 +4044,16 @@
     font-family: "Inter";
     font-style: normal;
     background: rgb(0, 0, 0);
-    margin: 0 0px 20px 0px;
-    align-self: first baseline;
-  }
+    margin: 0;
+    /* align-items:center;*/
   
+  } 
   .text-right {
     width: 60%;
     font-family: "Inter";
     font-style: normal;
     background: rgb(0, 0, 0);
-    margin: 0 0 20px 0;
+    margin: 0;
   }
   
   .text-content {
@@ -4003,15 +4069,15 @@
     font-style: normal;
     font-weight: bold;
     margin-bottom: 0;
-    margin-right: 10px;
+    margin-top:0;
   }
   
   .text-content-soustitre {
     font-size: 1.5vw;
     font-family: "Inter";
     font-style: normal;
-    margin-top: 5px;
-    margin-bottom: 0;
+    margin-bottom: 1vh;
+    margin-top:0;
     font-weight: 200;
   }
   
@@ -4025,14 +4091,16 @@
   }
   
   .text-content-credit {
-    font-size: 0.8vw;
+    font-size: 0.6vw;
     font-weight: 200;
     font-family: "Inter";
     font-style: normal;
+    margin-top: 0;
+    margin-bottom: 0;
   }
   
   .text-content-des {
-    margin-top: 30px;
+   
     font-size: 1vw;
     line-height: 1.75 !important;
     font-family: "Inter";
@@ -4333,7 +4401,7 @@
   
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-weight: 500 !important;
-    font-size: 0.875rem !important;
+    font-size: 1.1vw !important;
     line-height: 1.75 !important;
     letter-spacing: 0.02857em !important;
     text-transform: uppercase !important;
@@ -4391,7 +4459,53 @@
     transition: transform 800ms ease-in;
   }
 }
-
-
+.MuiContainer-root {
+  min-height: 64px;
+max-width: none !important;
+width: 100%;
+padding-left: 0px !important;
+padding-right: 0px !important;
+display: flex;
+justify-content: space-between;
+margin-bottom: 3vh;
+margin-top: 2vh;
+}
+.MuiToolbar-root {
+  min-height: 64px;
+  max-width:none !important;
+  width: 80%;
+  margin-left:10%;
+  margin-right: 10%;
+  padding-left:0px !important;
+  padding-right:0px !important;
+  display: flex;
+  justify-content: space-between;
+}
+.MuiPaper-root {
+  background-color: #0c0c0c !important;
+  color: #ffffffde;
+  -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  box-shadow: 0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12);
+  overflow-y: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  z-index: 1200;
+  -webkit-overflow-scrolling: touch;
+  position: fixed;
+  top: 0;
+  outline: 0;
+  right: 0;
+  width: 100vw;
+}
 
 
