@@ -20,9 +20,9 @@ const Contact = () => {
       
     <div className="containerRow">
       <div className="containerContactNico">NICOLAS CARMINE</div>  
-      <div className="containerContactNico2">-</div>  
+      <div className="containerContactNico2"></div>  
       <div className="containerContactNico3">{""}contact@nicocarmine.com{" "}</div>  
-      <div className="containerContactNico2">-</div>  
+      <div className="containerContactNico2"></div>  
       <div className="containerContactNico3"> 06 50 55 19 12</div>  
       </div>  
       
@@ -77,8 +77,7 @@ const Contact = () => {
          <div className="divider-icon">
          
                 <div className="divider2-white222">
-                <p style={{fontSize:"0.7vw", fontWeight:"lighter",
-  fontFamily: "Inter",fontStyle:"normal", margin:"auto 0px",width:"fit-content"}}>dev:Jc Alhinho</p>
+                <p className="groupicon">dev:Jc Alhinho</p>
                 <div className="icon-group2">
                 <Link to={"https://www.behance.net/nicocarmine?locale=fr_FR"}>
                 <FaBehanceSquare className="iconmuiContact" />
