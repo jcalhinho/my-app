@@ -124,7 +124,7 @@ export default function App() {
   };
   calcurl();
   
-  console.log(window.innerWidth);
+
 
   const [open, setState] = useState(false);
 
@@ -146,7 +146,7 @@ export default function App() {
       <div>
         <AppBar
           className="topappbar"
-          style={{ background: "black" }}
+          style={{ display:"none",background: "black" }}
           position="static"
         >
           <Container className="appbar">
@@ -173,7 +173,7 @@ export default function App() {
                 {/* The inside of the drawer  */}
                 <AppBar
           className="topappbar"
-          style={{ background: "black" }}
+          style={{ display:"none",background: "black" }}
           position="static"
         >
           <Container className="menuContainer">
@@ -225,7 +225,7 @@ export default function App() {
         <div>
            <AppBar
           className="topappbar"
-          style={{ background: "black" }}
+          style={{ display:"none",background: "black" }}
           position="static"
         >
           <Container  className="appbar3">
@@ -252,7 +252,7 @@ export default function App() {
                 {/* The inside of the drawer  */}
                 <AppBar
           className="topappbar"
-          style={{ background: "black" }}
+          style={{ display:"none",background: "black" }}
           position="static"
         >
           <Container className="menuContainer">
@@ -543,7 +543,7 @@ export default function App() {
               element={<>
               <AppBar
                 className="topappbar"
-                style={{ background: "black" }}
+                style={{ display:"none",background: "black" }}
                 position="static"
               >
                 <Container className="appbar">
@@ -570,7 +570,7 @@ export default function App() {
                       {/* The inside of the drawer  */}
                       <AppBar
                 className="topappbar"
-                style={{ background: "black" }}
+                style={{ display:"none",background: "black" }}
                 position="static"
               >
                 <Container className="menuContainer">
@@ -627,7 +627,7 @@ export default function App() {
               element={<>
                 <AppBar
                   className="topappbar"
-                  style={{ background: "black" }}
+                  style={{ display:"none",background: "black" }}
                   position="static"
                 >
                   <Container className="appbar">
@@ -654,7 +654,7 @@ export default function App() {
                         {/* The inside of the drawer  */}
                         <AppBar
                   className="topappbar"
-                  style={{ background: "black" }}
+                  style={{ display:"none",background: "black" }}
                   position="static"
                 >
                   <Container className="menuContainer">
@@ -711,7 +711,7 @@ export default function App() {
               element={<>
                 <AppBar
                   className="topappbar"
-                  style={{ background: "black" }}
+                  style={{ display:"none",background: "black" }}
                   position="static"
                 >
                   <Container className="appbar">
@@ -738,7 +738,7 @@ export default function App() {
                         {/* The inside of the drawer  */}
                         <AppBar
                   className="topappbar"
-                  style={{ background: "black" }}
+                  style={{ display:"none",background: "black" }}
                   position="static"
                 >
                   <Container className="menuContainer">
@@ -795,7 +795,7 @@ export default function App() {
               element={<>
                 <AppBar
                   className="topappbar"
-                  style={{ background: "black" }}
+                  style={{ display:"none",background: "black" }}
                   position="static"
                 >
                   <Container className="appbar">
@@ -822,7 +822,7 @@ export default function App() {
                         {/* The inside of the drawer  */}
                         <AppBar
                   className="topappbar"
-                  style={{ background: "black" }}
+                  style={{ display:"none",background: "black" }}
                   position="static"
                 >
                   <Container className="menuContainer">
@@ -879,7 +879,7 @@ export default function App() {
               element={<>
                 <AppBar
                   className="topappbar"
-                  style={{ background: "black" }}
+                  style={{ display:"none",background: "black" }}
                   position="static"
                 >
                   <Container className="appbar">
@@ -906,7 +906,7 @@ export default function App() {
                         {/* The inside of the drawer  */}
                         <AppBar
                   className="topappbar"
-                  style={{ background: "black" }}
+                  style={{ display:"none",background: "black" }}
                   position="static"
                 >
                   <Container className="menuContainer">
@@ -963,7 +963,7 @@ export default function App() {
               element={<>
                 <AppBar
                   className="topappbar"
-                  style={{ background: "black" }}
+                  style={{ display:"none",background: "black" }}
                   position="static"
                 >
                   <Container className="appbar">
@@ -990,7 +990,7 @@ export default function App() {
                         {/* The inside of the drawer  */}
                         <AppBar
                   className="topappbar"
-                  style={{ background: "black" }}
+                  style={{ display:"none",background: "black" }}
                   position="static"
                 >
                   <Container className="menuContainer">
@@ -1047,7 +1047,7 @@ export default function App() {
               element={<>
                 <AppBar
                   className="topappbar"
-                  style={{ background: "black" }}
+                  style={{ display:"none",background: "black" }}
                   position="static"
                 >
                   <Container className="appbar">
@@ -1074,7 +1074,7 @@ export default function App() {
                         {/* The inside of the drawer  */}
                         <AppBar
                   className="topappbar"
-                  style={{ background: "black" }}
+                  style={{ display:"none",background: "black" }}
                   position="static"
                 >
                   <Container className="menuContainer">
@@ -1131,7 +1131,7 @@ export default function App() {
               element={<>
                 <AppBar
                   className="topappbar"
-                  style={{ background: "black" }}
+                  style={{ display:"none",background: "black" }}
                   position="static"
                 >
                   <Container className="appbar">
@@ -1158,7 +1158,7 @@ export default function App() {
                         {/* The inside of the drawer  */}
                         <AppBar
                   className="topappbar"
-                  style={{ background: "black" }}
+                  style={{ display:"none",background: "black" }}
                   position="static"
                 >
                   <Container className="menuContainer">
@@ -1215,7 +1215,7 @@ export default function App() {
               element={<>
                 <AppBar
                   className="topappbar"
-                  style={{ background: "black" }}
+                  style={{ display:"none",background: "black" }}
                   position="static"
                 >
                   <Container className="appbar">
@@ -1242,7 +1242,7 @@ export default function App() {
                         {/* The inside of the drawer  */}
                         <AppBar
                   className="topappbar"
-                  style={{ background: "black" }}
+                  style={{ display:"none",background: "black" }}
                   position="static"
                 >
                   <Container className="menuContainer">
@@ -1299,7 +1299,7 @@ export default function App() {
               element={<>
                 <AppBar
                   className="topappbar"
-                  style={{ background: "black" }}
+                  style={{ display:"none",background: "black" }}
                   position="static"
                 >
                   <Container className="appbar">
@@ -1326,7 +1326,7 @@ export default function App() {
                         {/* The inside of the drawer  */}
                         <AppBar
                   className="topappbar"
-                  style={{ background: "black" }}
+                  style={{ display:"none",background: "black" }}
                   position="static"
                 >
                   <Container className="menuContainer">
@@ -1383,7 +1383,7 @@ export default function App() {
               element={<>
               <AppBar
                 className="topappbar"
-                style={{ background: "black" }}
+                style={{ display:"none",background: "black" }}
                 position="static"
               >
                 <Container className="appbar">
@@ -1410,7 +1410,7 @@ export default function App() {
                       {/* The inside of the drawer  */}
                       <AppBar
                 className="topappbar"
-                style={{ background: "black" }}
+                style={{ display:"none",background: "black" }}
                 position="static"
               >
                 <Container className="menuContainer">
@@ -1467,7 +1467,7 @@ export default function App() {
               element={<>
                 <AppBar
                   className="topappbar"
-                  style={{ background: "black" }}
+                  style={{ display:"none",background: "black" }}
                   position="static"
                 >
                   <Container className="appbar">
@@ -1494,7 +1494,7 @@ export default function App() {
                         {/* The inside of the drawer  */}
                         <AppBar
                   className="topappbar"
-                  style={{ background: "black" }}
+                  style={{ display:"none",background: "black" }}
                   position="static"
                 >
                   <Container className="menuContainer">
@@ -1551,7 +1551,7 @@ export default function App() {
               element={<>
               <AppBar
                 className="topappbar"
-                style={{ background: "black" }}
+                style={{ display:"none",background: "black" }}
                 position="static"
               >
                 <Container className="appbar">
@@ -1578,7 +1578,7 @@ export default function App() {
                       {/* The inside of the drawer  */}
                       <AppBar
                 className="topappbar"
-                style={{ background: "black" }}
+                style={{ display:"none",background: "black" }}
                 position="static"
               >
                 <Container className="menuContainer">
@@ -1635,7 +1635,7 @@ export default function App() {
               element={<>
               <AppBar
                 className="topappbar"
-                style={{ background: "black" }}
+                style={{ display:"none",background: "black" }}
                 position="static"
               >
                 <Container className="appbar">
@@ -1662,7 +1662,7 @@ export default function App() {
                       {/* The inside of the drawer  */}
                       <AppBar
                 className="topappbar"
-                style={{ background: "black" }}
+                style={{ display:"none",background: "black" }}
                 position="static"
               >
                 <Container className="menuContainer">
@@ -1719,7 +1719,7 @@ export default function App() {
               element={<>
               <AppBar
                 className="topappbar"
-                style={{ background: "black" }}
+                style={{ display:"none",background: "black" }}
                 position="static"
               >
                 <Container className="appbar">
@@ -1746,7 +1746,7 @@ export default function App() {
                       {/* The inside of the drawer  */}
                       <AppBar
                 className="topappbar"
-                style={{ background: "black" }}
+                style={{ display:"none",background: "black" }}
                 position="static"
               >
                 <Container className="menuContainer">
@@ -1803,7 +1803,7 @@ export default function App() {
               element={<>
               <AppBar
                 className="topappbar"
-                style={{ background: "black" }}
+                style={{ display:"none",background: "black" }}
                 position="static"
               >
                 <Container className="appbar">
@@ -1830,7 +1830,7 @@ export default function App() {
                       {/* The inside of the drawer  */}
                       <AppBar
                 className="topappbar"
-                style={{ background: "black" }}
+                style={{ display:"none",background: "black" }}
                 position="static"
               >
                 <Container className="menuContainer">
@@ -1887,7 +1887,7 @@ export default function App() {
               element={<>
               <AppBar
                 className="topappbar"
-                style={{ background: "black" }}
+                style={{ display:"none",background: "black" }}
                 position="static"
               >
                 <Container className="appbar">
@@ -1914,7 +1914,7 @@ export default function App() {
                       {/* The inside of the drawer  */}
                       <AppBar
                 className="topappbar"
-                style={{ background: "black" }}
+                style={{ display:"none",background: "black" }}
                 position="static"
               >
                 <Container className="menuContainer">
@@ -1971,7 +1971,7 @@ export default function App() {
               element={<>
               <AppBar
                 className="topappbar"
-                style={{ background: "black" }}
+                style={{ display:"none",background: "black" }}
                 position="static"
               >
                 <Container className="appbar">
@@ -1998,7 +1998,7 @@ export default function App() {
                       {/* The inside of the drawer  */}
                       <AppBar
                 className="topappbar"
-                style={{ background: "black" }}
+                style={{ display:"none",background: "black" }}
                 position="static"
               >
                 <Container className="menuContainer">
@@ -2055,7 +2055,7 @@ export default function App() {
               element={<>
               <AppBar
                 className="topappbar"
-                style={{ background: "black" }}
+                style={{ display:"none",background: "black" }}
                 position="static"
               >
                 <Container className="appbar">
@@ -2082,7 +2082,7 @@ export default function App() {
                       {/* The inside of the drawer  */}
                       <AppBar
                 className="topappbar"
-                style={{ background: "black" }}
+                style={{ display:"none",background: "black" }}
                 position="static"
               >
                 <Container className="menuContainer">
@@ -2145,7 +2145,7 @@ export default function App() {
                 >
                 <AppBar
                   className="topappbar"
-                  style={{ background: "black" }}
+                  style={{ display:"none",background: "black" }}
                   position="static"
                 >
                   <Container className="appbar">
@@ -2172,7 +2172,7 @@ export default function App() {
                         {/* The inside of the drawer  */}
                         <AppBar
                   className="topappbar"
-                  style={{ background: "black" }}
+                  style={{ display:"none",background: "black" }}
                   position="static"
                 >
                   <Container className="menuContainer">
