@@ -829,7 +829,7 @@ border-right: none;
 
 
 /* Écran moyen (tablette) */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   /* Styles pour les tablettes et écrans de taille similaire */
   body {
     margin: 0;
@@ -1081,7 +1081,7 @@ border-right: none;
     width: 80%;
   
     background: rgb(0, 0, 0);
-    margin: 110px auto 55px auto;
+    margin: 50px auto 20px auto;
   }
   
   .central-pix {
@@ -2289,7 +2289,7 @@ border-right: none;
 }
 
 /* Écran grand (ordinateur de bureau) */
-@media screen and (min-width: 1441px) and (max-width: 1960px) {
+@media screen and (min-width: 1440px) and (max-width: 1960px) {
   /* Styles pour les ordinateurs de bureau */
   body {
     margin: 0;
