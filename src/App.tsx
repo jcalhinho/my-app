@@ -3,6 +3,10 @@ import { url } from "inspector";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { FaBehanceSquare, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
+
+
+// Import Swiper styles
+import 'swiper/css';
 import {
   Routes,
   Route,
@@ -48,58 +52,7 @@ import { BorderBottom } from "@mui/icons-material";
 export const handleRouteChange = () => {
   window.scrollTo(0, 0);
 };
-const StyledSearch = styled("div")(({ theme }) => ({
-  position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.primary.main, 0.15),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.primary.main, 0.25),
-  },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(3),
-    width: "auto",
-  },
-}));
 
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
-  "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "20ch",
-    },
-  },
-}));
-
-//search as JSX
-const search = (
-  <StyledSearch>
-    <SearchIconWrapper>
-      <SearchIcon />
-    </SearchIconWrapper>
-    <StyledInputBase
-      placeholder="Suchen…"
-      inputProps={{ "aria-label": "search" }}
-    />
-  </StyledSearch>
-);
 export default function App() {
   const location = useLocation();
   const [nextRoute, setnextRoute] = useState(true);
@@ -193,10 +146,10 @@ export default function App() {
               
             </Toolbar>
            <div className="menuDivcentral">
-            <div className="menuDivtext1"><Link className="top-left-contact-white" onClick={()=>setState(false)} to="/travaux">travaux</Link></div>
+            <div className="menuDivtext1"><Link className="top-left-contact-white" onClick={toggleDrawer(false)} to="/travaux">travaux</Link></div>
             
            
-            <div className="menuDivtext2"><Link className="top-left-contact-white" onClick={()=>setState(false)} to="/contact">contact</Link></div>
+            <div className="menuDivtext2"><Link className="top-left-contact-white" onClick={toggleDrawer(false)} to="/contact">contact</Link></div>
             
                    
                 
@@ -324,12 +277,16 @@ export default function App() {
           <motion.div
             initial={{ y: window.innerHeight }}
             animate={{ y: 0, transition: { duration: 0.8 } }}
-            //  exit={{opacity:0 , transition:{duration:0.8}}}
+             exit={{opacity:0 , transition:{duration:0.8}}}
           >
             <div className="top-right">
               <div className="top-left-ensemble">
-                <Link className="top-left-travaux" to="/travaux">
-                  <FaBehanceSquare className="iconmui" />
+                <div className="top-left-travaux" >
+                <Link to={"https://www.behance.net/nicocarmine?locale=fr_FR"}>
+                <FaBehanceSquare className="iconmui" />
+                </Link><Link to={"https://www.linkedin.com/in/nicolas-carmine-448b703a/"}>
+                            <FaLinkedin className="iconmui"  /></Link><Link to={"https://www.instagram.com/nico.carmine/"}><FaInstagram className="iconmui" style={{marginLeft:"0.1vw"}}/> </Link>
+                  {/* <FaBehanceSquare className="iconmui" />
                   <FaLinkedin className="iconmui" />
                   <FaInstagram
                     className="icommui"
@@ -338,9 +295,9 @@ export default function App() {
                       color: "white",
                       fontSize: "1.4vw",
                     }}
-                  />
+                  /> */}
                   travaux{" "}
-                </Link>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -482,6 +439,7 @@ export default function App() {
 
   return (
     <div>
+      
       <AnimatePresence mode="sync">
         <Routes location={location} key={location.key}>
           <Route path="/" element={<Layout />}>
@@ -2221,6 +2179,6 @@ export default function App() {
           </Route>
         </Routes>
       </AnimatePresence>
-    </div>
+      </div>
   );
 }
