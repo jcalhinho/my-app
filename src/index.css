@@ -193,8 +193,8 @@ font-weight: 600;
   }
   
   .top-right-icon {
-    right: 5%;
-  
+    right: 6%;
+  top: 50%;
     font-size: 4vw;
   
     position: fixed;
@@ -216,10 +216,10 @@ font-weight: 600;
   .top-left-icon {
     color: white;
     /* transform-origin: top left; */
-  
+  top: 50%;
   
     display: flex;
-    left: 5%;
+    left: 6%;
     position: fixed;
     font-size: 4vw;
     font-weight: lighter;
