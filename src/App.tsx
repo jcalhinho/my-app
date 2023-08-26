@@ -571,9 +571,11 @@ export default function App() {
                 </Container>
               </AppBar>
                 <motion.div
-                drag
+                
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
                 onDrag={
-                  (event, info) => console.log(info.point.x, info.point.y)
+                  (event, info) => console.log(info,event)
                 }
                   variants={NEXTRoute()}
                   initial="initial"
