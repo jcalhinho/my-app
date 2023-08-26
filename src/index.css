@@ -194,7 +194,7 @@ font-weight: 600;
   
   .top-right-icon {
     right: 3%;
-  top: 50%;
+  
     font-size: 4vw;
   
     position: fixed;
@@ -209,15 +209,14 @@ font-weight: 600;
     border: solid 2px rgb(255, 255, 255);
     border-bottom: none;
     border-left: none;
-  
+    margin: 10% 0 0 0;
   }
   
   
   .top-left-icon {
     color: white;
     /* transform-origin: top left; */
-  top: 50%;
-  
+ 
     display: flex;
     left: 3%;
     position: fixed;
@@ -230,7 +229,7 @@ font-weight: 600;
     border: solid 2px rgb(255, 255, 255);
     border-top: none;
     border-right: none;
-    margin: 0;
+    margin: 10% 0 0 0;
   }
   
   
