@@ -900,6 +900,9 @@ border-right: none;
     font-family: "Futura";
     font-style: normal;
     font-weight: 600;
+    cursor:pointer;
+    display: flex;
+    align-items: center;
    
   
   }
@@ -1055,13 +1058,13 @@ border-right: none;
     font-family: "Inter";
     font-style: normal;
     font-weight: bold;
-    font-size: 1.1vw;
+    font-size: 1.4vw;
     color: rgba(255, 255, 255, 1);
     text-transform: uppercase;
   }
   
   .secondPixP {
-    font-size: 0.64vw;
+    font-size: 0.8vw;
     margin: 2.5px auto 15px auto;
     font-family: "Inter";
     font-style: normal;
@@ -1741,6 +1744,9 @@ margin-right: 10%;
     font-family: "Futura";
     font-style: normal;
     font-weight: 600;
+    cursor:pointer;
+    display: flex;
+    align-items: center;
    
   
   }
@@ -2426,7 +2432,7 @@ margin-right: 10%;
   
   }
   
-  .fade-enter {
+  /* .fade-enter {
     opacity: 0;
   }
   
@@ -2460,7 +2466,7 @@ margin-right: 10%;
   .slide-exit-active {
     transform: translateX(100%);
     transition: transform 800ms ease-in;
-  }
+  } */
   
 }
 

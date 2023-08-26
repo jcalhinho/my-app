@@ -11,13 +11,16 @@ import { handleRouteChange } from "../App";
 
 
 const Travaux1 = (props) => {
-  console.log(window.location.href.slice(-1))
-  const url: number = parseInt(window.location.href.slice(-1)) -1;
+  const navigate=useNavigate(); 
+  const url: number = parseInt(window.location.href.slice(-1)) -1 || 0;
   const dataWithoutFirst = Data[url].pics.slice(1);
-  const [nextRoute, setnextRoute] = useState(true);
-  const lastPics = dataWithoutFirst.pop();
+  if (dataWithoutFirst === undefined){ 
+    return null
+  };
 
-  console.log(props)
+   const lastPics = dataWithoutFirst.pop();
+
+ 
 
   // Effectuer la navigation
   // handleRouteChange(); // Appeler la fonction de défilement vers le haut
@@ -25,7 +28,24 @@ const Travaux1 = (props) => {
 
 
   return (
-    <div>
+    <motion.div
+        drag={'x'}
+        dragConstraints={{ left: 0, right: 0 }}
+        onDragEnd={
+          (event, info) => 
+    
+            {if(info.offset.x <= 0) {console.log(event)
+              navigate("/travaux/" + props.url)
+            } else {
+              navigate("/travaux/" + props.url2)
+              console.log(event)
+            }
+          }
+
+        }
+      >
+        <div>
+      
       <div className="central">
         <div className="central-pix">
           <img src={Data[url].pics[0]} className="pixHead" alt="" />
@@ -36,7 +56,7 @@ const Travaux1 = (props) => {
               <SlArrowLeft
                 style={{ color: "transparent" }}
                 className="top-left-iconright"
-                onClick={(params) => setnextRoute(true)}
+                onClick={(params) => null}
               />
             </Link>
           </div>
@@ -57,7 +77,7 @@ const Travaux1 = (props) => {
               <SlArrowRight
                 style={{ color: "transparent" }}
                 className="top-left-iconright"
-                onClick={(params) => setnextRoute(false)}
+                onClick={(params) => null}
               />
             </Link>
           </div>
@@ -76,6 +96,7 @@ const Travaux1 = (props) => {
           <img src={lastPics} className={"pixHead"} alt="" />
         </div>
       </div>
+      
       <div className="divider-icon">
         <div className="divider2-white22" />
         <a className="lien-contact" href="/">
@@ -84,6 +105,7 @@ const Travaux1 = (props) => {
         <div className="divider2-white22" style={{ marginLeft: "0px" }} />
       </div>
     </div>
+     </motion.div>
   );
 };
 export default Travaux1;

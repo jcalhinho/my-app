@@ -296,7 +296,7 @@ export default function App() {
                       fontSize: "1.4vw",
                     }}
                   /> */}
-                  travaux{" "}
+                  <p style={{marginTop:"25px"}}>travaux{" "}</p>
                 </div>
               </div>
             </div>
@@ -363,7 +363,7 @@ export default function App() {
                 </Link>
               ) : (
                 <Link className="top-left-travaux" to="/travaux">
-                  travaux
+                 travaux
                 </Link>
               )}
             </div>
@@ -440,7 +440,7 @@ export default function App() {
   return (
     <div>
       
-      <AnimatePresence mode="sync">
+      <AnimatePresence mode={"sync"}>
         <Routes location={location} key={location.key}>
           <Route path="/" element={<Layout />}>
             <Route
@@ -571,12 +571,6 @@ export default function App() {
                 </Container>
               </AppBar>
                 <motion.div
-                
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                onDrag={
-                  (event, info) => console.log(info,event)
-                }
                   variants={NEXTRoute()}
                   initial="initial"
                   animate="animate"

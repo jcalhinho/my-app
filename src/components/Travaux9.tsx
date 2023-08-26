@@ -4,17 +4,33 @@ import "../index.css";
 import { motion } from "framer-motion";
 import { Data } from "../data";
 import {Divider} from "@mui/material";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {SlArrowLeft, SlArrowRight} from "react-icons/sl";
 import { useState } from "react";
 
 const Travaux9 = (props) => {
-  const url : number = 9-1 ;
+  const navigate=useNavigate(); 
+  const url : number = 9-1 || 0 ;
   const dataWithoutFirst = Data[url].pics.slice(1);
   const lastPics = dataWithoutFirst.pop();
   const [nextRoute, setnextRoute] = useState(true);
   return (
+<motion.div
+        drag={'x'}
+        dragConstraints={{ left: 0, right: 0 }}
+        onDragEnd={
+          (event, info) => 
+    
+            {if(info.offset.x <= 0) {console.log(event)
+              navigate("/travaux/" + props.url)
+            } else {
+              navigate("/travaux/" + props.url2)
+              console.log(event)
+            }
+          }
 
+        }
+      >
         <div >
           
           <div className="central">
@@ -74,7 +90,7 @@ const Travaux9 = (props) => {
                 </div>
           
        
-        </div>
+        </div></motion.div>
 
   );
 };
