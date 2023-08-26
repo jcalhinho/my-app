@@ -571,6 +571,10 @@ export default function App() {
                 </Container>
               </AppBar>
                 <motion.div
+                drag
+                onDrag={
+                  (event, info) => console.log(info.point.x, info.point.y)
+                }
                   variants={NEXTRoute()}
                   initial="initial"
                   animate="animate"
