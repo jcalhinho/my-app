@@ -193,7 +193,7 @@ font-weight: 600;
   }
   
   .top-right-icon {
-    right: 6%;
+    right: 3%;
   top: 50%;
     font-size: 4vw;
   
@@ -219,7 +219,7 @@ font-weight: 600;
   top: 50%;
   
     display: flex;
-    left: 6%;
+    left: 3%;
     position: fixed;
     font-size: 4vw;
     font-weight: lighter;
