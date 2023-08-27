@@ -1099,11 +1099,12 @@ border-right: none;
   .central-text {
   
     margin: auto auto;
-    font-size:2vw;
-    font-style:normal;
-   line-height: 8vh;
-  /* height: 100%; */
+    font-size: 2.5vw;
+    font-style: normal;
+    line-height: 8vh;
+    height: 100%;
     font-family: "Inter", sans-serif;
+    text-align: justify;
   
   }
   
@@ -1251,7 +1252,7 @@ border-right: none;
   
   .title-nicocarmine {
     color: #ff5800;
-    font-size: 2.2vw;
+    font-size: 2.7vw;
     margin: 0px 0px 0px 0px;
    
     font-weight:"bold";
@@ -1942,11 +1943,12 @@ margin-right: 10%;
   .central-text {
   
     margin: auto auto;
-    font-size:2vw;
-    font-style:normal;
-   line-height: 8vh;
-  /* height: 100%; */
+    font-size: 2.5vw;
+    font-style: normal;
+    line-height: 8vh;
+    height: 100%;
     font-family: "Inter", sans-serif;
+    text-align: justify;
   
   }
   
@@ -2095,7 +2097,7 @@ margin-right: 10%;
   
   .title-nicocarmine {
     color: #ff5800;
-    font-size: 2.2vw;
+    font-size: 2.7vw;
     margin: 0px 0px 0px 0px;
    
     font-weight:"bold";

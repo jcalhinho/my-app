@@ -8,8 +8,8 @@ import {Divider} from "@mui/material";
 import { useState } from "react";
 
 const Travaux3 = (props) => {
-  const url : number = parseInt(window.location.href.slice(-1)) -1;
-  const dataWithoutFirst = Data[url].pics.slice(1);
+   
+  const dataWithoutFirst = Data[2].pics.slice(1);
   const lastPics = dataWithoutFirst.pop();
   const [nextRoute, setnextRoute] = useState(true);
   return (
@@ -18,7 +18,7 @@ const Travaux3 = (props) => {
           
           <div className="central">
         <div className="central-pix">
-          <img src={Data[url].pics[0]} className="pixHead" alt="" />
+          <img src={Data[2].pics[0]} className="pixHead" alt="" />
         </div>
         <div className="text">
           <div id="link" className="top-left-icon">
@@ -32,14 +32,14 @@ const Travaux3 = (props) => {
           </div>
           <div className="text-left">
             <div style={{ display: "flex", flexWrap: "wrap" }}>
-              <p className="text-content-titre">{Data[url].titre} -</p>
-              <p className="text-content-soustitre">{Data[url].subtitle}</p>
+             
+              <p className="text-content-soustitre">{Data[2].subtitle}</p>
             </div>
 
-            <p className="text-content-credit">{Data[url].credit}</p>
+            <p className="text-content-credit">{Data[2].credit}</p>
           </div>
           <div className="text-right">
-            <p className="text-content-des">{Data[url].desc}</p>
+            <p className="text-content-des">{Data[2].desc}</p>
           </div>
 
           <div id="link" className="top-right-icon">

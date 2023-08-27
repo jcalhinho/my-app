@@ -1,7 +1,7 @@
 import * as React from "react";
 import "../index.css";
 
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { Data } from "../data";
 import { Button, Divider } from "@mui/material";
 import { SlArrowDown, SlArrowLeft, SlArrowRight } from "react-icons/sl";
@@ -12,43 +12,83 @@ import { handleRouteChange } from "../App";
 
 const Travaux1 = (props) => {
   const navigate=useNavigate(); 
-  const url: number = parseInt(window.location.href.slice(-1)) -1 || 0;
-  const dataWithoutFirst = Data[url].pics.slice(1);
-  if (dataWithoutFirst === undefined){ 
-    return null
-  };
+ 
+  const dataWithoutFirst =Data[0].pics.slice(1);
+  
 
    const lastPics = dataWithoutFirst.pop();
+console.log(props.nextRoute)
+  
 
- 
+  function NEXTRoute() {
+    if (isOpen) {
+      console.log("toto")
+      const routeVariantstravauxnumber = {
+        initial: { x: -window.innerWidth },
+        animate: {
+          transition: { duration: 1 },
+          opacity: 1,
+          x: 0,
+          y: 0,
+        },
+        //  exit:{ transition: { duration: 1 },x:-window.innerWidth}
+      };
+      return routeVariantstravauxnumber;
+    } else {
+      console.log("tutu")
+      const routeVariantstravauxnumber = {
+        initial: { x: window.innerWidth },
+        animate: {
+          transition: { duration: 1 },
+          opacity: 1,
+          x: 0,
+          y: 0,
+        },
 
+        // exit:{ transition: { duration: 1 },x:window.innerWidth}
+      };
+      return routeVariantstravauxnumber;
+    }
+  }
   // Effectuer la navigation
-  // handleRouteChange(); // Appeler la fonction de défilement vers le haut
+   
+  const [isOpen, setIsOpen] = useState(true)
+  const controls = useAnimation();
+  const handleGesture = (event, info) => {
+    const swipeThreshold = 0; // Seuil de glissement en pixels
 
-
-
+    if (info.offset.x > swipeThreshold) {
+      // Glissement vers la droite (retour)
+      controls.start({ x: '100%' }); // Animation pour sortir de l'écran à droite
+      setTimeout(() => navigate("/travaux/2"), 0); // Naviguer vers la route précédente après l'animation
+    } else if (info.offset.x < -swipeThreshold) {
+      // Glissement vers la gauche (avance)
+      controls.start({ x: '-100%' }); // Animation pour sortir de l'écran à gauche
+      setTimeout(() => navigate('/travaux/20'), 0); // Naviguer vers la route suivante après l'animation
+    }
+  };
   return (
     <motion.div
-        drag={'x'}
-        dragConstraints={{ left: 0, right: 0 }}
-        onDragEnd={
-          (event, info) => 
-    
-            {if(info.offset.x <= 0) {console.log(event)
-              navigate("/travaux/" + props.url)
-            } else {
-              navigate("/travaux/" + props.url2)
-              console.log(event)
-            }
-          }
-
-        }
-      >
+    initial= {{ x: -window.innerWidth }}
+        animate= {{
+          transition: { duration: 1 },
+          opacity: 1,
+          x: 0,
+          y: 0,
+        }}
+        variants={NEXTRoute()}
+        // exit={{ transition: { duration: 1 },x:window.innerWidth}}
+     
+     
+      drag="x"
+      dragConstraints={{ left: 0, right: 0 }}
+      onDragEnd={handleGesture}
+    >
         <div>
       
       <div className="central">
         <div className="central-pix">
-          <img src={Data[url].pics[0]} className="pixHead" alt="" />
+          <img src={Data[0].pics[0]} className="pixHead" alt="" />
         </div>
         <div className="text">
           <div id="link" className="top-left-icon">
@@ -56,20 +96,20 @@ const Travaux1 = (props) => {
               <SlArrowLeft
                 style={{ color: "transparent" }}
                 className="top-left-iconright"
-                onClick={(params) => null}
-              />
+                onClick={() => setIsOpen(isOpen => !isOpen)} />
+             
             </Link>
           </div>
           <div className="text-left">
             
-              <p className="text-content-titre">{Data[url].titre}</p>
-              <p className="text-content-soustitre">{Data[url].subtitle}</p>
+              <p className="text-content-titre">{Data[0].titre}</p>
+              <p className="text-content-soustitre">{Data[0].subtitle}</p>
             
 
-            <p className="text-content-credit">{Data[url].credit}</p>
+            <p className="text-content-credit">{Data[0].credit}</p>
           </div>
           <div className="text-right">
-            <p className="text-content-des">{Data[url].desc}</p>
+            <p className="text-content-des">{Data[0].desc}</p>
           </div>
 
           <div id="link" className="top-right-icon">
@@ -77,8 +117,8 @@ const Travaux1 = (props) => {
               <SlArrowRight
                 style={{ color: "transparent" }}
                 className="top-left-iconright"
-                onClick={(params) => null}
-              />
+                onClick={() => setIsOpen(isOpen => isOpen)} />
+              
             </Link>
           </div>
         </div>
@@ -105,7 +145,7 @@ const Travaux1 = (props) => {
         <div className="divider2-white22" style={{ marginLeft: "0px" }} />
       </div>
     </div>
-     </motion.div>
+    </motion.div>
   );
 };
 export default Travaux1;
