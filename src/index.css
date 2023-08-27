@@ -1247,7 +1247,7 @@ border-right: none;
     display: flex;
     justify-content: space-between;
     align-items:baseline;
-    margin-bottom:4vh;
+    margin-bottom:6vh;
   }
   
   .title-nicocarmine {
@@ -2091,7 +2091,7 @@ margin-right: 10%;
   .column-nicocarmine {
     display: flex;
     justify-content: space-between;
-    margin-bottom:4vh;
+    margin-bottom:7vh;
     align-items:baseline;
   }
   
