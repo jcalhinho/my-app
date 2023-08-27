@@ -31,10 +31,10 @@ const Travaux3 = (props) => {
             </Link>
           </div>
           <div className="text-left">
-            <div style={{ display: "flex", flexWrap: "wrap" }}>
-             
+          
+            <p className="text-content-titre">{Data[2].titre}</p>
               <p className="text-content-soustitre">{Data[2].subtitle}</p>
-            </div>
+            
 
             <p className="text-content-credit">{Data[2].credit}</p>
           </div>

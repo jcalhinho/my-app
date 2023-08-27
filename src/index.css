@@ -1099,7 +1099,7 @@ border-right: none;
   .central-text {
   
     margin: auto auto;
-    font-size: 2.5vw;
+    font-size: 3vw;
     font-style: normal;
     line-height: 8vh;
     height: 100%;
@@ -1252,8 +1252,8 @@ border-right: none;
   
   .title-nicocarmine {
     color: #ff5800;
-    font-size: 2.7vw;
-    margin: 0px 0px 0px 0px;
+    font-size: 3.2vw;
+    margin: 0px 20px 0px 0px;
    
     font-weight:"bold";
       font-family: "Futura";
@@ -1927,7 +1927,7 @@ margin-right: 10%;
     width: 80%;
   
     background: rgb(0, 0, 0);
-    margin: 110px auto 55px auto;
+    margin: 55px auto 55px auto;
   }
   
   .central-pix {
@@ -1943,7 +1943,7 @@ margin-right: 10%;
   .central-text {
   
     margin: auto auto;
-    font-size: 2.5vw;
+    font-size: 2.8vw;
     font-style: normal;
     line-height: 8vh;
     height: 100%;
@@ -2097,8 +2097,8 @@ margin-right: 10%;
   
   .title-nicocarmine {
     color: #ff5800;
-    font-size: 2.7vw;
-    margin: 0px 0px 0px 0px;
+    font-size: 3.2vw;
+    margin: 0px 20px 0px 0px;
    
     font-weight:"bold";
       font-family: "Futura";
