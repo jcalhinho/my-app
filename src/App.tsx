@@ -71,7 +71,7 @@ export const handleRouteChange = () => {
 
 export default function App() {
   const location = useLocation();
-  const [nextRoute, setnextRoute] = useState(null);
+  let isOpen = useRef(null)
   const url0 = location.pathname;
   const numero = parseInt(url0.slice(url0.lastIndexOf("/") + 1));
 
@@ -93,7 +93,7 @@ export default function App() {
   };
   calcurl();
   
-console.log(nextRoute)
+
 
   const [open, setState] = useState(false);
 
@@ -109,7 +109,7 @@ console.log(nextRoute)
     setState(open);
   };
   
- 
+ console.log(isOpen.current)
   function Layout() {
     return (
       <div>
@@ -269,8 +269,7 @@ console.log(nextRoute)
             animate={{ y: 0, transition: { duration: 0.8 } }}
             exit={{ opacity: 0, transition: { duration: 0.8 } }}
           > */}
-            <div className="top-left" onClick = {(params)=>{setnextRoute(true)
-              console.log(params)}}>
+            <div className="top-left" onClick={() =>{ isOpen.current = true }}>
               <div className="top-left-ensemble">
                 <Link className="top-left-contact-white" to="/contact">
                   contact
@@ -296,7 +295,7 @@ console.log(nextRoute)
             animate={{ y: 0, transition: { duration: 0.8 } }}
              exit={{opacity:0 , transition:{duration:0.8}}}
           > */}
-            <div className="top-right" onClick = {()=>{setnextRoute(false)}}>
+            <div className="top-right" onClick={() =>{ isOpen.current = false }}>
               <div className="top-left-ensemble">
                 <div className="top-left-travaux" >
                 <Link to={"https://www.behance.net/nicocarmine?locale=fr_FR"}>
@@ -337,7 +336,7 @@ console.log(nextRoute)
       return (
         <div>
           {/* <div className="container"> */}
-          <div className="top-left"onClick = {()=>{setnextRoute(true)}}>
+          <div className="top-left"onClick = {() =>{ isOpen.current = true }}>
             <div className="top-left-ensemble">
               {/* <BurgerNav>
             <Button
@@ -372,7 +371,7 @@ console.log(nextRoute)
               ? null
               : null
           }
-          <div className="top-right"onClick = {()=>{setnextRoute(false)}}>
+          <div className="top-right"onClick = {() =>{ isOpen.current = false }}>
             <div className="top-left-ensemble">
               {location.pathname === "/contact" ? (
                 <Link className="top-left-travaux-white" to="/travaux">
@@ -457,7 +456,7 @@ console.log(nextRoute)
   return (
     <div>
       
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         <Routes location={location} key={location.key}>
           <Route path="/" element={<Layout />}>
             <Route
@@ -593,7 +592,7 @@ console.log(nextRoute)
                   animate="animate"
                   exit="exit"
                 > */}
-                  <Travaux1 nextRoute={nextRoute} url={url} url2={url2} />
+                  <Travaux1 isOpen={isOpen.current} url={url} url2={url2} />
                 {/* </motion.div> */}
                 </>
               }
@@ -678,7 +677,7 @@ console.log(nextRoute)
                     animate="animate"
                     exit="exit"
                   > */}
-                    <Travaux2 nextRoute={nextRoute} url={url} url2={url2} />
+                    <Travaux2 isOpen={isOpen.current}  url={url} url2={url2} />
                   {/* </motion.div> */}
                   </>
                 }

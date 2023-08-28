@@ -6,7 +6,7 @@ import { Data } from "../data";
 import { Button, Divider } from "@mui/material";
 import { SlArrowDown, SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { handleRouteChange } from "../App";
 
 
@@ -21,21 +21,8 @@ console.log(props.nextRoute)
   
 
   function NEXTRoute() {
-    if (isOpen) {
-      console.log("toto")
-      const routeVariantstravauxnumber = {
-        initial: { x: -window.innerWidth },
-        animate: {
-          transition: { duration: 1 },
-          opacity: 1,
-          x: 0,
-          y: 0,
-        },
-        //  exit:{ transition: { duration: 1 },x:-window.innerWidth}
-      };
-      return routeVariantstravauxnumber;
-    } else {
-      console.log("tutu")
+    if (isOpen.current) {
+      console.log(isOpen.current)
       const routeVariantstravauxnumber = {
         initial: { x: window.innerWidth },
         animate: {
@@ -44,15 +31,28 @@ console.log(props.nextRoute)
           x: 0,
           y: 0,
         },
-
         // exit:{ transition: { duration: 1 },x:window.innerWidth}
+      };
+      return routeVariantstravauxnumber;
+    } else {
+      console.log(isOpen.current)
+      const routeVariantstravauxnumber = {
+        initial: { x: -window.innerWidth },
+        animate: {
+          transition: { duration: 1 },
+          opacity: 1,
+          x: 0,
+          y: 0,
+        },
+
+      //  exit:{ transition: { duration: 1 },x:-window.innerWidth}
       };
       return routeVariantstravauxnumber;
     }
   }
   // Effectuer la navigation
    
-  const [isOpen, setIsOpen] = useState(true)
+  let isOpen=useRef(null);
   const controls = useAnimation();
   const handleGesture = (event, info) => {
     const swipeThreshold = 0; // Seuil de glissement en pixels
@@ -67,17 +67,24 @@ console.log(props.nextRoute)
       setTimeout(() => navigate('/travaux/20'), 0); // Naviguer vers la route suivante après l'animation
     }
   };
+  console.log(isOpen.current)
   return (
     <motion.div
-    initial= {{ x: -window.innerWidth }}
-        animate= {{
-          transition: { duration: 1 },
-          opacity: 1,
-          x: 0,
-          y: 0,
-        }}
-        variants={NEXTRoute()}
-        // exit={{ transition: { duration: 1 },x:window.innerWidth}}
+    variants={NEXTRoute()}
+       
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+        
+       
+    // initial= {{ x: -window.innerWidth }}
+    // animate= {{
+    //   transition: { duration: 1 },
+    //   opacity: 1,
+    //   x: 0,
+    //   y: 0,
+    // }}
+    //  exit={{ transition: { duration: 1 },x:window.innerWidth}}
      
      
       drag="x"
@@ -96,7 +103,7 @@ console.log(props.nextRoute)
               <SlArrowLeft
                 style={{ color: "transparent" }}
                 className="top-left-iconright"
-                onClick={() => setIsOpen(isOpen => !isOpen)} />
+                onClick={() =>{ isOpen.current = true }}/>
              
             </Link>
           </div>
@@ -117,7 +124,7 @@ console.log(props.nextRoute)
               <SlArrowRight
                 style={{ color: "transparent" }}
                 className="top-left-iconright"
-                onClick={() => setIsOpen(isOpen => isOpen)} />
+                onClick={() =>{ isOpen.current = false }}/>
               
             </Link>
           </div>
