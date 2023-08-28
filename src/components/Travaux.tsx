@@ -7,13 +7,14 @@ import {MdKeyboardArrowLeft, MdKeyboardArrowRight} from "react-icons/md";
 import {SlArrowLeft, SlArrowRight} from "react-icons/sl";
 import {Data} from "../data";
 import { Divider } from "@mui/material";
+import { handleRouteChange } from "../App";
 
 
 
 
 const Travaux = () => {
 
-  
+    handleRouteChange();
     return (
         <div>
          

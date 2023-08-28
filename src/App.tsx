@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { url } from "inspector";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { FaBehanceSquare, FaLinkedin, FaInstagram } from "react-icons/fa";
@@ -71,7 +71,7 @@ export const handleRouteChange = () => {
 
 export default function App() {
   const location = useLocation();
-  let isOpen = useRef(null)
+  const [isOpen,setIsOpen] = useState<boolean | null>(false)
   const url0 = location.pathname;
   const numero = parseInt(url0.slice(url0.lastIndexOf("/") + 1));
 
@@ -93,7 +93,53 @@ export default function App() {
   };
   calcurl();
   
+  function NEXTRoute() {
+    if (isOpen) {
+     
+      const routeVariantstravauxnumber = {
+        initial: { x: -window.innerWidth },
+        animate: {
+          transition: { duration: 1 },
+          opacity: 1,
+          x: 0,
+          y: 0,
+        },
+        // exit:{ transition: { duration: 1 },x:window.innerWidth}
+      };
+      return routeVariantstravauxnumber;
+    } else {
+      
+      const routeVariantstravauxnumber = {
+        initial: { x: window.innerWidth },
+        animate: {
+          transition: { duration: 1 },
+          opacity: 1,
+          x: 0,
+          y: 0,
+        },
 
+      // exit:{ transition: { duration: 1 },x:-window.innerWidth}
+      };
+      return routeVariantstravauxnumber;
+    }
+  }
+  // Effectuer la navigation
+   
+  const navigate=useNavigate(); 
+  const controls = useAnimation();
+  const handleGesture = (event, info) => {
+    const swipeThreshold = 0; // Seuil de glissement en pixels
+
+    if (info.offset.x > swipeThreshold) {
+      // Glissement vers la droite (retour)
+      controls.start({ x: '10%' }); // Animation pour sortir de l'écran à droite
+      setTimeout(() => navigate("/travaux/2"), 0); // Naviguer vers la route précédente après l'animation
+    } else if (info.offset.x < -swipeThreshold) {
+      // Glissement vers la gauche (avance)
+      controls.start({ x: '-10%' }); // Animation pour sortir de l'écran à gauche
+      setTimeout(() => navigate('/travaux/20'), 0); // Naviguer vers la route suivante après l'animation
+    }
+  };
 
   const [open, setState] = useState(false);
 
@@ -109,7 +155,7 @@ export default function App() {
     setState(open);
   };
   
- console.log(isOpen.current)
+ console.log(isOpen)
   function Layout() {
     return (
       <div>
@@ -264,12 +310,29 @@ export default function App() {
           </Container>
         </AppBar>
           {/* <div className="container"> */}
-          {/* <motion.div
-            initial={{ y: window.innerHeight }}
-            animate={{ y: 0, transition: { duration: 0.8 } }}
-            exit={{ opacity: 0, transition: { duration: 0.8 } }}
-          > */}
-            <div className="top-left" onClick={() =>{ isOpen.current = true }}>
+          <motion.div
+    variants={NEXTRoute()}
+       
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+        
+       
+    // initial= {{ x: -window.innerWidth }}
+    // animate= {{
+    //   transition: { duration: 1 },
+    //   opacity: 1,
+    //   x: 0,
+    //   y: 0,
+    // }}
+    //  exit={{ transition: { duration: 1 },x:window.innerWidth}}
+     
+     
+      drag="x"
+      dragConstraints={{ left: 0, right: 0 }}
+      onDragEnd={handleGesture}
+    >
+            <div className="top-left" >
               <div className="top-left-ensemble">
                 <Link className="top-left-contact-white" to="/contact">
                   contact
@@ -295,7 +358,7 @@ export default function App() {
             animate={{ y: 0, transition: { duration: 0.8 } }}
              exit={{opacity:0 , transition:{duration:0.8}}}
           > */}
-            <div className="top-right" onClick={() =>{ isOpen.current = false }}>
+            <div className="top-right" >
               <div className="top-left-ensemble">
                 <div className="top-left-travaux" >
                 <Link to={"https://www.behance.net/nicocarmine?locale=fr_FR"}>
@@ -316,7 +379,7 @@ export default function App() {
                 </div>
               </div>
             </div>
-          {/* </motion.div> */}
+          </motion.div>
           {
             //Check if message failed
             location.pathname === "/travaux" ||
@@ -336,7 +399,7 @@ export default function App() {
       return (
         <div>
           {/* <div className="container"> */}
-          <div className="top-left"onClick = {() =>{ isOpen.current = true }}>
+          <div className="top-left">
             <div className="top-left-ensemble">
               {/* <BurgerNav>
             <Button
@@ -371,7 +434,7 @@ export default function App() {
               ? null
               : null
           }
-          <div className="top-right"onClick = {() =>{ isOpen.current = false }}>
+          <div className="top-right" >
             <div className="top-left-ensemble">
               {location.pathname === "/contact" ? (
                 <Link className="top-left-travaux-white" to="/travaux">
@@ -398,60 +461,34 @@ export default function App() {
   }
   //   console.log(navigate(-1));
 
-  // const routeVariantsnico = {
-  //   initial: {
-  //     opacity: 0,
-  //   },
-  //   animate: {
-  //     transition: { duration: 0.8 },
-  //     opacity: 1,
-  //     x: "0%",
-  //     y: "0%",
-  //   },
-  //   exit: { opacity: 0 },
-  // };
+  const routeVariantsnico = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      transition: { duration: 0.8 },
+      opacity: 1,
+      x: "0%",
+      y: "0%",
+    },
+    exit: { opacity: 0 },
+  };
 
-  // const routeVariantstravaux = {
-  //   initial: {
-  //     opacity: 0,
-  //     y: "100%",
-  //   },
-  //   animate: {
-  //     transition: { duration: 0.8 },
-  //     opacity: 1,
-  //     x: "0%",
-  //     y: "0%",
-  //   },
-  //   exit: { opacity: 0 },
-  // };
+  const routeVariantstravaux = {
+    initial: {
+      opacity: 0,
+      y: "100%",
+    },
+    animate: {
+      transition: { duration: 0.8 },
+      opacity: 1,
+      x: "0%",
+      y: "0%",
+    },
+    exit: { opacity: 0 },
+  };
 
-  // function NEXTRoute() {
-  //   if (nextRoute) {
-  //     const routeVariantstravauxnumber = {
-  //       initial: { x: window.innerWidth },
-  //       animate: {
-  //         transition: { duration: 1 },
-  //         opacity: 1,
-  //         x: 0,
-  //         y: 0,
-  //       },
-  //        exit:{ transition: { duration: 1 },x:window.innerWidth}
-  //     };
-  //     return routeVariantstravauxnumber;
-  //   } else {
-  //     const routeVariantstravauxnumber = {
-  //       initial: { x: -window.innerWidth },
-  //       animate: {
-  //         transition: { duration: 1 },
-  //         opacity: 1,
-  //         x: "0%",
-  //         y: "0%",
-  //       },
-  //       // exit:{ transition: { duration: 1 },x:-window.innerWidth}
-  //     };
-  //     return routeVariantstravauxnumber;
-  //   }
-  // }
+ 
 
   return (
     <div>
@@ -462,30 +499,30 @@ export default function App() {
             <Route
               index
               element={
-                // <motion.div
-                //   variants={routeVariantsnico}
-                //   initial="initial"
-                //   animate="animate"
-                //   exit="exit"
-                // >
+                <motion.div
+                  variants={routeVariantsnico}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                >
                   <Nicocarmine />
-                // </motion.div>
+                 </motion.div>
               }
             />
             <Route
               path="/contact"
               element={
-                // <motion.div
-                //   variants={routeVariantsnico}
-                //   initial="initial"
-                //   animate="animate"
-                //   exit="exit"
-                // >
+                <motion.div
+                  variants={routeVariantsnico}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                >
                   <>
                     <Layout2 />
                     <Contact />
                   </>
-                // </motion.div>
+                 </motion.div>
               }
             />
           </Route>
@@ -501,14 +538,14 @@ export default function App() {
             <Route
               index
               element={
-                // <motion.div
-                //   variants={routeVariantstravaux}
-                //   initial="initial"
-                //   animate="animate"
-                //   exit="exit"
-                // >
+                <motion.div
+                  variants={routeVariantstravaux}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                >
                   <Travaux />
-                // </motion.div>
+                 </motion.div>
               }
             />
 
@@ -586,14 +623,14 @@ export default function App() {
                   </Toolbar>
                 </Container>
               </AppBar>
-                {/* <motion.div
+                <motion.div
                   variants={NEXTRoute()}
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                > */}
-                  <Travaux1 isOpen={isOpen.current} url={url} url2={url2} />
-                {/* </motion.div> */}
+                >
+                  <Travaux1 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
+                </motion.div>
                 </>
               }
             />
@@ -671,14 +708,14 @@ export default function App() {
                     </Toolbar>
                   </Container>
                 </AppBar>
-                  {/* <motion.div
+                  <motion.div
                     variants={NEXTRoute()}
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                  > */}
-                    <Travaux2 isOpen={isOpen.current}  url={url} url2={url2} />
-                  {/* </motion.div> */}
+                  >
+                    <Travaux2 isOpen={isOpen} setIsOpen={setIsOpen}  url={url} url2={url2} />
+                  </motion.div>
                   </>
                 }
             />
@@ -756,14 +793,14 @@ export default function App() {
                     </Toolbar>
                   </Container>
                 </AppBar>
-                  {/* <motion.div
+                  <motion.div
                     variants={NEXTRoute()}
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                  > */}
-                    <Travaux3 url={url} url2={url2} />
-                  {/* </motion.div> */}
+                  >
+                    <Travaux3 isOpen={isOpen} setIsOpen={setIsOpen}  url={url} url2={url2} />
+                  </motion.div>
                   </>
                 }
             />
@@ -841,14 +878,14 @@ export default function App() {
                     </Toolbar>
                   </Container>
                 </AppBar>
-                  {/* <motion.div
+                  <motion.div
                     variants={NEXTRoute()}
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                  > */}
-                    <Travaux4 url={url} url2={url2} />
-                  {/* </motion.div> */}
+                  >
+                    <Travaux4 isOpen={isOpen} setIsOpen={setIsOpen}  url={url} url2={url2} />
+                  </motion.div>
                   </>
                 }
             />
@@ -926,14 +963,14 @@ export default function App() {
                     </Toolbar>
                   </Container>
                 </AppBar>
-                  {/* <motion.div
+                  <motion.div
                     variants={NEXTRoute()}
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                  > */}
-                    <Travaux5 url={url} url2={url2} />
-                  {/* </motion.div> */}
+                  >
+                    <Travaux5 isOpen={isOpen} setIsOpen={setIsOpen}  url={url} url2={url2} />
+                  </motion.div>
                   </>
                 }
             />
@@ -1011,14 +1048,14 @@ export default function App() {
                     </Toolbar>
                   </Container>
                 </AppBar>
-                  {/* <motion.div
+                  <motion.div
                     variants={NEXTRoute()}
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                  > */}
-                    <Travaux6 url={url} url2={url2} />
-                  {/* </motion.div> */}
+                  >
+                    <Travaux6 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  </motion.div>
                   </>
                 }
             />
@@ -1096,14 +1133,14 @@ export default function App() {
                     </Toolbar>
                   </Container>
                 </AppBar>
-                  {/* <motion.div
+                  <motion.div
                     variants={NEXTRoute()}
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                  > */}
-                    <Travaux7 url={url} url2={url2} />
-                  {/* </motion.div> */}
+                  >
+                    <Travaux7 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  </motion.div>
                   </>
                 }
             />
@@ -1181,14 +1218,14 @@ export default function App() {
                     </Toolbar>
                   </Container>
                 </AppBar>
-                  {/* <motion.div
+                  <motion.div
                     variants={NEXTRoute()}
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                  > */}
-                    <Travaux8 url={url} url2={url2} />
-                  {/* </motion.div> */}
+                  >
+                    <Travaux8 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  </motion.div>
                   </>
                 }
             />
@@ -1266,14 +1303,14 @@ export default function App() {
                     </Toolbar>
                   </Container>
                 </AppBar>
-                  {/* <motion.div
+                  <motion.div
                     variants={NEXTRoute()}
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                  > */}
-                    <Travaux9 url={url} url2={url2} />
-                  {/* </motion.div> */}
+                  >
+                    <Travaux9 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  </motion.div>
                   </>
                 }
             />
@@ -1351,14 +1388,14 @@ export default function App() {
                     </Toolbar>
                   </Container>
                 </AppBar>
-                  {/* <motion.div
+                  <motion.div
                     variants={NEXTRoute()}
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                  > */}
-                    <Travaux10 url={url} url2={url2} />
-                  {/* </motion.div> */}
+                  >
+                    <Travaux10 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  </motion.div>
                   </>
                 }
             />
@@ -1436,14 +1473,14 @@ export default function App() {
                   </Toolbar>
                 </Container>
               </AppBar>
-                {/* <motion.div
+                <motion.div
                   variants={NEXTRoute()}
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                > */}
-                  <Travaux11 url={url} url2={url2} />
-                {/* </motion.div> */}
+                >
+                  <Travaux11 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
+                </motion.div>
                 </>
               }
             />
@@ -1521,14 +1558,14 @@ export default function App() {
                     </Toolbar>
                   </Container>
                 </AppBar>
-                  {/* <motion.div
+                  <motion.div
                     variants={NEXTRoute()}
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                  > */}
-                    <Travaux12 url={url} url2={url2} />
-                  {/* </motion.div> */}
+                  >
+                    <Travaux12 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  </motion.div>
                   </>
                 }
             />
@@ -1606,14 +1643,14 @@ export default function App() {
                   </Toolbar>
                 </Container>
               </AppBar>
-                {/* <motion.div
+                <motion.div
                   variants={NEXTRoute()}
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                > */}
-                  <Travaux13 url={url} url2={url2} />
-                {/* </motion.div> */}
+                >
+                  <Travaux13 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
+                </motion.div>
                 </>
               }
             />
@@ -1691,14 +1728,14 @@ export default function App() {
                   </Toolbar>
                 </Container>
               </AppBar>
-                {/* <motion.div
+                <motion.div
                   variants={NEXTRoute()}
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                > */}
-                  <Travaux14 url={url} url2={url2} />
-                {/* </motion.div> */}
+                >
+                  <Travaux14 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
+                </motion.div>
                 </>
               }
             />
@@ -1776,14 +1813,14 @@ export default function App() {
                   </Toolbar>
                 </Container>
               </AppBar>
-                {/* <motion.div
+                <motion.div
                   variants={NEXTRoute()}
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                > */}
-                  <Travaux15 url={url} url2={url2} />
-                {/* </motion.div> */}
+                >
+                  <Travaux15 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
+                </motion.div>
                 </>
               }
             />
@@ -1861,14 +1898,14 @@ export default function App() {
                   </Toolbar>
                 </Container>
               </AppBar>
-                {/* <motion.div
+                <motion.div
                   variants={NEXTRoute()}
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                > */}
-                  <Travaux16 url={url} url2={url2} />
-                {/* </motion.div> */}
+                >
+                  <Travaux16 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
+                </motion.div>
                 </>
               }
             />
@@ -1946,14 +1983,14 @@ export default function App() {
                   </Toolbar>
                 </Container>
               </AppBar>
-                {/* <motion.div
+                <motion.div
                   variants={NEXTRoute()}
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                > */}
-                  <Travaux17 url={url} url2={url2} />
-                {/* </motion.div> */}
+                >
+                  <Travaux17 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
+                </motion.div>
                 </>
               }
             />
@@ -2031,14 +2068,14 @@ export default function App() {
                   </Toolbar>
                 </Container>
               </AppBar>
-                {/* <motion.div
+                <motion.div
                   variants={NEXTRoute()}
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                > */}
-                  <Travaux18 url={url} url2={url2} />
-                {/* </motion.div> */}
+                >
+                  <Travaux18 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
+                </motion.div>
                 </>
               }
             />
@@ -2116,26 +2153,26 @@ export default function App() {
                   </Toolbar>
                 </Container>
               </AppBar>
-                {/* <motion.div
+                <motion.div
                   variants={NEXTRoute()}
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                > */}
-                  <Travaux19 url={url} url2={url2} />
-                {/* </motion.div> */}
+                >
+                  <Travaux19 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
+                </motion.div>
                 </>
               }
             />
             <Route
               path={`/travaux/20`}
               element={<>
-                {/* <motion.div
+                <motion.div
                   variants={NEXTRoute()}
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                > */}
+                >
                 <AppBar
                   className="topappbar"
                   style={{ display:"none",background: "black" }}
@@ -2207,8 +2244,8 @@ export default function App() {
                     </Toolbar>
                   </Container>
                 </AppBar>
-                  <Travaux20 url={url} url2={url2} />
-                {/* </motion.div> */}
+                  <Travaux20 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
+                </motion.div>
                 </>
               }
             />

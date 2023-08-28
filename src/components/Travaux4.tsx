@@ -15,7 +15,7 @@ const Travaux4 = (props) => {
 
   const [nextRoute, setnextRoute] = useState(true);
   return (
-  
+   
     <div>
   
   <div className="central">
@@ -28,8 +28,7 @@ const Travaux4 = (props) => {
           <SlArrowLeft
             style={{ color: "transparent" }}
             className="top-left-iconright"
-            onClick={(params) => null}
-          />
+            onClick={() =>{ props.setIsOpen(true) }}/>
         </Link>
       </div>
       <div className="text-left">
@@ -49,8 +48,8 @@ const Travaux4 = (props) => {
           <SlArrowRight
             style={{ color: "transparent" }}
             className="top-left-iconright"
-            onClick={(params) => null}
-          />
+            onClick={() =>{ props.setIsOpen(false) }}/>
+         
         </Link>
       </div>
     </div>
@@ -77,7 +76,7 @@ const Travaux4 = (props) => {
     <div className="divider2-white22" style={{ marginLeft: "0px" }} />
   </div>
 </div>
- 
+
 );
 };
 export default Travaux4;

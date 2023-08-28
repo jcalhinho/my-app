@@ -17,80 +17,46 @@ const Travaux1 = (props) => {
   
 
    const lastPics = dataWithoutFirst.pop();
-console.log(props.nextRoute)
+
   
 
-  function NEXTRoute() {
-    if (isOpen.current) {
-      console.log(isOpen.current)
-      const routeVariantstravauxnumber = {
-        initial: { x: window.innerWidth },
-        animate: {
-          transition: { duration: 1 },
-          opacity: 1,
-          x: 0,
-          y: 0,
-        },
-        // exit:{ transition: { duration: 1 },x:window.innerWidth}
-      };
-      return routeVariantstravauxnumber;
-    } else {
-      console.log(isOpen.current)
-      const routeVariantstravauxnumber = {
-        initial: { x: -window.innerWidth },
-        animate: {
-          transition: { duration: 1 },
-          opacity: 1,
-          x: 0,
-          y: 0,
-        },
+  // function NEXTRoute() {
+  //   if (isOpen) {
+  //     console.log(isOpen.current)
+  //     const routeVariantstravauxnumber = {
+  //       initial: { x: window.innerWidth },
+  //       animate: {
+  //         transition: { duration: 1 },
+  //         opacity: 1,
+  //         x: 0,
+  //         y: 0,
+  //       },
+  //       // exit:{ transition: { duration: 1 },x:window.innerWidth}
+  //     };
+  //     return routeVariantstravauxnumber;
+  //   } else {
+  //     console.log(isOpen.current)
+  //     const routeVariantstravauxnumber = {
+  //       initial: { x: -window.innerWidth },
+  //       animate: {
+  //         transition: { duration: 1 },
+  //         opacity: 1,
+  //         x: 0,
+  //         y: 0,
+  //       },
 
-      //  exit:{ transition: { duration: 1 },x:-window.innerWidth}
-      };
-      return routeVariantstravauxnumber;
-    }
-  }
+  //     //  exit:{ transition: { duration: 1 },x:-window.innerWidth}
+  //     };
+  //     return routeVariantstravauxnumber;
+  //   }
+  // }
   // Effectuer la navigation
    
-  let isOpen=useRef(null);
-  const controls = useAnimation();
-  const handleGesture = (event, info) => {
-    const swipeThreshold = 0; // Seuil de glissement en pixels
+ 
 
-    if (info.offset.x > swipeThreshold) {
-      // Glissement vers la droite (retour)
-      controls.start({ x: '100%' }); // Animation pour sortir de l'écran à droite
-      setTimeout(() => navigate("/travaux/2"), 0); // Naviguer vers la route précédente après l'animation
-    } else if (info.offset.x < -swipeThreshold) {
-      // Glissement vers la gauche (avance)
-      controls.start({ x: '-100%' }); // Animation pour sortir de l'écran à gauche
-      setTimeout(() => navigate('/travaux/20'), 0); // Naviguer vers la route suivante après l'animation
-    }
-  };
-  console.log(isOpen.current)
+ 
   return (
-    <motion.div
-    variants={NEXTRoute()}
-       
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-        
-       
-    // initial= {{ x: -window.innerWidth }}
-    // animate= {{
-    //   transition: { duration: 1 },
-    //   opacity: 1,
-    //   x: 0,
-    //   y: 0,
-    // }}
-    //  exit={{ transition: { duration: 1 },x:window.innerWidth}}
-     
-     
-      drag="x"
-      dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
-    >
+   
         <div>
       
       <div className="central">
@@ -103,7 +69,7 @@ console.log(props.nextRoute)
               <SlArrowLeft
                 style={{ color: "transparent" }}
                 className="top-left-iconright"
-                onClick={() =>{ isOpen.current = true }}/>
+                onClick={() =>{ props.setIsOpen(true)}}/>
              
             </Link>
           </div>
@@ -124,7 +90,7 @@ console.log(props.nextRoute)
               <SlArrowRight
                 style={{ color: "transparent" }}
                 className="top-left-iconright"
-                onClick={() =>{ isOpen.current = false }}/>
+                onClick={() =>{ props.setIsOpen(false)}}/>
               
             </Link>
           </div>
@@ -152,7 +118,7 @@ console.log(props.nextRoute)
         <div className="divider2-white22" style={{ marginLeft: "0px" }} />
       </div>
     </div>
-    </motion.div>
+    
   );
 };
 export default Travaux1;

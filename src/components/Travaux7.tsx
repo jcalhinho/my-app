@@ -26,8 +26,7 @@ const Travaux7 = (props) => {
           <SlArrowLeft
             style={{ color: "transparent" }}
             className="top-left-iconright"
-            onClick={(params) => null}
-          />
+            onClick={() =>{ props.setIsOpen(true) }}/>
         </Link>
       </div>
       <div className="text-left">
@@ -47,8 +46,7 @@ const Travaux7 = (props) => {
           <SlArrowRight
             style={{ color: "transparent" }}
             className="top-left-iconright"
-            onClick={(params) => null}
-          />
+            onClick={() =>{ props.setIsOpen(false) }}/>
         </Link>
       </div>
     </div>

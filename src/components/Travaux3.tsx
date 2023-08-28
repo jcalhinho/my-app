@@ -13,7 +13,7 @@ const Travaux3 = (props) => {
   const lastPics = dataWithoutFirst.pop();
   const [nextRoute, setnextRoute] = useState(true);
   return (
-
+    
         <div >
           
           <div className="central">
@@ -26,8 +26,8 @@ const Travaux3 = (props) => {
               <SlArrowLeft
                 style={{ color: "transparent" }}
                 className="top-left-iconright"
-                onClick={(params) => setnextRoute(true)}
-              />
+                onClick={() =>{ props.setIsOpen(true) }}/>
+             
             </Link>
           </div>
           <div className="text-left">
@@ -47,8 +47,8 @@ const Travaux3 = (props) => {
               <SlArrowRight
                 style={{ color: "transparent" }}
                 className="top-left-iconright"
-                onClick={(params) => setnextRoute(false)}
-              />
+                onClick={() =>{ props.setIsOpen(false) }}/>
+             
             </Link>
           </div>
         </div>
@@ -73,7 +73,7 @@ const Travaux3 = (props) => {
                     <div className="divider2-white22" style={{marginLeft:"0px"}}/>
                 </div>
         </div>
-
+        
   );
 };
 export default Travaux3;

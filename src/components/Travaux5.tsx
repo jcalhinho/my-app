@@ -13,7 +13,7 @@ const Travaux5 = (props) => {
   const lastPics = dataWithoutFirst.pop();
 
   return (
-  
+    
     <div>
   
   <div className="central">
@@ -26,8 +26,7 @@ const Travaux5 = (props) => {
           <SlArrowLeft
             style={{ color: "transparent" }}
             className="top-left-iconright"
-            onClick={(params) => null}
-          />
+            onClick={() =>{ props.setIsOpen(true) }}/>
         </Link>
       </div>
       <div className="text-left">
@@ -47,8 +46,7 @@ const Travaux5 = (props) => {
           <SlArrowRight
             style={{ color: "transparent" }}
             className="top-left-iconright"
-            onClick={(params) => null}
-          />
+             onClick={() =>{ props.setIsOpen(false) }}/>
         </Link>
       </div>
     </div>

@@ -23,67 +23,12 @@ const Travaux2 = (props) => {
    handleRouteChange(); // Appeler la fonction de défilement vers le haut
 
 
-   function NEXTRoute() {
-   console.log(isOpen)
-      if (isOpen.current) {
-      const routeVariantstravauxnumber = {
-        initial: { x: window.innerWidth },
-        animate: {
-          transition: { duration: 1 },
-          opacity: 1,
-          x: 0,
-          y: 0,
-        },
-      //   exit:{ transition: { duration: 1 },x:window.innerWidth}
-      };
-      return routeVariantstravauxnumber;
-    } else {
-      console.log(isOpen)
-      const routeVariantstravauxnumber = {
-        initial: { x: -window.innerWidth },
-        animate: {
-          transition: { duration: 1 },
-          opacity: 1,
-          x: 0,
-          y: 0,
-        },
-
-      //  exit:{ transition: { duration: 1 },x:-window.innerWidth}
-      };
-      return routeVariantstravauxnumber;
-    }
-  }
+  
   // Effectuer la navigation
   const navigate=useNavigate(); 
-  let isOpen=useRef(null);
-  const controls = useAnimation();
-  const handleGesture = (event, info) => {
-    const swipeThreshold = 0; // Seuil de glissement en pixels
-
-    if (info.offset.x > swipeThreshold) {
-      // Glissement vers la droite (retour)
-      controls.start({ x: '100%' }); // Animation pour sortir de l'écran à droite
-      setTimeout(() => navigate("/travaux/1"), 0); // Naviguer vers la route précédente après l'animation
-    } else if (info.offset.x < -swipeThreshold) {
-      // Glissement vers la gauche (avance)
-      controls.start({ x: '-100%' }); // Animation pour sortir de l'écran à gauche
-      setTimeout(() => navigate('/travaux/3'), 0); // Naviguer vers la route suivante après l'animation
-    }
-  };
+  
   return (
-    <motion.div
-    
-        variants={NEXTRoute()}
-       
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-     
-     
-      drag="x"
-      dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
-    >
+   
         <div>
       
       <div className="central">
@@ -96,7 +41,7 @@ const Travaux2 = (props) => {
               <SlArrowLeft
                 style={{ color: "transparent" }}
                 className="top-left-iconright"
-                onClick={() =>{ isOpen.current = true }}/>
+                onClick={() =>{ props.setIsOpen(true) }}/>
             </Link>
           </div>
           <div className="text-left">
@@ -116,7 +61,7 @@ const Travaux2 = (props) => {
               <SlArrowRight
                 style={{ color: "transparent" }}
                 className="top-left-iconright"
-                onClick={() =>{ isOpen.current = false }}/>
+                onClick={() =>{ props.setIsOpen(false) }}/>
             </Link>
           </div>
         </div>
@@ -143,7 +88,7 @@ const Travaux2 = (props) => {
         <div className="divider2-white22" style={{ marginLeft: "0px" }} />
       </div>
     </div>
-    </motion.div>
+    
   );
 };
 export default Travaux2;
