@@ -24,10 +24,11 @@ const Travaux18 = (props) => {
       <div id="link" className="top-left-icon">
         <Link to={"/travaux/" + props.url}>
           <SlArrowLeft
-            style={{ color: "transparent" }}
-            className="top-left-iconright"
-             onClick={() =>{ props.setIsOpen(true) }}/>
-        </Link>
+                style={{ color: "transparent" }}
+                className="top-left-iconright"
+                onClick={() =>{ props.setIsOpen(true);
+                props.settrueboolroute(true);
+                }}/>                    </Link>
       </div>
       <div className="text-left">
         
@@ -44,9 +45,11 @@ const Travaux18 = (props) => {
       <div id="link" className="top-right-icon">
         <Link to={"/travaux/" + props.url2}>
           <SlArrowRight
-            style={{ color: "transparent" }}
-            className="top-left-iconright"
-             onClick={() =>{ props.setIsOpen(false) }}/>
+                style={{ color: "transparent" }}
+                className="top-left-iconright"
+                onClick={() =>{ props.setIsOpen(false);
+                  props.settrueboolroute(true)}}
+                  />            
         </Link>
       </div>
     </div>

@@ -26,7 +26,9 @@ const Travaux3 = (props) => {
               <SlArrowLeft
                 style={{ color: "transparent" }}
                 className="top-left-iconright"
-                onClick={() =>{ props.setIsOpen(true) }}/>
+                onClick={() =>{ props.setIsOpen(true);
+                props.settrueboolroute(true);
+                }}/>  
              
             </Link>
           </div>
@@ -47,7 +49,9 @@ const Travaux3 = (props) => {
               <SlArrowRight
                 style={{ color: "transparent" }}
                 className="top-left-iconright"
-                onClick={() =>{ props.setIsOpen(false) }}/>
+                onClick={() =>{ props.setIsOpen(false);
+                  props.settrueboolroute(true)}}
+                  /> 
              
             </Link>
           </div>

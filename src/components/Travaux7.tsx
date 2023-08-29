@@ -1,7 +1,7 @@
 import * as React from "react";
 import "../index.css";
 
-import { motion } from "framer-motion";
+
 import { Data } from "../data";
 import {Divider} from "@mui/material";
 import {Link} from "react-router-dom";
@@ -24,9 +24,11 @@ const Travaux7 = (props) => {
       <div id="link" className="top-left-icon">
         <Link to={"/travaux/" + props.url}>
           <SlArrowLeft
-            style={{ color: "transparent" }}
-            className="top-left-iconright"
-            onClick={() =>{ props.setIsOpen(true) }}/>
+                style={{ color: "transparent" }}
+                className="top-left-iconright"
+                onClick={() =>{ props.setIsOpen(true);
+                props.settrueboolroute(true);
+                }}/>     
         </Link>
       </div>
       <div className="text-left">
@@ -44,9 +46,11 @@ const Travaux7 = (props) => {
       <div id="link" className="top-right-icon">
         <Link to={"/travaux/" + props.url2}>
           <SlArrowRight
-            style={{ color: "transparent" }}
-            className="top-left-iconright"
-            onClick={() =>{ props.setIsOpen(false) }}/>
+                style={{ color: "transparent" }}
+                className="top-left-iconright"
+                onClick={() =>{ props.setIsOpen(false);
+                  props.settrueboolroute(true)}}
+                  />  
         </Link>
       </div>
     </div>

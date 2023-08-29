@@ -27,11 +27,11 @@ import pic19 from "./pix/20-THUMB_Pelicafe.jpg";
 
 
 import paon from "./01-MR PAON/MR PAON_01.png";
-import paon1 from "./01-MR PAON/MR PAON_02.png";
-import paon2 from "./01-MR PAON/MR PAON_03.png";
-import paon3 from "./01-MR PAON/MR PAON_04.png";
-import paon4 from "./01-MR PAON/MR PAON_05.png";
-import paon5 from "./01-MR PAON/MR PAON_06.png";
+import paon1 from "./01-MR PAON/MR PAON_02.jpg";
+import paon2 from "./01-MR PAON/MR PAON_03.jpg";
+import paon3 from "./01-MR PAON/MR PAON_04.jpg";
+import paon4 from "./01-MR PAON/MR PAON_05.jpg";
+import paon5 from "./01-MR PAON/MR PAON_06.jpg";
 
 import orwell from "./02-GEORGE ORWELL/GEORGE ORWELL_01.jpg";
 import orwell1 from "./02-GEORGE ORWELL/GEORGE ORWELL_02.jpg";

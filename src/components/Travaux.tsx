@@ -14,7 +14,9 @@ import { handleRouteChange } from "../App";
 
 const Travaux = () => {
 
-    handleRouteChange();
+    // React.useEffect(() => {
+    //     window.scrollTo(0, 0);
+    //   }, []);
     return (
         <div>
          
