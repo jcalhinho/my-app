@@ -22,7 +22,7 @@ const Travaux1 = (props) => {
 
   // function NEXTRoute() {
   //   if (isOpen) {
-  //     console.log(isOpen.current)
+  //     //console.log(isOpen.current)
   //     const routeVariantstravauxnumber = {
   //       initial: { x: window.innerWidth },
   //       animate: {
@@ -35,7 +35,7 @@ const Travaux1 = (props) => {
   //     };
   //     return routeVariantstravauxnumber;
   //   } else {
-  //     console.log(isOpen.current)
+  //     //console.log(isOpen.current)
   //     const routeVariantstravauxnumber = {
   //       initial: { x: -window.innerWidth },
   //       animate: {

@@ -82,8 +82,8 @@ export default function App() {
     }
   };
   calcurl();
-  console.log(isOpen,"fleche")
-  console.log(boolroute,"swipe")
+  //console.log(isOpen,"fleche")
+  //console.log(boolroute,"swipe")
   function NEXTRoute() {
     
     if (isOpen) {
@@ -157,7 +157,7 @@ export default function App() {
   const handleGesture = (event, info) => {
     settrueboolroute(false);
     const swipeThreshold = 150; // Seuil de glissement en pixels
-console.log(event,info)
+//console.log(event,info)
     if (info.offset.x <= swipeThreshold) {
       // Glissement vers setIsOpen(true)
       setboolroute(true);
@@ -496,7 +496,7 @@ console.log(event,info)
       );
     }
   }
-  //   console.log(navigate(-1));
+  //   //console.log(navigate(-1));
 
   const routeVariantsnico = {
     initial: {

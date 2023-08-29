@@ -11,7 +11,7 @@ import { handleRouteChange } from "../App";
 
 const Travaux2 = (props) => {
 
-  console.log(props.nextRoute)
+  //console.log(props.nextRoute)
   const dataWithoutFirst =Data[1].pics.slice(1);
   
 
