@@ -157,23 +157,21 @@ export default function App() {
   const handleGesture = (event, info) => {
     settrueboolroute(false);
     const swipeThreshold = 150; // Seuil de glissement en pixels
-//console.log(event,info)
-if (Math.abs(info.offset.y) < 10) {
-  // Vérifier si le mouvement vertical est négligeable
-  if (info.offset.x <= -swipeThreshold) {
-    // Glissement vers la gauche (avance)
-    controls.start({ x: -200 }); // Animation pour sortir de l'écran à gauche
-    setTimeout(() => navigate('/travaux/' + url), 50); // Naviguer vers la route suivante après l'animation
-  } else if (info.offset.x >= swipeThreshold) {
-    // Glissement vers la droite (retour)
-    controls.start({ x: 200 }); // Animation pour sortir de l'écran à droite
-    setTimeout(() => navigate("/travaux/" + url2), 50); // Naviguer vers la route précédente après l'animation
-  } else {
-    // Retour à la position de départ
-    controls.start({ x: 0 });
-  }
-}
-   
+    
+    if (info.offset.x <= swipeThreshold) {
+      // Glissement vers setIsOpen(true)
+      setboolroute(true);
+      controls.start({ x: 0 }); // Animation pour sortir de l'écran à droite
+      setTimeout(() => 
+        navigate("/travaux/" + url2), 50);
+       // Naviguer vers la route précédente après l'animation
+    } else if (info.offset.x > swipeThreshold) {
+      // Glissement vers la gauche (avance)
+      setboolroute(false);
+      controls.start({ x: info.point.x < 0 ? -200 : 200 }); // Animation pour sortir de l'écran à gauche
+      setTimeout(() => navigate('/travaux/' + url), 50); // Naviguer vers la route suivante après l'animation
+    }
+  
   };
 
   const [open, setState] = useState(false);
