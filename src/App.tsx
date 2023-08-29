@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useAnimation } from "framer-motion";
+import { AnimatePresence, motion, useAnimation, useMotionValue } from "framer-motion";
 import { url } from "inspector";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { FaBehanceSquare, FaLinkedin, FaInstagram } from "react-icons/fa";
@@ -124,22 +124,39 @@ export default function App() {
     }
   }
   // Effectuer la navigation
-   
+  const x = useMotionValue(0);
+  const scrollY = useMotionValue(0);
+
   const navigate=useNavigate(); 
   const controls = useAnimation();
   const handleGesture = (event, info) => {
-    const swipeThreshold = 10; // Seuil de glissement en pixels
+    // const swipeThreshold = 200; // Seuil de glissement en pixels
 
-    if (info.offset.x < swipeThreshold) {
-      // Glissement vers setIsOpen(true)
-      controls.start({ x: 100 }); // Animation pour sortir de l'écran à droite
-      setTimeout(() => navigate("/travaux/" + url), 250); // Naviguer vers la route précédente après l'animation
-    } else if (info.offset.x > swipeThreshold) {
-      // Glissement vers la gauche (avance)
+    // if (info.offset.x < swipeThreshold) {
+    //   // Glissement vers setIsOpen(true)
+    //   controls.start({ x: 500 }); // Animation pour sortir de l'écran à droite
+    //   setTimeout(() => navigate("/travaux/" + url), 250); // Naviguer vers la route précédente après l'animation
+    // } else if (info.offset.x > swipeThreshold) {
+    //   // Glissement vers la gauche (avance)
      
-      controls.start({ x: 100 }); // Animation pour sortir de l'écran à gauche
-      setTimeout(() => navigate('/travaux/' + url2), 250); // Naviguer vers la route suivante après l'animation
-    }
+    //   controls.start({ x: 500 }); // Animation pour sortir de l'écran à gauche
+    //   setTimeout(() => navigate('/travaux/' + url2), 250); // Naviguer vers la route suivante après l'animation
+    // }
+    const screenWidth = window.innerWidth;
+
+    // Seuil de balayage horizontal pour changer de page
+    const swipeThreshold = screenWidth * 0.25;
+  
+    // Mise à jour de la page en fonction de la position X lors d'un geste de balayage
+    x.onChange((latestX) => {
+      if (Math.abs(latestX) > swipeThreshold) {
+        if (latestX > 0 && url > 1) {
+          setTimeout(() => navigate("/travaux/" + url), 250);
+        } else if (latestX < 0 && url < 20) {
+          setTimeout(() => navigate("/travaux/" + url2), 250);
+        }
+      }
+    });
   };
 
   const [open, setState] = useState(false);
@@ -319,7 +336,9 @@ export default function App() {
                   exit="exit"
                   drag="x"
       dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+        x.set(offset.x);
+      }}
       
     >
             <div className="top-left" >
@@ -494,9 +513,7 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                  drag="x"
-      dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+                  
                 >
                   <Nicocarmine />
                  </motion.div>
@@ -510,9 +527,7 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                  drag="x"
-      dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+                  
                 >
                   <>
                     <Layout2 />
@@ -539,9 +554,7 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                  drag="x"
-      dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+                  
                 >
                   <Travaux />
                  </motion.div>
@@ -629,7 +642,9 @@ export default function App() {
                   exit="exit"
                   drag="x"
       dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+        x.set(offset.x);
+      }}
                 >
                   <Travaux1 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
@@ -717,7 +732,9 @@ export default function App() {
                     exit="exit"
                   drag="x"
       dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+        x.set(offset.x);
+      }}
                   >
                     <Travaux2 isOpen={isOpen} setIsOpen={setIsOpen}  url={url} url2={url2} />
                   </motion.div>
@@ -805,7 +822,9 @@ export default function App() {
                     exit="exit"
                   drag="x"
       dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+        x.set(offset.x);
+      }}
                   >
                     <Travaux3 isOpen={isOpen} setIsOpen={setIsOpen}  url={url} url2={url2} />
                   </motion.div>
@@ -893,7 +912,9 @@ export default function App() {
                     exit="exit"
                   drag="x"
       dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+        x.set(offset.x);
+      }}
                   >
                     <Travaux4 isOpen={isOpen} setIsOpen={setIsOpen}  url={url} url2={url2} />
                   </motion.div>
@@ -981,7 +1002,9 @@ export default function App() {
                     exit="exit"
                   drag="x"
       dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+        x.set(offset.x);
+      }}
                   >
                     <Travaux5 isOpen={isOpen} setIsOpen={setIsOpen}  url={url} url2={url2} />
                   </motion.div>
@@ -1069,7 +1092,9 @@ export default function App() {
                     exit="exit"
                   drag="x"
       dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+        x.set(offset.x);
+      }}
                   >
                     <Travaux6 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
                   </motion.div>
@@ -1157,7 +1182,9 @@ export default function App() {
                     exit="exit"
                   drag="x"
       dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+        x.set(offset.x);
+      }}
                   >
                     <Travaux7 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
                   </motion.div>
@@ -1245,7 +1272,9 @@ export default function App() {
                     exit="exit"
                   drag="x"
       dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+        x.set(offset.x);
+      }}
                   >
                     <Travaux8 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
                   </motion.div>
@@ -1333,7 +1362,9 @@ export default function App() {
                     exit="exit"
                   drag="x"
       dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+        x.set(offset.x);
+      }}
                   >
                     <Travaux9 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
                   </motion.div>
@@ -1421,7 +1452,9 @@ export default function App() {
                     exit="exit"
                   drag="x"
       dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+        x.set(offset.x);
+      }}
                   >
                     <Travaux10 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
                   </motion.div>
@@ -1509,7 +1542,9 @@ export default function App() {
                   exit="exit"
                   drag="x"
       dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+        x.set(offset.x);
+      }}
                 >
                   <Travaux11 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
@@ -1597,7 +1632,9 @@ export default function App() {
                     exit="exit"
                   drag="x"
       dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+        x.set(offset.x);
+      }}
                   >
                     <Travaux12 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
                   </motion.div>
@@ -1685,7 +1722,9 @@ export default function App() {
                   exit="exit"
                   drag="x"
       dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+        x.set(offset.x);
+      }}
                 >
                   <Travaux13 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
@@ -1773,7 +1812,9 @@ export default function App() {
                   exit="exit"
                   drag="x"
       dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+        x.set(offset.x);
+      }}
                 >
                   <Travaux14 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
@@ -1861,7 +1902,9 @@ export default function App() {
                   exit="exit"
                   drag="x"
       dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+        x.set(offset.x);
+      }}
                 >
                   <Travaux15 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
@@ -1949,7 +1992,9 @@ export default function App() {
                   exit="exit"
                   drag="x"
       dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+        x.set(offset.x);
+      }}
                 >
                   <Travaux16 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
@@ -2037,7 +2082,9 @@ export default function App() {
                   exit="exit"
                   drag="x"
       dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+        x.set(offset.x);
+      }}
                 >
                   <Travaux17 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
@@ -2125,7 +2172,9 @@ export default function App() {
                   exit="exit"
                   drag="x"
       dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+        x.set(offset.x);
+      }}
                 >
                   <Travaux18 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
@@ -2213,7 +2262,9 @@ export default function App() {
                   exit="exit"
                   drag="x"
       dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+        x.set(offset.x);
+      }}  
                 >
                   <Travaux19 isOpen={isOpen} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
@@ -2230,7 +2281,9 @@ export default function App() {
                   exit="exit"
                   drag="x"
       dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}
+      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+        x.set(offset.x);
+      }}
                 >
                 <AppBar
                   className="topappbar"
