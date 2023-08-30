@@ -345,16 +345,9 @@ export default function App() {
         </AppBar>
           {/* <div className="container"> */}
           <motion.div
-    variants={NEXTRoute()}
-       
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                  drag="x"
-      dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+    initial={{ y: window.innerHeight }}
+    animate={{ y: 0, transition: { duration: 0.8 } }}
+     exit={{opacity:0 , transition:{duration:0.8}}}
       
     >
             <div className="top-left" >
@@ -368,7 +361,7 @@ export default function App() {
                 </Link>
               </div>
             </div>
-          {/* </motion.div> */}
+          </motion.div>
           {
             //Check if message failed
             location.pathname === "/travaux" ||
@@ -378,11 +371,11 @@ export default function App() {
               </div>
             )
           }
-          {/* <motion.div
+          <motion.div
             initial={{ y: window.innerHeight }}
             animate={{ y: 0, transition: { duration: 0.8 } }}
              exit={{opacity:0 , transition:{duration:0.8}}}
-          > */}
+          >
             <div className="top-right" >
               <div className="top-left-ensemble">
                 <div className="top-left-travaux" >
@@ -518,7 +511,7 @@ export default function App() {
   return (
     <div>
       
-      <AnimatePresence>
+      <AnimatePresence >
         <Routes location={location} key={location.key}>
           <Route path="/" element={<Layout />}>
             <Route
