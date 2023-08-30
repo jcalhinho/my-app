@@ -394,7 +394,7 @@ export default function App() {
           </Container>
         </AppBar>
           {/* <div className="container"> */}
-          <motion.div
+          {/* <motion.div
     initial={{ y: window.innerHeight }}
     animate={{ y: 0, transition: { duration: 0.8 } }}
      exit={{opacity:0 , transition:{duration:0.8}}}
@@ -411,7 +411,7 @@ export default function App() {
                 </Link>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
           {
             //Check if message failed
             location.pathname === "/travaux" ||
@@ -421,7 +421,7 @@ export default function App() {
               </div>
             )
           }
-          <motion.div
+          {/* <motion.div
             initial={{ y: window.innerHeight }}
             animate={{ y: 0, transition: { duration: 0.8 } }}
              exit={{opacity:0 , transition:{duration:0.8}}}
@@ -442,12 +442,12 @@ export default function App() {
                       color: "white",
                       fontSize: "1.4vw",
                     }}
-                  /> */}
+                  /> 
                   <p style={{marginTop:"25px"}}>travaux{" "}</p>
                 </div>
               </div>
             </div>
-          </motion.div>
+                  </motion.div> */}
           {
             //Check if message failed
             location.pathname === "/travaux" ||
@@ -601,10 +601,10 @@ export default function App() {
             path="/travaux"
             element={
               <motion.div
-                 
+              variants={routeVariantstravaux}
                   initial="initial"
                   animate="animate"
-                  exit="exit"
+                 // exit="exit"
                   
                 >
                 <Layout2 />
