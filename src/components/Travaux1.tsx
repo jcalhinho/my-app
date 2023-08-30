@@ -20,37 +20,7 @@ const Travaux1 = (props) => {
 
   
 
-  // function NEXTRoute() {
-  //   if (isOpen) {
-  //     //console.log(isOpen.current)
-  //     const routeVariantstravauxnumber = {
-  //       initial: { x: window.innerWidth },
-  //       animate: {
-  //         transition: { duration: 1 },
-  //         opacity: 1,
-  //         x: 0,
-  //         y: 0,
-  //       },
-  //       // exit:{ transition: { duration: 1 },x:window.innerWidth}
-  //     };
-  //     return routeVariantstravauxnumber;
-  //   } else {
-  //     //console.log(isOpen.current)
-  //     const routeVariantstravauxnumber = {
-  //       initial: { x: -window.innerWidth },
-  //       animate: {
-  //         transition: { duration: 1 },
-  //         opacity: 1,
-  //         x: 0,
-  //         y: 0,
-  //       },
 
-  //     //  exit:{ transition: { duration: 1 },x:-window.innerWidth}
-  //     };
-  //     return routeVariantstravauxnumber;
-  //   }
-  // }
-  // Effectuer la navigation
   let startX = 0;
   let startY = 0;
   let isScrolling = false;
