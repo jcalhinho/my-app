@@ -42,7 +42,7 @@
     -ms-flex: 1 0 auto;
     flex: 1 0 auto;
     z-index: 1200;
-    -webkit-overflow-scrolling: touch;
+  
     position: fixed;
     top: 0;
     outline: 0;
@@ -2374,7 +2374,7 @@ margin-right: 10%;
     -ms-flex: 1 0 auto;
     flex: 1 0 auto;
     z-index: 1200;
-    -webkit-overflow-scrolling: touch;
+   
     position: fixed;
     top: 0;
     outline: 0;

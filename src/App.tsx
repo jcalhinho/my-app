@@ -550,7 +550,13 @@ export default function App() {
           <Route
             path="/travaux"
             element={
-              <motion.div>
+              <motion.div
+                 
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  
+                >
                 <Layout2 />
               </motion.div>
             }
@@ -649,10 +655,18 @@ export default function App() {
                   variants={NEXTRoute()}
                   initial="initial"
                   animate="animate"
-                  
+                  onTouchStart={(event) => {
+                    console.log("tata")
+                  }}
+                  onTouchMove={(event) => {
+                    console.log("toto")
+                  }}
+                  onTouchEnd={(event) => {
+                    console.log("tutu")
+                  }}
                   drag="x"
       dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+        onDrag={(e, { offset }) => {
         x.set(offset.x);
       }}
                 >
@@ -666,7 +680,7 @@ export default function App() {
                   
                   drag="x"
       dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+        onDrag={(e, { offset }) => {
         x.set(offset.x);
       }}
                 >
