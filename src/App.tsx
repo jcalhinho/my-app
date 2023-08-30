@@ -154,25 +154,25 @@ export default function App() {
  
   const navigate=useNavigate(); 
   const controls = useAnimation();
-  const handleGesture = (event, info) => {
-    settrueboolroute(false);
-    const swipeThreshold = 150; // Seuil de glissement en pixels
+  // const handleGesture = (event, info) => {
+  //   settrueboolroute(false);
+  //   const swipeThreshold = 150; // Seuil de glissement en pixels
     
-    if (info.offset.x <= swipeThreshold) {
-      // Glissement vers setIsOpen(true)
-      setboolroute(true);
-      controls.start({ x: 0 }); // Animation pour sortir de l'écran à droite
-      setTimeout(() => 
-        navigate("/travaux/" + url2), 50);
-       // Naviguer vers la route précédente après l'animation
-    } else if (info.offset.x > swipeThreshold) {
-      // Glissement vers la gauche (avance)
-      setboolroute(false);
-      controls.start({ x: info.point.x < 0 ? -200 : 200 }); // Animation pour sortir de l'écran à gauche
-      setTimeout(() => navigate('/travaux/' + url), 50); // Naviguer vers la route suivante après l'animation
-    }
+  //   if (info.offset.x <= swipeThreshold) {
+  //     // Glissement vers setIsOpen(true)
+  //     setboolroute(true);
+  //     controls.start({ x: 0 }); // Animation pour sortir de l'écran à droite
+  //     setTimeout(() => 
+  //       navigate("/travaux/" + url2), 50);
+  //      // Naviguer vers la route précédente après l'animation
+  //   } else if (info.offset.x > swipeThreshold) {
+  //     // Glissement vers la gauche (avance)
+  //     setboolroute(false);
+  //     controls.start({ x: info.point.x < 0 ? -200 : 200 }); // Animation pour sortir de l'écran à gauche
+  //     setTimeout(() => navigate('/travaux/' + url), 50); // Naviguer vers la route suivante après l'animation
+  //   }
   
-  };
+  // };
 
   const [open, setState] = useState(false);
 
@@ -196,30 +196,41 @@ export default function App() {
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
     isScrolling = false;
-    console.log(startX)
-    console.log(startY)
+   
   };
 
+ 
+
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    // if (!containerRef.current) return;
-
-    const deltaX = Math.abs(e.touches[0].clientX - startX);
-    const deltaY = Math.abs(e.touches[0].clientY - startY);
-
-    if (deltaX < deltaY) {
+   // if (!containerRef.current) return;
+  
+    const deltaX = e.touches[0].clientX - startX;
+    const deltaY = e.touches[0].clientY - startY;
+  
+    if (Math.abs(deltaX) < Math.abs(deltaY)) {
       
-     console.log('scrolling detected');
       isScrolling = true;
+  
+      
     }else {
-      setboolroute(true);
-    
-      setTimeout(() => 
-        navigate("/travaux/" + url2), 50);
-        // setboolroute(false);
-        
-        // setTimeout(() => navigate('/travaux/' + url), 50); // Naviguer vers la route suivante après l'animation
-      console.log('Horizontal swipe detected');
-    }
+      settrueboolroute(false)
+            if (deltaX > 0) {
+              setboolroute(false);
+              setTimeout(() => 
+              navigate("/travaux/" + url), 50);
+              
+            } else {
+       setboolroute(true);
+       
+              setTimeout(() => navigate('/travaux/' + url2), 50); // Naviguer vers la route suivante après l'animation
+              
+            }
+            
+          
+            
+             
+            
+          }
   };
 
   const handleTouchEnd = () => {
@@ -694,32 +705,28 @@ export default function App() {
                   variants={NEXTRoute()}
                   initial="initial"
                   animate="animate"
-                  onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
+                 
       //             drag="x"
       // dragConstraints={{ left: -1000, right: 1000 }}
       //   onDrag={(e, { offset }) => {
       //   x.set(offset.x);
       // }}
                 >
-                  <Travaux1 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux1 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
               :  
               <motion.div
                   variants={NEXTRoute2()}
                   initial="initial"
                   animate="animate"
-                  onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
+                 
       //             drag="x"
       // dragConstraints={{ left: -1000, right: 1000 }}
       //   onDrag={(e, { offset }) => {
       //   x.set(offset.x);
     //  }}
                 >
-                  <Travaux1 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux1 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
             }
                 
@@ -806,13 +813,13 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000,top:0,bottom:0 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+      //             drag="x"
+      // dragConstraints={{ left: -1000, right: 1000,top:0,bottom:0 }}
+      // onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+      //   x.set(offset.x);
+      // }}
                 >
-                  <Travaux2 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux2 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
               :  
               <motion.div
@@ -820,13 +827,13 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+      //             drag="x"
+      // dragConstraints={{ left: -1000, right: 1000 }}
+      // onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+      //   x.set(offset.x);
+      // }}
                 >
-                  <Travaux2 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux2 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
             }
                   </>
@@ -911,14 +918,11 @@ export default function App() {
                   variants={NEXTRoute()}
                   initial="initial"
                   animate="animate"
+                 
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux3 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux3 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
               :  
               <motion.div
@@ -926,13 +930,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux3 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux3 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
             }
                   </>
@@ -1017,28 +1017,22 @@ export default function App() {
                   variants={NEXTRoute()}
                   initial="initial"
                   animate="animate"
+                 
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux4 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux4 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
               :  
               <motion.div
                   variants={NEXTRoute2()}
                   initial="initial"
                   animate="animate"
+                 
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux4 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux4 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
             }
                   </>
@@ -1123,28 +1117,22 @@ export default function App() {
                   variants={NEXTRoute()}
                   initial="initial"
                   animate="animate"
+                 
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux5 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux5 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
               :  
               <motion.div
                   variants={NEXTRoute2()}
                   initial="initial"
                   animate="animate"
+                 
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux5 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux5 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
             }
                   </>
@@ -1230,27 +1218,22 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux6 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux6 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
               :  
               <motion.div
                   variants={NEXTRoute2()}
                   initial="initial"
                   animate="animate"
+                  onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux6 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux6 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
             }
                   </>
@@ -1335,14 +1318,13 @@ export default function App() {
                   variants={NEXTRoute()}
                   initial="initial"
                   animate="animate"
+                  onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux7 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux7 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
               :  
               <motion.div
@@ -1350,13 +1332,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux7 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux7 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
             }
                   </>
@@ -1442,13 +1420,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux8 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux8 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
               :  
               <motion.div
@@ -1456,13 +1430,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux8 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux8 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
             }
                   </>
@@ -1548,13 +1518,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux9 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux9 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
               :  
               <motion.div
@@ -1562,13 +1528,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux9 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux9 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
             }
                   </>
@@ -1654,13 +1616,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux10 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux10 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
               :  
               <motion.div
@@ -1668,13 +1626,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux10 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux10 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
             }
                   </>
@@ -1760,13 +1714,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux11 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux11 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
               :  
               <motion.div
@@ -1774,13 +1724,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux11 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux11 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
             }
                 </>
@@ -1866,13 +1812,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux12 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux12 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
               :  
               <motion.div
@@ -1880,13 +1822,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux12 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux12 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
             }
                   </>
@@ -1972,13 +1910,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux13 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux13 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
               :  
               <motion.div
@@ -1986,13 +1920,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux13 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux13 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
             }
                 </>
@@ -2078,13 +2008,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux14 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux14 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
               :  
               <motion.div
@@ -2092,13 +2018,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux14 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux14 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
             }
                 </>
@@ -2184,13 +2106,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux15 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux15 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
               :  
               <motion.div
@@ -2198,13 +2116,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux15 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux15 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
             }
                 </>
@@ -2290,13 +2204,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux16 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux16 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
               :  
               <motion.div
@@ -2304,13 +2214,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux16 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux16 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
             }
                 </>
@@ -2396,13 +2302,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux17 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux17 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
               :  
               <motion.div
@@ -2410,13 +2312,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux17 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux17 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
             }
                 </>
@@ -2502,13 +2400,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux18 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux18 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
               :  
               <motion.div
@@ -2516,13 +2410,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux18 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux18 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
             }
                 </>
@@ -2608,13 +2498,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux19 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux19 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
               :  
               <motion.div
@@ -2622,13 +2508,9 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  
                 >
-                  <Travaux19 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux19 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
             }
                 </>
@@ -2715,13 +2597,13 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+      //             drag="x"
+      // dragConstraints={{ left: -1000, right: 1000 }}
+      // onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+      //   x.set(offset.x);
+      // }}
                 >
-                  <Travaux20 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux20 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
               :  
               <motion.div
@@ -2729,13 +2611,13 @@ export default function App() {
                   initial="initial"
                   animate="animate"
                   
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-      onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+      //             drag="x"
+      // dragConstraints={{ left: -1000, right: 1000 }}
+      // onDragEnd={handleGesture}  onDrag={(e, { offset }) => {
+      //   x.set(offset.x);
+      // }}
                 >
-                  <Travaux20 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
+                  <Travaux20 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
             }
                 </>

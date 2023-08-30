@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../index.css";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {SlArrowLeft, SlArrowRight} from "react-icons/sl";
 import { motion } from "framer-motion";
 import { Data } from "../data";
@@ -8,15 +8,73 @@ import {Divider} from "@mui/material";
 import { useState } from "react";
 
 const Travaux3 = (props) => {
-   
+  const navigate=useNavigate(); 
   const dataWithoutFirst = Data[2].pics.slice(1);
   const lastPics = dataWithoutFirst.pop();
   const [nextRoute, setnextRoute] = useState(true);
-  return (
-    
-        <div >
+ let startX = 0;
+  let startY = 0;
+  let isScrolling = false;
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    isScrolling = false;
+   
+  };
+
+ 
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+   // if (!containerRef.current) return;
+  
+    const deltaX = e.touches[0].clientX - startX;
+    const deltaY = e.touches[0].clientY - startY;
+  
+    if (Math.abs(deltaX) < Math.abs(deltaY)) {
+      
+      isScrolling = true;
+  
+      
+    }else {
+      props.settrueboolroute(false)
+            if (deltaX > 0) {
+              props.setboolroute(false);
+              setTimeout(() => 
+              navigate("/travaux/" + props.url), 50);
+              
+            } else {
+       props.setboolroute(true);
+       
+              setTimeout(() => navigate('/travaux/' + props.url2), 50); // Naviguer vers la route suivante après l'animation
+              
+            }
+            
           
-          <div className="central">
+            
+             
+            
+          }
+  };
+
+  const handleTouchEnd = () => {
+    if (!isScrolling) {
+      // Handle horizontal swipe action here
+      console.log('Horizontal swipe detected');
+    }
+  };
+ 
+
+ 
+  return (
+   
+        <div>
+      
+      <div 
+       onTouchStart={handleTouchStart}
+       onTouchMove={handleTouchMove}
+       onTouchEnd={handleTouchEnd}
+      className="central">
         <div className="central-pix">
           <img src={Data[2].pics[0]} className="pixHead" alt="" />
         </div>

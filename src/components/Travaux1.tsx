@@ -51,7 +51,57 @@ const Travaux1 = (props) => {
   //   }
   // }
   // Effectuer la navigation
+  let startX = 0;
+  let startY = 0;
+  let isScrolling = false;
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    isScrolling = false;
    
+  };
+
+ 
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+   // if (!containerRef.current) return;
+  
+    const deltaX = e.touches[0].clientX - startX;
+    const deltaY = e.touches[0].clientY - startY;
+  
+    if (Math.abs(deltaX) < Math.abs(deltaY)) {
+      
+      isScrolling = true;
+  
+      
+    }else {
+      props.settrueboolroute(false)
+            if (deltaX > 0) {
+              props.setboolroute(false);
+              setTimeout(() => 
+              navigate("/travaux/" + props.url), 50);
+              
+            } else {
+       props.setboolroute(true);
+       
+              setTimeout(() => navigate('/travaux/' + props.url2), 50); // Naviguer vers la route suivante après l'animation
+              
+            }
+            
+          
+            
+             
+            
+          }
+  };
+
+  const handleTouchEnd = () => {
+    if (!isScrolling) {
+      // Handle horizontal swipe action here
+      console.log('Horizontal swipe detected');
+    }
+  };
  
 
  
@@ -59,7 +109,11 @@ const Travaux1 = (props) => {
    
         <div>
       
-      <div className="central">
+      <div 
+       onTouchStart={handleTouchStart}
+       onTouchMove={handleTouchMove}
+       onTouchEnd={handleTouchEnd}
+      className="central">
         <div className="central-pix">
           <img src={Data[0].pics[0]} className="pixHead" alt="" />
         </div>
