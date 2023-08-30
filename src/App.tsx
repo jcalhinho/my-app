@@ -188,7 +188,46 @@ export default function App() {
     setState(open);
   };
   
+  let startX = 0;
+  let startY = 0;
+  let isScrolling = false;
 
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    isScrolling = false;
+    console.log(startX)
+    console.log(startY)
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    // if (!containerRef.current) return;
+
+    const deltaX = Math.abs(e.touches[0].clientX - startX);
+    const deltaY = Math.abs(e.touches[0].clientY - startY);
+
+    if (deltaX < deltaY) {
+      
+     console.log('scrolling detected');
+      isScrolling = true;
+    }else {
+      setboolroute(true);
+    
+      setTimeout(() => 
+        navigate("/travaux/" + url2), 50);
+        // setboolroute(false);
+        
+        // setTimeout(() => navigate('/travaux/' + url), 50); // Naviguer vers la route suivante après l'animation
+      console.log('Horizontal swipe detected');
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (!isScrolling) {
+      // Handle horizontal swipe action here
+      console.log('Horizontal swipe detected');
+    }
+  };
   function Layout() {
     return (
       <div>
@@ -655,20 +694,14 @@ export default function App() {
                   variants={NEXTRoute()}
                   initial="initial"
                   animate="animate"
-                  onTouchStart={(event) => {
-                    console.log("tata")
-                  }}
-                  onTouchMove={(event) => {
-                    console.log("toto")
-                  }}
-                  onTouchEnd={(event) => {
-                    console.log("tutu")
-                  }}
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-        onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      //             drag="x"
+      // dragConstraints={{ left: -1000, right: 1000 }}
+      //   onDrag={(e, { offset }) => {
+      //   x.set(offset.x);
+      // }}
                 >
                   <Travaux1 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
@@ -677,12 +710,14 @@ export default function App() {
                   variants={NEXTRoute2()}
                   initial="initial"
                   animate="animate"
-                  
-                  drag="x"
-      dragConstraints={{ left: -1000, right: 1000 }}
-        onDrag={(e, { offset }) => {
-        x.set(offset.x);
-      }}
+                  onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      //             drag="x"
+      // dragConstraints={{ left: -1000, right: 1000 }}
+      //   onDrag={(e, { offset }) => {
+      //   x.set(offset.x);
+    //  }}
                 >
                   <Travaux1 isOpen={isOpen} settrueboolroute={settrueboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
                 </motion.div>
