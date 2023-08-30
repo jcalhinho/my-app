@@ -188,57 +188,7 @@ export default function App() {
     setState(open);
   };
   
-  let startX = 0;
-  let startY = 0;
-  let isScrolling = false;
 
-  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
-    isScrolling = false;
-   
-  };
-
- 
-
-  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-   // if (!containerRef.current) return;
-  
-    const deltaX = e.touches[0].clientX - startX;
-    const deltaY = e.touches[0].clientY - startY;
-  
-    if (Math.abs(deltaX) < Math.abs(deltaY)) {
-      
-      isScrolling = true;
-  
-      
-    }else {
-      settrueboolroute(false)
-            if (deltaX > 0) {
-              setboolroute(false);
-              setTimeout(() => 
-              navigate("/travaux/" + url), 50);
-              
-            } else {
-       setboolroute(true);
-       
-              setTimeout(() => navigate('/travaux/' + url2), 50); // Naviguer vers la route suivante après l'animation
-              
-            }
-            
-          
-            
-             
-            
-          }
-  };
-
-  const handleTouchEnd = () => {
-    if (!isScrolling) {
-      // Handle horizontal swipe action here
-      console.log('Horizontal swipe detected');
-    }
-  };
   function Layout() {
     return (
       <div>
@@ -396,10 +346,10 @@ export default function App() {
           {/* <div className="container"> */}
           {/* <motion.div
     initial={{ y: window.innerHeight }}
-    animate={{ y: 0, transition: { duration: 0.8 } }}
+    animate={{ x:0,y: 0, transition: { duration: 0.8 } }}
      exit={{opacity:0 , transition:{duration:0.8}}}
       
-    >
+    > */}
             <div className="top-left" >
               <div className="top-left-ensemble">
                 <Link className="top-left-contact-white" to="/contact">
@@ -411,7 +361,7 @@ export default function App() {
                 </Link>
               </div>
             </div>
-          </motion.div> */}
+          {/* </motion.div> */}
           {
             //Check if message failed
             location.pathname === "/travaux" ||
@@ -425,7 +375,7 @@ export default function App() {
             initial={{ y: window.innerHeight }}
             animate={{ y: 0, transition: { duration: 0.8 } }}
              exit={{opacity:0 , transition:{duration:0.8}}}
-          >
+          > */}
             <div className="top-right" >
               <div className="top-left-ensemble">
                 <div className="top-left-travaux" >
@@ -442,12 +392,12 @@ export default function App() {
                       color: "white",
                       fontSize: "1.4vw",
                     }}
-                  /> 
+                  /> */}
                   <p style={{marginTop:"25px"}}>travaux{" "}</p>
                 </div>
               </div>
             </div>
-                  </motion.div> */}
+          {/* </motion.div> */}
           {
             //Check if message failed
             location.pathname === "/travaux" ||
@@ -600,15 +550,9 @@ export default function App() {
           <Route
             path="/travaux"
             element={
-              <motion.div
-              variants={routeVariantstravaux}
-                  initial="initial"
-                  animate="animate"
-                 // exit="exit"
-                  
-                >
+              
                 <Layout2 />
-              </motion.div>
+             
             }
           >
             <Route
@@ -1227,9 +1171,7 @@ export default function App() {
                   variants={NEXTRoute2()}
                   initial="initial"
                   animate="animate"
-                  onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
+                 
                   
                   
                 >
@@ -1318,9 +1260,7 @@ export default function App() {
                   variants={NEXTRoute()}
                   initial="initial"
                   animate="animate"
-                  onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
+                 
                   
                   
                 >
