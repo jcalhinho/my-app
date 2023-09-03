@@ -43,14 +43,14 @@
     -webkit-flex: 1 0 auto;
     -ms-flex: 1 0 auto;
     flex: 1 0 auto;
-    z-index: 1200;
+    z-index: 12;
   
     position: fixed;
     top: 0;
     outline: 0;
     right: 0;
     width: 100%;;
-    touch-action: none;
+    
   }
   .spanlinktext  {
     color:white !important;
@@ -108,7 +108,7 @@ margin-top: 2vh;
     margin-top: 0px;
     overflow: auto;
     right: 0;
-    z-index: 0;
+    z-index: 2;
     height: 100%;
   }
   
@@ -126,7 +126,7 @@ margin-top: 2vh;
     margin-top: 0px;
     overflow: auto;
     left: 0;
-    z-index: 0;
+    z-index: 2;
     height: 100%;
   }
   
@@ -205,7 +205,7 @@ font-weight: 600;
     display: flex;
     color: white;
     font-weight: lighter;
-    z-index: 1;
+    z-index: 2;
     width: 4vw;
     height: 4vw;
     transform: rotate(45deg);
@@ -225,7 +225,7 @@ font-weight: 600;
     position: fixed;
     font-size: 4vw;
     font-weight: lighter;
-    z-index: 1;
+    z-index: 2;
     width: 4vw;
     height: 4vw;
     transform: rotate(45deg);
@@ -249,7 +249,7 @@ font-weight: 600;
     width: 100%;
     /* height: 101vh; 
     //background: rgb(0, 0, 0); */
-    margin: 0 auto 1vh auto;
+    margin: 1vh auto 1vh auto;
   
   }
   
@@ -825,6 +825,110 @@ border-right: none;
     transform: translateX(100%);
     transition: transform 800ms ease-in;
   }
+  .appbar2 {
+    min-height: 64px;
+  max-width: none !important;
+  width: 100%;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  display: flex;
+  justify-content: flex-end;
+  
+  }
+  .menuContainer {
+    width: 100%;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  display: flex;
+  height:100%;
+  }
+  .menuDivcentral {
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      height:85%;
+      justify-content: center;
+      margin-top:-4vh;
+      margin-bottom:-7vh
+    }
+    .spantext1  {
+      display:flex;
+      margin: auto;
+      text-transform: none;
+      
+    }
+    .menuDivtext1   {
+      display:flex;
+     margin: 0 auto 0 auto;
+      border-top: solid 0.7vh white;
+      border-bottom: solid 0.7vh white;
+      font-size: 12vw;
+      font-weight: bold;
+      font-family: "Futura";
+      font-style: "normal";
+      align-items: center;
+      width:100%;
+      padding-bottom:1.2vh
+    }
+    .menuDivtext2 {
+      display:flex;
+     
+      
+      border-bottom: solid 0.7vh white;
+      font-size:12vw;
+      font-weight: bold;
+      font-family: "Futura";
+      font-style: "normal";
+      align-items: center;
+      width:100%;
+      padding-bottom:1.2vh
+    }
+  
+  .menuicon {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 11.2vw!important;
+    height: 11.2vw!important;
+    display: inline-block;
+    fill: rgba(255, 88, 0, 1) !important;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: 11.2vw;
+  }
+  .iconmuiContact2 {
+    font-size: 10vw;
+      color: white;
+    
+      
+    }
+    .icon-group3 {
+      display: flex;
+      justify-content: space-around;
+      width: 50%;
+        margin: auto auto 6vh auto ;
+      }
+      .icon-group4 {
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+        margin: auto;
+        }
+        .lien-contact2 {
+          display: flex;
+          justify-content: space-around;
+          width: 50%;
+            margin: auto;
+            color:#ff5800;
+            font-size: 3.8vw;
+      font-weight: 600;
+      font-family: "Futura";
+      font-style: "normal"
+          }
 }
 
 /* Écran petit (téléphone en mode portrait) */
@@ -863,7 +967,7 @@ border-right: none;
     position: fixed;
     top: 0px;
     background: #000;
-    margin-top: 40px;
+   
     overflow: auto;
     right: 0;
     z-index: 10000;
@@ -881,7 +985,7 @@ border-right: none;
     background: #000;
     position: fixed;
     top: 0px;
-    margin-top: 40px;
+    
     overflow: auto;
     left: 0;
     z-index: 10000;
@@ -1634,6 +1738,110 @@ margin-right: 10%;
     transform: translateX(100%);
     transition: transform 800ms ease-in;
   }
+  .appbar2 {
+    min-height: 64px;
+  max-width: none !important;
+  width: 100%;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  display: flex;
+  justify-content: flex-end;
+  
+  }
+  .menuContainer {
+    width: 100%;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  display: flex;
+  height:100%;
+  }
+  .menuDivcentral {
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      height:85%;
+      justify-content: center;
+      margin-top:-4vh;
+      margin-bottom:-7vh
+    }
+    .spantext1  {
+      display:flex;
+      margin: auto;
+      text-transform: none;
+      
+    }
+    .menuDivtext1   {
+      display:flex;
+     margin: 0 auto 0 auto;
+      border-top: solid 0.7vh white;
+      border-bottom: solid 0.7vh white;
+      font-size: 12vw;
+      font-weight: bold;
+      font-family: "Futura";
+      font-style: "normal";
+      align-items: center;
+      width:100%;
+      padding-bottom:1.2vh
+    }
+    .menuDivtext2 {
+      display:flex;
+     
+      
+      border-bottom: solid 0.7vh white;
+      font-size:12vw;
+      font-weight: bold;
+      font-family: "Futura";
+      font-style: "normal";
+      align-items: center;
+      width:100%;
+      padding-bottom:1.2vh
+    }
+  
+  .menuicon {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 11.2vw!important;
+    height: 11.2vw!important;
+    display: inline-block;
+    fill: rgba(255, 88, 0, 1) !important;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: 11.2vw;
+  }
+  .iconmuiContact2 {
+    font-size: 10vw;
+      color: white;
+    
+      
+    }
+    .icon-group3 {
+      display: flex;
+      justify-content: space-around;
+      width: 50%;
+        margin: auto auto 6vh auto ;
+      }
+      .icon-group4 {
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+        margin: auto;
+        }
+        .lien-contact2 {
+          display: flex;
+          justify-content: space-around;
+          width: 50%;
+            margin: auto;
+            color:#ff5800;
+            font-size: 3.8vw;
+      font-weight: 600;
+      font-family: "Futura";
+      font-style: "normal"
+          }
 }
 
 /* Écran moyen à grand (tablette ou ordinateur portable) */
@@ -1707,7 +1915,7 @@ margin-right: 10%;
     position: fixed;
     top: 0px;
     background: #000;
-    margin-top: 40px;
+   
     overflow: auto;
     right: 0;
     z-index: 10000;
@@ -1727,7 +1935,7 @@ margin-right: 10%;
     background: #000;
     position: fixed;
     top: 0px;
-    margin-top: 40px;
+   
     overflow: auto;
     left: 0;
     z-index: 10000;
@@ -2440,7 +2648,110 @@ margin-right: 10%;
     display: flex;
   
   }
+  .appbar2 {
+    min-height: 64px;
+  max-width: none !important;
+  width: 100%;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  display: flex;
+  justify-content: flex-end;
   
+  }
+  .menuContainer {
+    width: 100%;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  display: flex;
+  height:100%;
+  }
+  .menuDivcentral {
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      height:85%;
+      justify-content: center;
+      margin-top:-4vh;
+      margin-bottom:-7vh
+    }
+    .spantext1  {
+      display:flex;
+      margin: auto;
+      text-transform: none;
+      
+    }
+    .menuDivtext1   {
+      display:flex;
+     margin: 0 auto 0 auto;
+      border-top: solid 0.7vh white;
+      border-bottom: solid 0.7vh white;
+      font-size: 12vw;
+      font-weight: bold;
+      font-family: "Futura";
+      font-style: "normal";
+      align-items: center;
+      width:100%;
+      padding-bottom:1.2vh
+    }
+    .menuDivtext2 {
+      display:flex;
+     
+      
+      border-bottom: solid 0.7vh white;
+      font-size:12vw;
+      font-weight: bold;
+      font-family: "Futura";
+      font-style: "normal";
+      align-items: center;
+      width:100%;
+      padding-bottom:1.2vh
+    }
+  
+  .menuicon {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 11.2vw!important;
+    height: 11.2vw!important;
+    display: inline-block;
+    fill: rgba(255, 88, 0, 1) !important;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: 11.2vw;
+  }
+  .iconmuiContact2 {
+    font-size: 10vw;
+      color: white;
+    
+      
+    }
+    .icon-group3 {
+      display: flex;
+      justify-content: space-around;
+      width: 50%;
+        margin: auto auto 6vh auto ;
+      }
+      .icon-group4 {
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+        margin: auto;
+        }
+        .lien-contact2 {
+          display: flex;
+          justify-content: space-around;
+          width: 50%;
+            margin: auto;
+            color:#ff5800;
+            font-size: 3.8vw;
+      font-weight: 600;
+      font-family: "Futura";
+      font-style: "normal"
+          }
   /* .fade-enter {
     opacity: 0;
   }
@@ -2479,109 +2790,6 @@ margin-right: 10%;
   
 }
 
-.appbar2 {
-  min-height: 64px;
-max-width: none !important;
-width: 100%;
-padding-left: 0px !important;
-padding-right: 0px !important;
-display: flex;
-justify-content: flex-end;
 
-}
-.menuContainer {
-  width: 100%;
-padding-left: 0px !important;
-padding-right: 0px !important;
-display: flex;
-height:100%;
-}
-.menuDivcentral {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    height:85%;
-    justify-content: center;
-    margin-top:-4vh;
-    margin-bottom:-7vh
-  }
-  .spantext1  {
-    display:flex;
-    margin: auto;
-    text-transform: none;
-    
-  }
-  .menuDivtext1   {
-    display:flex;
-   margin: 0 auto 0 auto;
-    border-top: solid 0.7vh white;
-    border-bottom: solid 0.7vh white;
-    font-size: 12vw;
-    font-weight: bold;
-    font-family: "Futura";
-    font-style: "normal";
-    align-items: center;
-    width:100%;
-    padding-bottom:1.2vh
-  }
-  .menuDivtext2 {
-    display:flex;
-   
-    
-    border-bottom: solid 0.7vh white;
-    font-size:12vw;
-    font-weight: bold;
-    font-family: "Futura";
-    font-style: "normal";
-    align-items: center;
-    width:100%;
-    padding-bottom:1.2vh
-  }
-
-.menuicon {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 11.2vw!important;
-  height: 11.2vw!important;
-  display: inline-block;
-  fill: rgba(255, 88, 0, 1) !important;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  font-size: 11.2vw;
-}
-.iconmuiContact2 {
-  font-size: 10vw;
-    color: white;
-  
-    
-  }
-  .icon-group3 {
-    display: flex;
-    justify-content: space-around;
-    width: 50%;
-      margin: auto auto 6vh auto ;
-    }
-    .icon-group4 {
-      display: flex;
-      justify-content: space-around;
-      width: 50%;
-      margin: auto;
-      }
-      .lien-contact2 {
-        display: flex;
-        justify-content: space-around;
-        width: 50%;
-          margin: auto;
-          color:#ff5800;
-          font-size: 3.8vw;
-    font-weight: 600;
-    font-family: "Futura";
-    font-style: "normal"
-        }
 
        

@@ -6,6 +6,8 @@ import { Data } from "../data";
 import {Divider} from "@mui/material";
 import {Link, useNavigate} from "react-router-dom";
 import {SlArrowLeft, SlArrowRight} from "react-icons/sl";
+import { NEXTRoute, NEXTRoute2 } from "../App";
+import { useSwipeable, LEFT, RIGHT } from "react-swipeable";
 
 const Travaux19 = (props) => {
   
@@ -37,15 +39,15 @@ const Travaux19 = (props) => {
   
       
     }else {
-      props.settrueboolroute(false)
+      
             if (deltaX > 0) {
-              props.setboolroute(false);
+              props.setIsOpen(true);
               setTimeout(() => 
               navigate("/travaux/" + props.url), 50);
               
             } else {
-       props.setboolroute(true);
-       
+      
+              props.setIsOpen(false);
               setTimeout(() => navigate('/travaux/' + props.url2), 50); // Naviguer vers la route suivante après l'animation
               
             }
@@ -57,57 +59,92 @@ const Travaux19 = (props) => {
           }
   };
 
-  const handleTouchEnd = () => {
-    if (!isScrolling) {
-      // Handle horizontal swipe action here
-      console.log('Horizontal swipe detected');
-    }
-  };
- 
+   const handlers = useSwipeable({
+    onSwipedLeft: (eventData) => {
 
- 
+      props.setIsOpen(false);
+       setTimeout(() => 
+       navigate("/travaux/" + props.url2), 150);
+      
+  
+
+     
+    
+},
+onSwipedRight: (eventData) => {
+
+  
+  
+
+
+  props.setIsOpen(true);
+   setTimeout(() => navigate('/travaux/' + props.url), 150); // Naviguer vers la route suivante après l'animation
+
+
+},
+swipeDuration: Infinity,
+    
+
+
+
+
+})
+
+
+
   return (
    
-        <div>
-      
-      <div 
-       onTouchStart={handleTouchStart}
-       onTouchMove={handleTouchMove}
-       onTouchEnd={handleTouchEnd}
-      className="central">
+        <div {...handlers}>
+
+ 
+  
+{/* {props.trueboolroute ?  */} 
+          <motion.div
+              variants={NEXTRoute(props.isOpen)}
+              initial="initial"
+              animate="animate"
+             
+           
+            >
+  <div 
+ 
+  className="central">
     <div className="central-pix">
-      <img src={ Data[18].pics[0]} className="pixHead" alt="" />
+      <img src={Data[18].pics[0]} className="pixHead" alt="" />
     </div>
     <div className="text">
       <div id="link" className="top-left-icon">
         <Link to={"/travaux/" + props.url}>
           <SlArrowLeft
-                style={{ color: "transparent" }}
-                className="top-left-iconright"
-                onClick={() =>{ props.setIsOpen(true);
-                props.settrueboolroute(true);
-                }}/>                    </Link>
+            style={{ color: "transparent" }}
+            className="top-left-iconright"
+            onClick={() =>{ props.setIsOpen(true);
+            props.settrueboolroute(true);
+            }}/> 
+         
+        </Link>
       </div>
       <div className="text-left">
         
-          <p className="text-content-titre">{ Data[18].titre}</p>
-          <p className="text-content-soustitre">{ Data[18].subtitle}</p>
+          <p className="text-content-titre">{Data[18].titre}</p>
+          <p className="text-content-soustitre">{Data[18].subtitle}</p>
         
 
-        <p className="text-content-credit">{ Data[18].credit}</p>
+        <p className="text-content-credit">{Data[18].credit}</p>
       </div>
       <div className="text-right">
-        <p className="text-content-des">{ Data[18].desc}</p>
+        <p className="text-content-des">{Data[18].desc}</p>
       </div>
 
       <div id="link" className="top-right-icon">
         <Link to={"/travaux/" + props.url2}>
           <SlArrowRight
-                style={{ color: "transparent" }}
-                className="top-left-iconright"
-                onClick={() =>{ props.setIsOpen(false);
-                  props.settrueboolroute(true)}}
-                  />            
+            style={{ color: "transparent" }}
+            className="top-left-iconright"
+            onClick={() =>{ props.setIsOpen(false);
+              props.settrueboolroute(true)}}
+              />   
+          
         </Link>
       </div>
     </div>
@@ -126,15 +163,16 @@ const Travaux19 = (props) => {
     </div>
   </div>
   
+ 
   <div className="divider-icon">
     <div className="divider2-white22" />
     <a className="lien-contact" href="/">
       contact@nicocarmine.com
     </a>
     <div className="divider2-white22" style={{ marginLeft: "0px" }} />
-  </div>
+  </div></motion.div>
 </div>
- 
+
 );
 };
 export default Travaux19;
