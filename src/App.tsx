@@ -51,6 +51,7 @@ import Travaux5 from "./components/Travaux5";
 import Travaux6 from "./components/Travaux6";
 import Travaux7 from "./components/Travaux7";
 import Travaux8 from "./components/Travaux8";
+import { LEFT } from "react-swipeable";
 
 export const handleRouteChange = () => {
   window.scrollTo(0, 0);
@@ -59,15 +60,16 @@ export function NEXTRoute(param: boolean) {
   console.log(param)
   if (param === true) {
     const routeVariantstravauxnumber = {
-      initial: { x: -parent.innerWidth,opacity:0 },
+      initial: { x:-parent.innerWidth,opacity:0 },
       animate: {
         transition: { duration: 0.8 },
         opacity: 1,
+       
         x: 0,
         y: 0,
       },
 
-       exit:{transition: { duration: 0.8 },
+       exit:{transition: { duration: 0.2 },
        opacity: 0,}
     };
     return routeVariantstravauxnumber;
@@ -81,8 +83,9 @@ export function NEXTRoute(param: boolean) {
         y: 0,
       },
 
-       exit:{transition: { duration: 0.8 },
-       opacity: 0,}
+       exit:{transition: { duration: 0.2 },
+       opacity: 0,
+       }
     };
     return routeVariantstravauxnumber;
   }
@@ -388,106 +391,7 @@ console.log(boolroute)
                   exit="exit"
                 >
                   <>
-                    <AppBar
-            className="topappbar"
-            style={{ display: "none", background: "black" }}
-            position="relative"
-           
-          >
-            <Container className="appbar3">
-              <Toolbar>
-                <Link className="top-left-nico" to="/">
-                  nicocarmine
-                </Link>
-
-                <div onClick={toggleDrawer(true)}>
-                  <MenuIcon className="menuicon" />
-                </div>
-
-                {/* The outside of the drawer  */}
-                <Drawer
-                  //from which side the drawer slides in
-                  anchor="right"
-                  //if open is true --> drawer is shown
-                  open={open}
-                  //function that is called when the drawer should close
-                  onClose={toggleDrawer(false)}
-                  //function that is called when the drawer should open
-                  // onOpen={toggleDrawer(true)}
-                >
-                  {/* The inside of the drawer  */}
-                  <AppBar
-                    className="appbar3"
-                    style={{ display: "block", background: "black" }}
-                    position="relative"
-                  >
-                    <Container className="menuContainer">
-                      <Toolbar>
-                        <Link
-                          className="top-left-nico"
-                          onClick={() => setState(false)}
-                          to="/"
-                        >
-                          nicocarmine
-                        </Link>
-
-                        <div onClick={toggleDrawer(false)}>
-                          <CloseIcon className="menuicon" />
-                        </div>
-
-                        {/* The outside of the drawer  */}
-                      </Toolbar>
-                      <div className="menuDivcentral">
-                        <div className="menuDivtext1">
-                          <Link
-                            className="top-left-contact-white"
-                            onClick={() => setState(false)}
-                            to="/travaux"
-                          >
-                            travaux
-                          </Link>
-                        </div>
-
-                        <div className="menuDivtext2">
-                          <Link
-                            className="top-left-contact-white"
-                            onClick={() => setState(false)}
-                            to="/contact"
-                          >
-                            contact
-                          </Link>
-                        </div>
-                      </div>
-                      <div className="icon-group3">
-                        <Link
-                          to={
-                            "https://www.linkedin.com/in/nicolas-carmine-448b703a/"
-                          }
-                        >
-                          <FaLinkedin className="iconmuiContact2" />
-                        </Link>
-                        <Link
-                          to={
-                            "https://www.behance.net/nicocarmine?locale=fr_FR"
-                          }
-                        >
-                          <FaBehanceSquare className="iconmuiContact2" />
-                        </Link>
-                        <Link to={"https://www.instagram.com/nico.carmine/"}>
-                          <FaInstagram className="iconmuiContact2" />{" "}
-                        </Link>
-                      </div>
-                      <div className="icon-group4">
-                        <a className="lien-contact2" href="/">
-                          contact@nicocarmine.com
-                        </a>
-                      </div>
-                    </Container>
-                  </AppBar>
-                </Drawer>
-              </Toolbar>
-            </Container>
-          </AppBar>
+                    
                 <Layout2 />
                     <Contact />
                   </>

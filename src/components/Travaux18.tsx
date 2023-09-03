@@ -59,36 +59,21 @@ const Travaux18 = (props) => {
           }
   };
 
-   const handlers = useSwipeable({
+    const handlers = useSwipeable({
     onSwipedLeft: (eventData) => {
-
       props.setIsOpen(false);
-       setTimeout(() => 
-       navigate("/travaux/" + props.url2), 150);
-      
-  
-
-     
-    
-},
-onSwipedRight: (eventData) => {
-
-  
-  
-
-
-  props.setIsOpen(true);
-   setTimeout(() => navigate('/travaux/' + props.url), 150); // Naviguer vers la route suivante après l'animation
-
-
-},
-swipeDuration: Infinity,
-    
-
-
-
-
-})
+      navigate("/travaux/" + props.url2)
+    },
+    onSwipedRight: (eventData) => {
+      props.setIsOpen(true);
+     navigate("/travaux/" + props.url)// Naviguer vers la route suivante après l'animation
+    },
+    swipeDuration: Infinity,
+     // onTouchStartOrOnMouseDown: (({ event }) => event.preventDefault()),
+    touchEventOptions: { passive: false },
+    preventScrollOnSwipe: true,
+    trackMouse: true
+  });
 
 
 
@@ -101,9 +86,10 @@ swipeDuration: Infinity,
   
 {/* {props.trueboolroute ?  */} 
           <motion.div
-              variants={NEXTRoute(props.isOpen)}
-              initial="initial"
-              animate="animate"
+        variants={NEXTRoute(props.isOpen)}
+        initial="initial"
+        animate="animate"
+        exit="exit"
              
            
             >
