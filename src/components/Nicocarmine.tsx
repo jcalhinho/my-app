@@ -42,7 +42,7 @@ if(scrollDir === "down") {
                 <div className="column-nicocarmine" >
                     <h2 className="title-nicocarmine" >nicocarmine</h2>
                    <div className="divider2-white22" />
-                    <a className="lien-contact" href="/">contact@nicocarmine.com</a>
+                    <div className="lien-contact"onClick={(e) => {window.location.href ='mailto:contact@nicocarmine.com';}}>contact@nicocarmine.com</div>
                    
                 </div>
                 

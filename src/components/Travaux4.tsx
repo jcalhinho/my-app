@@ -220,9 +220,7 @@ alt=""
 </motion.div>  } */}
   <div className="divider-icon">
     <div className="divider2-white22" />
-    <a className="lien-contact" href="/">
-      contact@nicocarmine.com
-    </a>
+    <div className="lien-contact"onClick={(e) => {window.location.href ='mailto:contact@nicocarmine.com';}}>contact@nicocarmine.com</div>
     <div className="divider2-white22" style={{ marginLeft: "0px" }} />
   </div></motion.div>
 </div>

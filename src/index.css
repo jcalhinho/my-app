@@ -628,6 +628,7 @@ border-right: none;
     color: #ff5800;
     font-family: "Inter";
     font-size:2vw;
+    cursor:pointer;
     font-weight: bold;
     margin: auto 2vw auto 2vw  !important;
     width: auto;
@@ -922,6 +923,7 @@ border-right: none;
           display: flex;
           justify-content: space-around;
           width: 50%;
+          cursor:pointer;
             margin: auto;
             color:#ff5800;
             font-size: 3.8vw;
@@ -1488,6 +1490,7 @@ margin-right: 10%;
     font-weight: bold;
     margin: auto 20px 5px 0 !important;
     width: auto;
+    cursor:pointer;
   }
   
   .containerContact {
@@ -1546,7 +1549,7 @@ margin-right: 10%;
     font-family: "Inter";
     font-size:1vw;
     font-weight: bold;
-    
+    cursor:pointer;
     margin: 0 1vw 0 1vw!important;
     width: auto;
   }
@@ -1840,7 +1843,8 @@ margin-right: 10%;
             font-size: 3.8vw;
       font-weight: 600;
       font-family: "Futura";
-      font-style: "normal"
+      font-style: "normal";
+      cursor:pointer;
           }
 }
 
@@ -2445,7 +2449,7 @@ margin-right: 10%;
     font-family: "Inter";
     font-size:1vw;
     font-weight: bold;
-    
+    cursor:pointer;
     margin: 0 1vw 0 1vw!important;
     width: auto;
   }
@@ -2750,7 +2754,8 @@ margin-right: 10%;
             font-size: 3.8vw;
       font-weight: 600;
       font-family: "Futura";
-      font-style: "normal"
+      font-style: "normal";
+      cursor:pointer;
           }
   /* .fade-enter {
     opacity: 0;
