@@ -151,27 +151,7 @@ export default function App() {
 
   const navigate = useNavigate();
   const controls = useAnimation();
-  // const handleGesture = (event, info) => {
-  //   settrueboolroute(false);
-  //   const swipeThreshold = 150; // Seuil de glissement en pixels
 
-  //   if (info.offset.x <= swipeThreshold) {
-  //     // Glissement vers setIsOpen(true)
-  //     setboolroute(true);
-  //     controls.start({ x: 0 }); // Animation pour sortir de l'écran à droite
-  //     setTimeout(() =>
-  //       navigate("/travaux/" + url2), 50);
-  //      // Naviguer vers la route précédente après l'animation
-  //   } else if (info.offset.x > swipeThreshold) {
-  //     // Glissement vers la gauche (avance)
-  //     setboolroute(false);
-  //     controls.start({ x: info.point.x < 0 ? -200 : 200 }); // Animation pour sortir de l'écran à gauche
-  //     setTimeout(() => navigate('/travaux/' + url), 50); // Naviguer vers la route suivante après l'animation
-  //   }
-
-  // };
-console.log(trueboolroute);
-console.log(boolroute)
   const [open, setState] = useState(false);
 
   //function that is being called every time the drawer should open or close, the keys tab and shift are excluded so the user can focus between the elements with the keys
@@ -402,7 +382,10 @@ console.log(boolroute)
 
           <Route path="/travaux" element={
           <>
-          
+            
+            
+  
+         
           <Outlet />
           </>}>
             <Route
@@ -509,7 +492,11 @@ console.log(boolroute)
               </Toolbar>
             </Container>
           </AppBar>
-                  <Travaux /></>
+         
+          <Layout2 /> 
+                  <Travaux />
+                  
+                  </>
               
               }
             />
