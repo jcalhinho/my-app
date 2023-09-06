@@ -2,8 +2,7 @@
 import {
   AnimatePresence,
   motion,
-  useAnimation,
-  useMotionValue,
+ 
 } from "framer-motion";
 
 import React, { useState } from "react";
@@ -16,7 +15,7 @@ import {
   Route,
   Outlet,
   useLocation,
-  useNavigate,
+ 
   Link,
 } from "react-router-dom";
 
@@ -51,7 +50,7 @@ import Travaux5 from "./components/Travaux5";
 import Travaux6 from "./components/Travaux6";
 import Travaux7 from "./components/Travaux7";
 import Travaux8 from "./components/Travaux8";
-import { LEFT } from "react-swipeable";
+
 
 export const handleRouteChange = () => {
   window.scrollTo(0, 0);
@@ -142,15 +141,10 @@ export default function App() {
     }
   };
   calcurl();
-  console.log(isOpen,"fleche")
-  console.log(boolroute,"swipe")
+ 
 
   // Effectuer la navigation
-  const x = useMotionValue(0);
-  const scrollY = useMotionValue(0);
-
-  const navigate = useNavigate();
-  const controls = useAnimation();
+  
 
   const [open, setState] = useState(false);
 
