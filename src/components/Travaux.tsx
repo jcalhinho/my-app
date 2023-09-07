@@ -40,7 +40,7 @@ const Travaux = () => {
           {Data.map((pic, index) => (
             <div key={index} className="thumb">
               <Link to={`/travaux/${pic.id}`}>
-                <img src={pic.vignette} className="pixThumb" alt="" />
+                <img loading="lazy" src={pic.vignette} className="pixThumb" alt="" />
               </Link>
               <p className="firstPixP">{pic.titre}</p>
               <p className="secondPixP">{pic.type}</p>

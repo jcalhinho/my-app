@@ -98,7 +98,7 @@ const Travaux4 = (props) => {
   
   className="central">
     <div className="central-pix">
-      <img src={Data[3].pics[0]} className="pixHead" alt="" />
+      <img loading="lazy" src={Data[3].pics[0]} className="pixHead" alt="" />
     </div>
     <div className="text">
       <div id="link" className="top-left-icon">
@@ -140,14 +140,14 @@ const Travaux4 = (props) => {
     <div className="central-pix">
       <Divider className="divider1-white2" />
       {dataWithoutFirst.map((pic, index) => (
-        <img
+        <img loading="lazy"
           key={index}
           src={pic}
           className={index === 0 ? "pixFirst" : "pix"}
           alt=""
         />
       ))}
-      <img src={lastPics} className={"pixHead"} alt="" />
+      <img loading="lazy" src={lastPics} className={"pixHead"} alt="" />
     </div>
   </div>
   
@@ -165,7 +165,7 @@ onTouchMove={handleTouchMove}
 onTouchEnd={handleTouchEnd}
 className="central">
 <div className="central-pix">
-<img src={Data[3].pics[0]} className="pixHead" alt="" />
+<img loading="lazy" src={Data[3].pics[0]} className="pixHead" alt="" />
 </div>
 <div className="text">
 <div id="link" className="top-left-icon">
@@ -207,14 +207,14 @@ onClick={() =>{ props.setIsOpen(false);
 <div className="central-pix">
 <Divider className="divider1-white2" />
 {dataWithoutFirst.map((pic, index) => (
-<img
+<img loading="lazy"
 key={index}
 src={pic}
 className={index === 0 ? "pixFirst" : "pix"}
 alt=""
 />
 ))}
-<img src={lastPics} className={"pixHead"} alt="" />
+<img loading="lazy" src={lastPics} className={"pixHead"} alt="" />
 </div>
 </div>
 </motion.div>  } */}
