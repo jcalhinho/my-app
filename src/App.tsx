@@ -1,10 +1,6 @@
 /* eslint-disable no-restricted-globals */
-import {
-  AnimatePresence,
-  motion,
- 
-} from "framer-motion";
 
+import "swiper/css";
 import React, { useState } from "react";
 import { FaBehanceSquare, FaLinkedin, FaInstagram } from "react-icons/fa";
 
@@ -18,7 +14,11 @@ import {
  
   Link,
 } from "react-router-dom";
-
+import {
+  AnimatePresence,
+  motion,
+ 
+} from "framer-motion";
 import Contact from "./components/Contact";
 
 import Nicocarmine from "./components/Nicocarmine";

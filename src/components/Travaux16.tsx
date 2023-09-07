@@ -6,58 +6,15 @@ import { Data } from "../data";
 import {Divider} from "@mui/material";
 import {Link, useNavigate} from "react-router-dom";
 import {SlArrowLeft, SlArrowRight} from "react-icons/sl";
-import { NEXTRoute, NEXTRoute2 } from "../App";
-import { useSwipeable, LEFT, RIGHT } from "react-swipeable";
+import { NEXTRoute } from "../App";
+import { useSwipeable } from "react-swipeable";
 
 const Travaux16 = (props) => {
   
   const dataWithoutFirst = Data[15].pics.slice(1);
   const lastPics = dataWithoutFirst.pop();
 
-  const navigate=useNavigate();  let startX = 0;
-  let startY = 0;
-  let isScrolling = false;
-
-  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
-    isScrolling = false;
-   
-  };
-
- 
-
-  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-   // if (!containerRef.current) return;
-  
-    const deltaX = e.touches[0].clientX - startX;
-    const deltaY = e.touches[0].clientY - startY;
-  
-    if (Math.abs(deltaX) < Math.abs(deltaY)) {
-      
-      isScrolling = true;
-  
-      
-    }else {
-      
-            if (deltaX > 0) {
-              props.setIsOpen(true);
-              setTimeout(() => 
-              navigate("/travaux/" + props.url), 50);
-              
-            } else {
-      
-              props.setIsOpen(false);
-              setTimeout(() => navigate('/travaux/' + props.url2), 50); // Naviguer vers la route suivante après l'animation
-              
-            }
-            
-          
-            
-             
-            
-          }
-  };
+  const navigate=useNavigate();  
 
     const handlers = useSwipeable({
     onSwipedLeft: (eventData) => {

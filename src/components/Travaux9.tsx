@@ -7,65 +7,28 @@ import {Divider} from "@mui/material";
 import {Link, useNavigate} from "react-router-dom";
 import {SlArrowLeft, SlArrowRight} from "react-icons/sl";
 import { useState } from "react";
-import { NEXTRoute, NEXTRoute2 } from "../App";
-import { useSwipeable, LEFT, RIGHT } from "react-swipeable";
+import { NEXTRoute } from "../App";
+import { useSwipeable } from "react-swipeable";
 
 const Travaux9 = (props) => {
  
   const dataWithoutFirst = Data[8].pics.slice(1);
   const lastPics = dataWithoutFirst.pop();
-  const [nextRoute, setnextRoute] = useState(true);
+  
   const navigate=useNavigate();  let startX = 0;
   let startY = 0;
   let isScrolling = false;
 
-  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
-    isScrolling = false;
-   
-  };
 
  
 
-  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-   // if (!containerRef.current) return;
-  
-    const deltaX = e.touches[0].clientX - startX;
-    const deltaY = e.touches[0].clientY - startY;
-  
-    if (Math.abs(deltaX) < Math.abs(deltaY)) {
-      
-      isScrolling = true;
-  
-      
-    }else {
-      
-            if (deltaX > 0) {
-              props.setIsOpen(true);
-              setTimeout(() => 
-              navigate("/travaux/" + props.url), 50);
-              
-            } else {
-      
-              props.setIsOpen(false);
-              setTimeout(() => navigate('/travaux/' + props.url2), 50); // Naviguer vers la route suivante après l'animation
-              
-            }
-            
-          
-            
-             
-            
-          }
-  };
 
     const handlers = useSwipeable({
-    onSwipedLeft: (eventData) => {
+    onSwipedLeft: () => {
       props.setIsOpen(false);
       navigate("/travaux/" + props.url2)
     },
-    onSwipedRight: (eventData) => {
+    onSwipedRight: () => {
       props.setIsOpen(true);
      navigate("/travaux/" + props.url)// Naviguer vers la route suivante après l'animation
     },
@@ -154,7 +117,7 @@ const Travaux9 = (props) => {
 
   <div className="divider-icon">
     <div className="divider2-white22" />
-    <div className="lien-contact"onClick={(e) => {window.location.href ='mailto:contact@nicocarmine.com';}}>contact@nicocarmine.com</div>
+    <div className="lien-contact"onClick={() => {window.location.href ='mailto:contact@nicocarmine.com';}}>contact@nicocarmine.com</div>
     <div className="divider2-white22" style={{ marginLeft: "0px" }} />
   </div></motion.div>
 </div>

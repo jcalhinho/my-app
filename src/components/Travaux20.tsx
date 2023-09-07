@@ -7,14 +7,14 @@ import { Divider } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { useState } from "react";
-import { NEXTRoute, NEXTRoute2 } from "../App";
-import { useSwipeable, LEFT, RIGHT } from "react-swipeable";
+import { NEXTRoute } from "../App";
+import { useSwipeable } from "react-swipeable";
 
 const Travaux20 = (props) => {
   const dataWithoutFirst = Data[19].pics.slice(1);
 
   const lastPics = dataWithoutFirst.pop();
-  const [nextRoute, setnextRoute] = useState(true);
+  
   const navigate = useNavigate();
   let startX = 0;
   let startY = 0;
