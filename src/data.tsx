@@ -26,7 +26,7 @@ import pic19 from "./pix/20-THUMB_Pelicafe.jpg";
 
 
 
-import paon from "./01-MR PAON/MR PAON_01.png";
+import paon from "./01-MR PAON/MR PAON_01.jpg";
 import paon1 from "./01-MR PAON/MR PAON_02.jpg";
 import paon2 from "./01-MR PAON/MR PAON_03.jpg";
 import paon3 from "./01-MR PAON/MR PAON_04.jpg";
@@ -54,12 +54,12 @@ import monfils3 from "./04-MON FILS/MON-FILS-04.jpg";
 
 import bmr from "./05-BMR EDITION/BMR EDITION_01.png";
 import bmr1 from "./05-BMR EDITION/BMR EDITION_02.png";
-import bmr2 from "./05-BMR EDITION/BMR EDITION_03.png";
-import bmr3 from "./05-BMR EDITION/BMR EDITION_04.png";
-import bmr4 from "./05-BMR EDITION/BMR EDITION_05.png";
+import bmr2 from "./05-BMR EDITION/BMR EDITION_03.jpg";
+import bmr3 from "./05-BMR EDITION/BMR EDITION_04.jpg";
+import bmr4 from "./05-BMR EDITION/BMR EDITION_05.jpg";
 import bmr5 from "./05-BMR EDITION/BMR EDITION_06.jpg";
-import bmr6 from "./05-BMR EDITION/BMR EDITION_07.png";
-import bmr7 from "./05-BMR EDITION/BMR EDITION_08.png";
+import bmr6 from "./05-BMR EDITION/BMR EDITION_07.jpg";
+import bmr7 from "./05-BMR EDITION/BMR EDITION_08.jpg";
 
 import issa from "./06-ISSA_UNIVERSITE DE PARIS/ISSA_UNIVERSITE DE PARIS_01.jpg";
 import issa1 from "./06-ISSA_UNIVERSITE DE PARIS/ISSA_UNIVERSITE DE PARIS_02.jpg";
