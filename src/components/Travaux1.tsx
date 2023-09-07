@@ -36,7 +36,7 @@ const Travaux1 = (props) => {
   });
 
   return (
-    <>
+    <div {...handlers}>
       {/* {props.trueboolroute ?  */}
       {/* <motion.div
         variants={NEXTRoute(props.isOpen)}
@@ -105,7 +105,7 @@ const Travaux1 = (props) => {
           <div className="divider2-white22" style={{ marginLeft: "0px" }} />
         </div>
       {/* </motion.div> */}
-    </>
+    </div>
   );
 };
 export default Travaux1;
