@@ -1,14 +1,14 @@
 import * as React from "react";
 import "../index.css";
 
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import { Data } from "../data";
 import {Divider} from "@mui/material";
 import {Link, useNavigate} from "react-router-dom";
 import {SlArrowLeft, SlArrowRight} from "react-icons/sl";
-import { useRef, useState } from "react";
+
 import { handleRouteChange, NEXTRoute, NEXTRoute2 } from "../App";
-import { useSwipeable, LEFT, RIGHT } from "react-swipeable";
+import { useSwipeable } from "react-swipeable";
 
 const Travaux2 = (props) => {
 
@@ -28,50 +28,9 @@ const Travaux2 = (props) => {
   // Effectuer la navigation
   const navigate=useNavigate(); 
   
-    let startX = 0;
-  let startY = 0;
-  let isScrolling = false;
-
-  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
-    isScrolling = false;
    
-  };
 
  
-
-  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-   // if (!containerRef.current) return;
-  
-    const deltaX = e.touches[0].clientX - startX;
-    const deltaY = e.touches[0].clientY - startY;
-  
-    if (Math.abs(deltaX) < Math.abs(deltaY)) {
-      
-      isScrolling = true;
-  
-      
-    }else {
-      
-            if (deltaX > 0) {
-              props.setIsOpen(true);
-              setTimeout(() => 
-              navigate("/travaux/" + props.url), 50);
-              
-            } else {
-      
-              props.setIsOpen(false);
-              setTimeout(() => navigate('/travaux/' + props.url2), 50); // Naviguer vers la route suivante après l'animation
-              
-            }
-            
-          
-            
-             
-            
-          }
-  };
 
     const handlers = useSwipeable({
     onSwipedLeft: (eventData) => {
@@ -102,7 +61,7 @@ const Travaux2 = (props) => {
         variants={NEXTRoute(props.isOpen)}
         initial="initial"
         animate="animate"
-        exit="exit"
+       
              
            
             >

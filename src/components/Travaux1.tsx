@@ -1,14 +1,15 @@
 import * as React from "react";
 import "../index.css";
 
-import { motion, useAnimation } from "framer-motion";
+
 import { Data } from "../data";
-import { Button, Divider } from "@mui/material";
-import { SlArrowDown, SlArrowLeft, SlArrowRight } from "react-icons/sl";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
-import { handleRouteChange, NEXTRoute, NEXTRoute2 } from "../App";
-import { LEFT, RIGHT, useSwipeable } from "react-swipeable";
+import {  Divider } from "@mui/material";
+import {  SlArrowLeft, SlArrowRight } from "react-icons/sl";
+import { Link,  useNavigate } from "react-router-dom";
+
+import {  useSwipeable } from "react-swipeable";
+import { motion } from "framer-motion";
+import { NEXTRoute } from "../App";
 
 const Travaux1 = (props) => {
   const navigate = useNavigate();
@@ -38,12 +39,12 @@ const Travaux1 = (props) => {
   return (
     <div {...handlers}>
       {/* {props.trueboolroute ?  */}
-      {/* <motion.div
+      <motion.div
         variants={NEXTRoute(props.isOpen)}
         initial="initial"
         animate="animate"
-        exit="exit"
-      > */}
+       
+      >
         <div className="central">
           <div className="central-pix">
             <img loading="lazy" src={Data[0].pics[0]} className="pixHead" alt="" />
@@ -104,7 +105,7 @@ const Travaux1 = (props) => {
           <div className="lien-contact"onClick={(e) => {window.location.href ='mailto:contact@nicocarmine.com';}}>contact@nicocarmine.com</div>
           <div className="divider2-white22" style={{ marginLeft: "0px" }} />
         </div>
-      {/* </motion.div> */}
+      </motion.div>
     </div>
   );
 };
