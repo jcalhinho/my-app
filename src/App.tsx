@@ -9,7 +9,7 @@ import React, { useState } from "react";
 import { FaBehanceSquare, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 // Import Swiper styles
-import "swiper/css";
+
 import {
   Routes,
   Route,
@@ -56,7 +56,7 @@ export const handleRouteChange = () => {
   window.scrollTo(0, 0);
 };
 export function NEXTRoute(param: boolean) {
-  console.log(param)
+
   if (param === true) {
     const routeVariantstravauxnumber = {
       initial: { x:-parent.innerWidth,opacity:0 },
@@ -90,7 +90,7 @@ export function NEXTRoute(param: boolean) {
   }
 }
 export function NEXTRoute2(param) {
-  console.log(param)
+
   if (param === true) {
     const routeVariantstravauxnumber = {
       initial: { x: window.innerWidth },
@@ -128,7 +128,7 @@ export default function App() {
   let url2: number | string = numero + 1;
   const [boolroute, setboolroute] = useState<boolean | null>(null);
   const [trueboolroute, settrueboolroute] = useState<boolean | null>(true);
-  handleRouteChange();
+  
   const calcurl = () => {
     if (numero === 1) {
       url = 20;
@@ -600,14 +600,7 @@ export default function App() {
             </Container>
           </AppBar>
                 <Layout2 />
-                  {/* {trueboolroute ? 
-              <motion.div
-                  variants={NEXTRoute()}
-                  initial="initial"
-                  animate="animate"
                  
-               
-                > */}
                   <Travaux1
                     isOpen={isOpen}
                     boolroute={boolroute}
@@ -618,18 +611,7 @@ export default function App() {
                     url={url}
                     url2={url2}
                   />
-                  {/* </motion.div>
-              :  
-              <motion.div
-                  variants={NEXTRoute2()}
-                  initial="initial"
-                  animate="animate"
                  
-                  
-                > 
-                  <Travaux1 isOpen={isOpen} settrueboolroute={settrueboolroute} setboolroute={setboolroute} setIsOpen={setIsOpen} url={url} url2={url2} />
-                {/* </motion.div>
-            } */}
                 </>
               }
             />
