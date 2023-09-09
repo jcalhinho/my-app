@@ -1,5 +1,4 @@
-/* eslint-disable no-restricted-globals */
-
+import './index.css';
 import "swiper/css";
 import React, { useState } from "react";
 import { FaBehanceSquare, FaLinkedin, FaInstagram } from "react-icons/fa";
@@ -59,7 +58,7 @@ export function NEXTRoute(param: boolean) {
 
   if (param === true) {
     const routeVariantstravauxnumber = {
-      initial: { x:-parent.innerWidth,opacity:0 },
+      initial: { x:-window.innerWidth,opacity:0 },
       animate: {
         transition: { duration: 0.8 },
         opacity: 1,
@@ -74,7 +73,7 @@ export function NEXTRoute(param: boolean) {
     return routeVariantstravauxnumber;
   } else if (param === false) {
     const routeVariantstravauxnumber = {
-      initial: { x: parent.innerWidth,opacity:0 },
+      initial: { x: window.innerWidth,opacity:0 },
       animate: {
         transition: { duration: 0.8 },
         opacity: 1,

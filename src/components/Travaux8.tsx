@@ -97,7 +97,7 @@ const Travaux8 = (props) => {
   
   className="central">
     <div className="central-pix">
-      <img loading="lazy" src={Data[7].pics[0]} className="pixHead" alt="" />
+      <img loading="eager" src={Data[7].pics[0]} className="pixHead" alt="nicocarmine" />
     </div>
     <div className="text">
       <div id="link" className="top-left-icon">
@@ -139,14 +139,14 @@ const Travaux8 = (props) => {
     <div className="central-pix">
       <Divider className="divider1-white2" />
       {dataWithoutFirst.map((pic, index) => (
-        <img loading="lazy"
+        <img loading="eager"
           key={index}
           src={pic}
           className={index === 0 ? "pixFirst" : "pix"}
-          alt=""
+          alt="nicocarmine"
         />
       ))}
-      <img loading="lazy" src={lastPics} className={"pixHead"} alt="" />
+      <img loading="eager" src={lastPics} className={"pixHead"} alt="nicocarmine" />
     </div>
   </div>
   

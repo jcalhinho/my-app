@@ -1847,7 +1847,7 @@ margin-right: 10%;
 }
 
 /* Écran moyen à grand (tablette ou ordinateur portable) */
-@media screen and (min-width: 1440px) and (max-width: 2560px) {
+
 
   body {
     margin: 0;
@@ -2066,8 +2066,8 @@ margin-right: 10%;
   
   .central {
     width: 100%;
-    /* height: 101vh; 
-    //background: rgb(0, 0, 0); */
+     /* height: 101vh;  */
+  background: rgb(0, 0, 0); 
     margin: 40px auto 20px auto;
   
   }
@@ -2754,43 +2754,9 @@ margin-right: 10%;
       font-style: normal;
       cursor:pointer;
           }
-  /* .fade-enter {
-    opacity: 0;
-  }
+ 
   
-  .fade-enter-active {
-    opacity: 1;
-    transition: opacity 800ms ease-in;
-  }
-  
-  .fade-exit {
-    opacity: 1;
-  }
-  
-  .fade-exit-active {
-    opacity: 0;
-    transition: opacity 800ms ease-in;
-  }
-  
-  .slide-enter {
-    transform: translateX(-100%);
-  }
-  
-  .slide-enter-active {
-    transform: translateX(0%);
-    transition: transform 800ms ease-in;
-  }
-  
-  .slide-exit {
-    transform: translateX(0%);
-  }
-  
-  .slide-exit-active {
-    transform: translateX(100%);
-    transition: transform 800ms ease-in;
-  } */
-  
-}
+
 
 
 
