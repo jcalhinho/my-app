@@ -7,7 +7,7 @@ import {Divider} from "@mui/material";
 import {Link, useNavigate} from "react-router-dom";
 import {SlArrowLeft, SlArrowRight} from "react-icons/sl";
 
-import { handleRouteChange, NEXTRoute, NEXTRoute2 } from "../App";
+import { handleRouteChange, NEXTRoute } from "../App";
 import { useSwipeable } from "react-swipeable";
 
 const Travaux2 = (props) => {

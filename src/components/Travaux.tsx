@@ -17,9 +17,10 @@ const Travaux = () => {
     initial: {
       opacity: 0,
       y: "100%",
+      transition: { duration: 1.2 },
     },
     animate: {
-      transition: { duration: 0.8 },
+      transition: { duration: 1.2 },
       opacity: 1,
       x: "0%",
       y: "0%",
@@ -40,6 +41,7 @@ const Travaux = () => {
           {Data.map((pic, index) => (
             <div key={index} className="thumb">
               <Link to={`/travaux/${pic.id}`}>
+              <source srcSet={pic.vignette}  type="image/webp" />
                 <img loading="eager" src={pic.vignette} className="pixThumb" alt="nicocarmine" />
               </Link>
               <p className="firstPixP">{pic.titre}</p>
