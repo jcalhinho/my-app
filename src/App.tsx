@@ -1,36 +1,25 @@
-import './index.css';
+import "./index.css";
 import "swiper/css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaBehanceSquare, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 // Import Swiper styles
 
-import {
-  Routes,
-  Route,
-  Outlet,
-  useLocation,
- 
-  Link,
-} from "react-router-dom";
-import {
-  AnimatePresence,
-  motion,
- 
-} from "framer-motion";
+import { Routes, Route, Outlet, useLocation, Link } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 import Contact from "./components/Contact";
 
 import Nicocarmine from "./components/Nicocarmine";
 import Travaux from "./components/Travaux";
 import Travaux1 from "./components/Travaux1";
 import Travaux10 from "./components/Travaux10";
-import MenuIcon from "@mui/icons-material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";import CloseIcon from "@mui/icons-material/Close";
 import Travaux20 from "./components/Travaux20";
 
 import Travaux9 from "./components/Travaux9";
 
 import "swiper/swiper-bundle.css";
-import CloseIcon from "@mui/icons-material/Close";
+
 import { AppBar, Container, Toolbar, Drawer } from "@mui/material";
 
 import Travaux2 from "./components/Travaux2";
@@ -50,30 +39,29 @@ import Travaux6 from "./components/Travaux6";
 import Travaux7 from "./components/Travaux7";
 import Travaux8 from "./components/Travaux8";
 
-
 export const handleRouteChange = () => {
   window.scrollTo(0, 0);
 };
-export function NEXTRoute(param: boolean) {
+// eslint-disable-next-line react-hooks/rules-of-hooks
 
+export function NEXTRoute(param: boolean) {
   if (param === true) {
     const routeVariantstravauxnumber = {
-      initial: { x:"-100vw",opacity:0 },
+      initial: { x: "-100vw", opacity: 0 },
       animate: {
         transition: { duration: 0.8 },
         opacity: 1,
-       
+
         x: 0,
         y: 0,
       },
 
-       exit:{transition: { duration: 0.2 },
-       opacity: 0,}
+      exit: { transition: { duration: 0.2 }, opacity: 0 },
     };
     return routeVariantstravauxnumber;
   } else if (param === false) {
     const routeVariantstravauxnumber = {
-      initial: { x: "100vw",opacity:0 },
+      initial: { x: "100vw", opacity: 0 },
       animate: {
         transition: { duration: 0.8 },
         opacity: 1,
@@ -81,9 +69,7 @@ export function NEXTRoute(param: boolean) {
         y: 0,
       },
 
-       exit:{transition: { duration: 0.2 },
-       opacity: 0,
-       }
+      exit: { transition: { duration: 0.2 }, opacity: 0 },
     };
     return routeVariantstravauxnumber;
   }
@@ -99,7 +85,7 @@ export default function App() {
   let url2: number | string = numero + 1;
   const [boolroute, setboolroute] = useState<boolean | null>(null);
   const [trueboolroute, settrueboolroute] = useState<boolean | null>(true);
-  
+
   const calcurl = () => {
     if (numero === 1) {
       url = 20;
@@ -112,10 +98,8 @@ export default function App() {
     }
   };
   calcurl();
- 
 
   // Effectuer la navigation
-  
 
   const [open, setState] = useState(false);
 
@@ -136,12 +120,12 @@ export default function App() {
   function Layout() {
     return (
       <div>
-        <AppBar
+         <AppBar
           className="topappbar"
-          style={{ display: "none", background: "black" }}
-          position="static"
+          style={{ display: "none", background: "black",left:0,top:0 }}
+          position="sticky"
         >
-          <Container className="appbar">
+          <Container className="appbar3">
             <Toolbar>
               <Link className="top-left-nico" to="/">
                 nicocarmine
@@ -164,13 +148,17 @@ export default function App() {
               >
                 {/* The inside of the drawer  */}
                 <AppBar
-                  className="topappbar"
-                  style={{ display: "none", background: "black" }}
-                  position="static"
+                  className="appbar3"
+                  style={{ display: "block", background: "black" }}
+                  position="relative"
                 >
                   <Container className="menuContainer">
                     <Toolbar>
-                      <Link className="top-left-nico" to="/">
+                      <Link
+                        className="top-left-nico"
+                        onClick={() => setState(false)}
+                        to="/"
+                      >
                         nicocarmine
                       </Link>
 
@@ -184,7 +172,7 @@ export default function App() {
                       <div className="menuDivtext1">
                         <Link
                           className="top-left-contact-white"
-                          onClick={toggleDrawer(false)}
+                          onClick={() => setState(false)}
                           to="/travaux"
                         >
                           travaux
@@ -194,7 +182,7 @@ export default function App() {
                       <div className="menuDivtext2">
                         <Link
                           className="top-left-contact-white"
-                          onClick={toggleDrawer(false)}
+                          onClick={() => setState(false)}
                           to="/contact"
                         >
                           contact
@@ -234,161 +222,157 @@ export default function App() {
     );
   }
   function Layout2() {
-   
-     
-      return (
-        <div >
-          <AppBar
-            className="topappbar"
-            style={{ display: "none", background: "black" }}
-            position="relative"
-           
-          >
-            <Container className="appbar3">
-              <Toolbar>
-                <Link className="top-left-nico" to="/">
-                  nicocarmine
-                </Link>
-
-                <div onClick={toggleDrawer(true)}>
-                  <MenuIcon className="menuicon" />
-                </div>
-
-                {/* The outside of the drawer  */}
-                <Drawer
-                  //from which side the drawer slides in
-                  anchor="right"
-                  //if open is true --> drawer is shown
-                  open={open}
-                  //function that is called when the drawer should close
-                  onClose={toggleDrawer(false)}
-                  //function that is called when the drawer should open
-                  // onOpen={toggleDrawer(true)}
-                >
-                  {/* The inside of the drawer  */}
-                  <AppBar
-                    className="appbar3"
-                    style={{ display: "block", background: "black" }}
-                    position="relative"
-                  >
-                    <Container className="menuContainer">
-                      <Toolbar>
-                        <Link
-                          className="top-left-nico"
-                          onClick={() => setState(false)}
-                          to="/"
-                        >
-                          nicocarmine
-                        </Link>
-
-                        <div onClick={toggleDrawer(false)}>
-                          <CloseIcon className="menuicon" />
-                        </div>
-
-                        {/* The outside of the drawer  */}
-                      </Toolbar>
-                      <div className="menuDivcentral">
-                        <div className="menuDivtext1">
-                          <Link
-                            className="top-left-contact-white"
-                            onClick={() => setState(false)}
-                            to="/travaux"
-                          >
-                            travaux
-                          </Link>
-                        </div>
-
-                        <div className="menuDivtext2">
-                          <Link
-                            className="top-left-contact-white"
-                            onClick={() => setState(false)}
-                            to="/contact"
-                          >
-                            contact
-                          </Link>
-                        </div>
-                      </div>
-                      <div className="icon-group3">
-                        <Link
-                          to={
-                            "https://www.linkedin.com/in/nicolas-carmine-448b703a/"
-                          }
-                        >
-                          <FaLinkedin className="iconmuiContact2" />
-                        </Link>
-                        <Link
-                          to={
-                            "https://www.behance.net/nicocarmine?locale=fr_FR"
-                          }
-                        >
-                          <FaBehanceSquare className="iconmuiContact2" />
-                        </Link>
-                        <Link to={"https://www.instagram.com/nico.carmine/"}>
-                          <FaInstagram className="iconmuiContact2" />{" "}
-                        </Link>
-                      </div>
-                      <div className="icon-group4">
-                        <a className="lien-contact2" href="/">
-                          contact@nicocarmine.com
-                        </a>
-                      </div>
-                    </Container>
-                  </AppBar>
-                </Drawer>
-              </Toolbar>
-            </Container>
-          </AppBar>
-          
-          {/* <div className="container"> */}
-          <div className="top-left" style={{marginTop:"40px"}}onClick={()=>{settrueboolroute(true);setboolroute(true)}}>
-            <div className="top-left-ensemble">
-              {/* <BurgerNav>
-            <Button
-                id="demo-positioned-button"
-                aria-controls={open ? 'demo-positioned-menu' : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? 'true' : undefined}
-                onClick={handleClick}
-            >
-                <MenuIcon />
-            </Button>
-            
-        </BurgerNav> */}
-              {location.pathname === "/contact" ? (
-                <Link className="top-left-contact" to="/contact">
-                  contact
-                </Link>
-              ) : (
-                <Link className="top-left-contact-white" to="/contact">
-                  contact
-                </Link>
-              )}
-
+    return (
+      <div>
+         <AppBar
+          className="topappbar"
+          style={{ display: "none", background: "black",left:0,top:0 }}
+          position="sticky"
+        >
+          <Container className="appbar3">
+            <Toolbar>
               <Link className="top-left-nico" to="/">
                 nicocarmine
               </Link>
-            </div>
-          </div>
+
+              <div onClick={toggleDrawer(true)}>
+                <MenuIcon className="menuicon" />
+              </div>
+
           
-          <div className="top-right" style={{marginTop:"40px"}}onClick={()=>{settrueboolroute(true);setboolroute(false)}}>
-            <div className="top-left-ensemble">
-              {location.pathname === "/contact" ? (
-                <Link className="top-left-travaux-white" to="/travaux">
-                  travaux
-                </Link>
-              ) : (
-                <Link className="top-left-travaux" to="/travaux">
-                  travaux
-                </Link>
-              )}
-            </div>
-          </div>
-         
-          {/* </div> */}
+              <Drawer
+                //from which side the drawer slides in
+                anchor="right"
+                //if open is true --> drawer is shown
+                open={open}
+                //function that is called when the drawer should close
+                onClose={toggleDrawer(false)}
+                //function that is called when the drawer should open
+                // onOpen={toggleDrawer(true)}
+              >
+               
+                <AppBar
+                  className="appbar3"
+                  style={{ display: "block", background: "black" }}
+                  position="relative"
+                >
+                  <Container className="menuContainer">
+                    <Toolbar>
+                      <Link
+                        className="top-left-nico"
+                        onClick={() => setState(false)}
+                        to="/"
+                      >
+                        nicocarmine
+                      </Link>
+
+                      <div onClick={toggleDrawer(false)}>
+                        <CloseIcon className="menuicon" />
+                      </div>
+
+                      
+                    </Toolbar>
+                    <div className="menuDivcentral">
+                      <div className="menuDivtext1">
+                        <Link
+                          className="top-left-contact-white"
+                          onClick={() => setState(false)}
+                          to="/travaux"
+                        >
+                          travaux
+                        </Link>
+                      </div>
+
+                      <div className="menuDivtext2">
+                        <Link
+                          className="top-left-contact-white"
+                          onClick={() => setState(false)}
+                          to="/contact"
+                        >
+                          contact
+                        </Link>
+                      </div>
+                    </div>
+                    <div className="icon-group3">
+                      <Link
+                        to={
+                          "https://www.linkedin.com/in/nicolas-carmine-448b703a/"
+                        }
+                      >
+                        <FaLinkedin className="iconmuiContact2" />
+                      </Link>
+                      <Link
+                        to={"https://www.behance.net/nicocarmine?locale=fr_FR"}
+                      >
+                        <FaBehanceSquare className="iconmuiContact2" />
+                      </Link>
+                      <Link to={"https://www.instagram.com/nico.carmine/"}>
+                        <FaInstagram className="iconmuiContact2" />{" "}
+                      </Link>
+                    </div>
+                    <div className="icon-group4">
+                      <a className="lien-contact2" href="/">
+                        contact@nicocarmine.com
+                      </a>
+                    </div>
+                  </Container>
+                </AppBar>
+              </Drawer>
+            </Toolbar>
+          </Container>
+        </AppBar>
+
+        {/* <div className="container"> */}
+        <div
+          className="top-left"
+          style={{ marginTop: "40px" }}
+          onClick={() => {
+            settrueboolroute(true);
+            setboolroute(true);
+          }}
+        >
+          <div className="top-left-ensemble">
           
+            {location.pathname === "/contact" ? (
+              <Link className="top-left-contact" to="/contact">
+                contact
+              </Link>
+            ) : (
+              <Link className="top-left-contact-white" to="/contact">
+                contact
+              </Link>
+            )}
+
+            <Link className="top-left-nico" to="/">
+              nicocarmine
+            </Link>
+          </div>
         </div>
-      );
-    
+
+        <div
+          className="top-right"
+          style={{ marginTop: "40px" }}
+          onClick={() => {
+            settrueboolroute(true);
+            setboolroute(false);
+          }}
+        >
+          <div className="top-left-ensemble">
+            {location.pathname === "/contact" ? (
+              <Link className="top-left-travaux-white" to="/travaux">
+                travaux
+              </Link>
+            ) : (
+              <Link className="top-left-travaux" to="/travaux">
+                travaux
+              </Link>
+            )}
+          </div>
+        </div>
+
+        {/* </div> */}
+      </div>
+    );
   }
   //   //console.log(navigate(-1));
 
@@ -402,10 +386,12 @@ export default function App() {
       x: "0%",
       y: "0%",
     },
-    exit: { opacity: 0, transition: { duration: 1.0 }, y:-window.innerHeight },
+   exit:{
+    transition: { duration: 1.0 },
+    opacity: 0,
+    
+  },
   };
-
-  
 
   return (
     <div>
@@ -427,42 +413,36 @@ export default function App() {
             />
             <Route
               path="/contact"
-              element={
+              element={<>
                 <motion.div
                   variants={routeVariantsnico}
                   initial="initial"
                   animate="animate"
                   exit="exit"
                 >
-                  <>
-                    
-                
+                  
                     <Contact />
-                  </>
-                </motion.div>
+                  
+                </motion.div></>
               }
             />
           </Route>
 
-          <Route path="/travaux" element={
-          <>
-            
-            
-  
-         
-          <Outlet />
-          </>}>
+          <Route
+            path="/travaux"
+            element={
+              <>
+                <Outlet />
+              </>
+            }
+          >
             <Route
               index
               element={
                 <>
-                
-         
-          <Layout2 /> 
+                  <Layout2 />
                   <Travaux />
-                  
-                  </>
-              
+                </>
               }
             />
 
@@ -470,9 +450,8 @@ export default function App() {
               path={`/travaux/1`}
               element={
                 <>
-           
-                <Layout2 />
-                 
+                  <Layout2 />
+
                   <Travaux1
                     isOpen={isOpen}
                     boolroute={boolroute}
@@ -483,7 +462,6 @@ export default function App() {
                     url={url}
                     url2={url2}
                   />
-                 
                 </>
               }
             />
@@ -491,9 +469,8 @@ export default function App() {
               path={`/travaux/2`}
               element={
                 <>
-            
-                <Layout2 />
-                 
+                  <Layout2 />
+
                   {/* {trueboolroute ? 
               <motion.div
                   variants={NEXTRoute()}
@@ -535,9 +512,7 @@ export default function App() {
               path={`/travaux/3`}
               element={
                 <>
-                
-                <Layout2 />
-                 
+                  <Layout2 />
 
                   <Travaux3
                     isOpen={isOpen}
@@ -556,9 +531,7 @@ export default function App() {
               path={`/travaux/4`}
               element={
                 <>
-                
-                <Layout2 />
-                 
+                  <Layout2 />
 
                   <Travaux4
                     isOpen={isOpen}
@@ -577,9 +550,7 @@ export default function App() {
               path={`/travaux/5`}
               element={
                 <>
-                
-                <Layout2 />
-                 
+                  <Layout2 />
 
                   <Travaux5
                     isOpen={isOpen}
@@ -598,9 +569,7 @@ export default function App() {
               path={`/travaux/6`}
               element={
                 <>
-                
-                <Layout2 />
-                 
+                  <Layout2 />
 
                   <Travaux6
                     isOpen={isOpen}
@@ -619,9 +588,7 @@ export default function App() {
               path={`/travaux/7`}
               element={
                 <>
-                
-                <Layout2 />
-                 
+                  <Layout2 />
 
                   <Travaux7
                     isOpen={isOpen}
@@ -640,9 +607,7 @@ export default function App() {
               path={`/travaux/8`}
               element={
                 <>
-                
-                <Layout2 />
-                 
+                  <Layout2 />
 
                   <Travaux8
                     isOpen={isOpen}
@@ -661,9 +626,7 @@ export default function App() {
               path={`/travaux/9`}
               element={
                 <>
-                
-                <Layout2 />
-                 
+                  <Layout2 />
 
                   <Travaux9
                     isOpen={isOpen}
@@ -682,9 +645,7 @@ export default function App() {
               path={`/travaux/10`}
               element={
                 <>
-                
-                <Layout2 />
-                 
+                  <Layout2 />
 
                   <Travaux10
                     isOpen={isOpen}
@@ -703,9 +664,7 @@ export default function App() {
               path={`/travaux/11`}
               element={
                 <>
-                
-                <Layout2 />
-                 
+                  <Layout2 />
 
                   <Travaux11
                     isOpen={isOpen}
@@ -724,9 +683,7 @@ export default function App() {
               path={`/travaux/12`}
               element={
                 <>
-                
-                <Layout2 />
-                 
+                  <Layout2 />
 
                   <Travaux12
                     isOpen={isOpen}
@@ -745,9 +702,7 @@ export default function App() {
               path={`/travaux/13`}
               element={
                 <>
-                
-                <Layout2 />
-                 
+                  <Layout2 />
 
                   <Travaux13
                     isOpen={isOpen}
@@ -766,9 +721,7 @@ export default function App() {
               path={`/travaux/14`}
               element={
                 <>
-                
-                <Layout2 />
-                 
+                  <Layout2 />
 
                   <Travaux14
                     isOpen={isOpen}
@@ -787,9 +740,7 @@ export default function App() {
               path={`/travaux/15`}
               element={
                 <>
-                
-                <Layout2 />
-                 
+                  <Layout2 />
 
                   <Travaux15
                     isOpen={isOpen}
@@ -808,9 +759,7 @@ export default function App() {
               path={`/travaux/16`}
               element={
                 <>
-                
-                <Layout2 />
-                 
+                  <Layout2 />
 
                   <Travaux16
                     isOpen={isOpen}
@@ -829,9 +778,7 @@ export default function App() {
               path={`/travaux/17`}
               element={
                 <>
-                
-                <Layout2 />
-                 
+                  <Layout2 />
 
                   <Travaux17
                     isOpen={isOpen}
@@ -850,9 +797,7 @@ export default function App() {
               path={`/travaux/18`}
               element={
                 <>
-                
-                <Layout2 />
-                 
+                  <Layout2 />
 
                   <Travaux18
                     isOpen={isOpen}
@@ -871,9 +816,7 @@ export default function App() {
               path={`/travaux/19`}
               element={
                 <>
-                
-                <Layout2 />
-                 
+                  <Layout2 />
 
                   <Travaux19
                     isOpen={isOpen}
@@ -892,9 +835,7 @@ export default function App() {
               path={`/travaux/20`}
               element={
                 <>
-                
-                <Layout2 />
-                 
+                  <Layout2 />
 
                   <Travaux20
                     isOpen={isOpen}

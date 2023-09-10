@@ -20,16 +20,11 @@ import {SlArrowDown} from "react-icons/sl";
 
 
 export default function Nicocarmine() {
-   const [scrollDir] = useDetectScroll({});
-   const history = useNavigate();
+
    
    
 
-   useEffect(() => {
-if(scrollDir === "down") {
-   history("/travaux");
-   }
-   },[history, scrollDir])
+  
    
 
 
