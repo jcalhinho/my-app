@@ -54,7 +54,7 @@ import Travaux8 from "./components/Travaux8";
 
 
 export function NEXTRoute(param: boolean) {
-  console.log(param)
+
   if (param === true) {
     const routeVariantstravauxnumber = {
       initial: { x: -parent.innerWidth,opacity:0 },
@@ -86,7 +86,7 @@ export function NEXTRoute(param: boolean) {
   }
 }
 export function NEXTRoute2(param) {
-  console.log(param)
+
   if (param === true) {
     const routeVariantstravauxnumber = {
       initial: { x: window.innerWidth },
