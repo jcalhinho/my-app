@@ -94,103 +94,7 @@ const Travaux8 = (props) => {
 
   return (
   <>
-    {/* <AppBar
-          className="topappbar"
-          style={{ display: "none", background: "black" }}
-          position="fixed"
-        >
-          <Container className="appbar3">
-            <Toolbar>
-              <Link className="top-left-nico" to="/">
-                nicocarmine
-              </Link>
-
-              <div onClick={toggleDrawer(true)}>
-                <MenuIcon className="menuicon" />
-              </div>
-
-             
-              <Drawer
-                //from which side the drawer slides in
-                anchor="right"
-                //if open is true --> drawer is shown
-                open={open}
-                //function that is called when the drawer should close
-                onClose={toggleDrawer(false)}
-                //function that is called when the drawer should open
-                // onOpen={toggleDrawer(true)}
-              >
-               
-                <AppBar
-                  className="appbar3"
-                  style={{ display: "block", background: "black" }}
-                  position="relative"
-                >
-                  <Container className="menuContainer">
-                    <Toolbar>
-                      <Link
-                        className="top-left-nico"
-                        onClick={() => setState(false)}
-                        to="/"
-                      >
-                        nicocarmine
-                      </Link>
-
-                      <div onClick={toggleDrawer(false)}>
-                        <CloseIcon className="menuicon" />
-                      </div>
-
-                      
-                    </Toolbar>
-                    <div className="menuDivcentral">
-                      <div className="menuDivtext1">
-                        <Link
-                          className="top-left-contact-white"
-                          onClick={() => setState(false)}
-                          to="/travaux"
-                        >
-                          travaux
-                        </Link>
-                      </div>
-
-                      <div className="menuDivtext2">
-                        <Link
-                          className="top-left-contact-white"
-                          onClick={() => setState(false)}
-                          to="/contact"
-                        >
-                          contact
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="icon-group3">
-                      <Link
-                        to={
-                          "https://www.linkedin.com/in/nicolas-carmine-448b703a/"
-                        }
-                      >
-                        <FaLinkedin className="iconmuiContact2" />
-                      </Link>
-                      <Link
-                        to={"https://www.behance.net/nicocarmine?locale=fr_FR"}
-                      >
-                        <FaBehanceSquare className="iconmuiContact2" />
-                      </Link>
-                      <Link to={"https://www.instagram.com/nico.carmine/"}>
-                        <FaInstagram className="iconmuiContact2" />{" "}
-                      </Link>
-                    </div>
-                    <div className="icon-group4">
-                      <a className="lien-contact2" href="/">
-                        contact@nicocarmine.com
-                      </a>
-                    </div>
-                  </Container>
-                </AppBar>
-              </Drawer>
-            </Toolbar>
-          </Container>
-        </AppBar> */}
+    
  
 <div {...handlers}>
  
@@ -200,7 +104,7 @@ const Travaux8 = (props) => {
         variants={NEXTRoute(props.isOpen)}
         initial="initial"
         animate="animate"
-        exit="exit"
+        
              
            
             >
