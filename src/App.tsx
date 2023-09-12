@@ -116,7 +116,7 @@ export function NEXTRoute2(param) {
 }
 export default function App() {
   const location = useLocation();
-  const [isOpen, setIsOpen] = useState<boolean | null>(null);
+  const [isOpen, setIsOpen] = useState<boolean | null>(true);
   const url0 = location.pathname;
   const numero = parseInt(url0.slice(url0.lastIndexOf("/") + 1));
 
@@ -345,8 +345,8 @@ export default function App() {
                     }}
                   /></Link>
 
-
-                  travaux{" "}
+<Link className="top-left-travaux" to={"/travaux"}>
+                  travaux{" "}</Link>
                </div>
               )}
             </div>
@@ -430,7 +430,7 @@ export default function App() {
 
           <Route path="/travaux" element={
           <>
-          <Layout2 />
+          
           <Outlet />
           </>}>
             <Route
@@ -537,7 +537,7 @@ export default function App() {
               </Toolbar>
             </Container>
           </AppBar>
-          
+          <Layout2 />
                   <Travaux /></>
               
               }
