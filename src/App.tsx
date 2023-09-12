@@ -314,7 +314,7 @@ export default function App() {
                   travaux
                 </Link>
               ) : (
-                <Link className="top-left-travaux" to="/travaux">
+                <div className="top-left-travaux" >
 <Link
                         to={"https://www.behance.net/nicocarmine?locale=fr_FR"}
                       >
@@ -347,7 +347,7 @@ export default function App() {
 
 
                   travaux{" "}
-               </Link>
+               </div>
               )}
             </div>
           </div>
