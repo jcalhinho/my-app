@@ -2,14 +2,14 @@ import * as React from "react";
 import "../index.css";
 
 import { motion } from "framer-motion";
-import { Data } from "../data";import MenuIcon from "@mui/icons-material/Menu";import CloseIcon from "@mui/icons-material/Close";
-import { AppBar, Container, Divider, Drawer, Toolbar } from "@mui/material";
+import { Data } from "../data";
+import { Divider } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
-import { useState } from "react";
+
 import { NEXTRoute } from "../App";
 import { useSwipeable } from "react-swipeable";
-import { FaLinkedin, FaBehanceSquare, FaInstagram } from "react-icons/fa";
+
 
 const Travaux20 = (props) => {
   const dataWithoutFirst = Data[19].pics.slice(1);
@@ -17,51 +17,7 @@ const Travaux20 = (props) => {
   const lastPics = dataWithoutFirst.pop();
   
   const navigate = useNavigate();
-  let startX = 0;
-  let startY = 0;
-  let isScrolling = false;
-
-  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
-    isScrolling = false;
-   
-  };
-
- 
-
-  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-   // if (!containerRef.current) return;
   
-    const deltaX = e.touches[0].clientX - startX;
-    const deltaY = e.touches[0].clientY - startY;
-  
-    if (Math.abs(deltaX) < Math.abs(deltaY)) {
-      
-      isScrolling = true;
-  
-      
-    }else {
-      
-            if (deltaX > 0) {
-              props.setIsOpen(true);
-              setTimeout(() => 
-              navigate("/travaux/" + props.url), 50);
-              
-            } else {
-      
-              props.setIsOpen(false);
-              setTimeout(() => navigate('/travaux/' + props.url2), 50); // Naviguer vers la route suivante après l'animation
-              
-            }
-            
-          
-            
-             
-            
-          }
-  };
-
     const handlers = useSwipeable({
     onSwipedLeft: (eventData) => {
       props.setIsOpen(false);
@@ -80,19 +36,7 @@ const Travaux20 = (props) => {
 
 
 
-    const [open, setState] = useState(false);
-
-  //function that is being called every time the drawer should open or close, the keys tab and shift are excluded so the user can focus between the elements with the keys
-  const toggleDrawer = (open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-    //changes the function state according to the value of open
-    setState(open);
-  };
+  
 
   return (
   <>

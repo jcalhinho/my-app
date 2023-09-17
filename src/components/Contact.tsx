@@ -1,13 +1,7 @@
 import * as React from "react";
 import "../index.css";
 
-// import { motion } from "framer-motion";
-// import pic from "../01-MR PAON/MR PAON_01.png";
-// import pic1 from "../01-MR PAON/MR PAON_02.png";
-// import pic2 from "../01-MR PAON/MR PAON_03.png";
-// import pic3 from "../01-MR PAON/MR PAON_04.png";
-// import pic4 from "../01-MR PAON/MR PAON_05.png";
-// import pic5 from "../01-MR PAON/MR PAON_06.png";
+
 import {Divider} from "@mui/material";
 import { FaBehanceSquare, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -25,12 +19,7 @@ const Contact = () => {
       <p className="containerContactNico2"></p>  
       <p className="containerContactNico3"> 06 50 55 19 12</p>  
       </div>  
-      
-    {/* <div className="containerRow2">
-      <div>EXPERTISE</div>  
-      <div>CLIENTS</div>  
-      <div></div>  
-    </div> */}
+  
     <div className="containerRow3">
       <div className="listcontact">
       <p className="containerContactexpertise">EXPERTISE</p>
@@ -67,13 +56,7 @@ const Contact = () => {
         </div>  
     </div>
     
-    {/* <div className="divider-icon" style={{marginTop:"0", marginRight:"19%"}}>
-        <Divider className="divider2-white" />
-        <div className="icon-group">
-                            <FaBehanceSquare className="iconmui" />
-                            <FaLinkedin className="iconmui"  /><FaInstagram className="iconmui" /> </div>
-    
-        </div> */}
+   
          <div className="divider-icon">
          
                 <div className="divider2-white222">
@@ -88,21 +71,6 @@ const Contact = () => {
                 </div>
                 
     
-{/* 
-{/*          
-    // <div className="central">
-    // <div className="central-travaux">
-        
-
-
-
-
-    // </div>
-// </div> 
- <div className="divider-icon">
-        <Divider className="divider2-white" />
-        {/* <a className="lien-contact" href="/contact">contact@gmail.com</a>
-    </div> */}
 
 
 

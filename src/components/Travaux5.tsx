@@ -2,13 +2,13 @@ import * as React from "react";
 import "../index.css";
 
 import { motion } from "framer-motion";
-import { Data } from "../data";import MenuIcon from "@mui/icons-material/Menu";import CloseIcon from "@mui/icons-material/Close";
-import {AppBar, Container, Divider, Drawer, Toolbar} from "@mui/material";
+import { Data } from "../data";
+import {Divider} from "@mui/material";
 import {Link, useNavigate} from "react-router-dom";
 import {SlArrowLeft, SlArrowRight} from "react-icons/sl";
 import { NEXTRoute } from "../App";
 import { useSwipeable } from "react-swipeable";
-import { FaLinkedin, FaBehanceSquare, FaInstagram } from "react-icons/fa";
+
 
 const Travaux5 = (props) => {
    
@@ -37,19 +37,7 @@ const Travaux5 = (props) => {
 
 
 
-    const [open, setState] = React.useState(false);
-
-  //function that is being called every time the drawer should open or close, the keys tab and shift are excluded so the user can focus between the elements with the keys
-  const toggleDrawer = (open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-    //changes the function state according to the value of open
-    setState(open);
-  };
+    
 
   return (
   <>

@@ -7,16 +7,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { motion } from "framer-motion";
-import {Link, Outlet, useLocation, useNavigate} from "react-router-dom";
-import { useDetectScroll } from "@smakss/react-scroll-direction";
-import { TfiAngleDown } from "react-icons/tfi";
 
-import Travaux from "./Travaux";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {FaBehanceSquare, FaInstagram, FaLinkedin} from "react-icons/fa";
-import {SlArrowDown} from "react-icons/sl";
-//import Container from "./Container";
+import {Link} from "react-router-dom";
+
+
 
 
 export default function Nicocarmine() {

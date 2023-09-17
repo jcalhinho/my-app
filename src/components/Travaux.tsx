@@ -5,16 +5,13 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 
-import { Data } from "../data";import MenuIcon from "@mui/icons-material/Menu";import CloseIcon from "@mui/icons-material/Close";
-import { AppBar, Container, Toolbar, Drawer } from "@mui/material";
-import { FaLinkedin, FaBehanceSquare, FaInstagram } from "react-icons/fa";
+import { Data } from "../data";
+
 import { useState } from "react";
 
 
 const Travaux = () => {
-  // React.useEffect(() => {
-  //     window.scrollTo(0, 0);
-  //   }, []);
+
 
   const routeVariantstravaux = {
     initial: {
@@ -31,19 +28,8 @@ const Travaux = () => {
     exit: { opacity: 0 },
   };
 
-  const [open, setState] = useState(false);
 
-  //function that is being called every time the drawer should open or close, the keys tab and shift are excluded so the user can focus between the elements with the keys
-  const toggleDrawer = (open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-    //changes the function state according to the value of open
-    setState(open);
-  };
+ 
   return (
     <div>
       

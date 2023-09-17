@@ -35,19 +35,7 @@ const Travaux3 = (props) => {
 
 
 
-    const [open, setState] = useState(false);
-
-  //function that is being called every time the drawer should open or close, the keys tab and shift are excluded so the user can focus between the elements with the keys
-  const toggleDrawer = (open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-    //changes the function state according to the value of open
-    setState(open);
-  };
+  
 
   return (
   <>

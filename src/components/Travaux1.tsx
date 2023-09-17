@@ -1,13 +1,12 @@
 import { Data } from "../data";
-import {  AppBar, Container, Divider, Drawer, Toolbar } from "@mui/material";
+import {   Divider } from "@mui/material";
 import {  SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { Link,  useNavigate } from "react-router-dom";
-import MenuIcon from "@mui/icons-material/Menu";import CloseIcon from "@mui/icons-material/Close";
+
 import {  useSwipeable } from "react-swipeable";
 import { motion } from "framer-motion";
 import { NEXTRoute } from "../App";
-import { FaLinkedin, FaBehanceSquare, FaInstagram } from "react-icons/fa";
-import { useState } from "react";
+
 
 const Travaux1 = (props) => {
   const navigate = useNavigate();
@@ -33,19 +32,7 @@ const Travaux1 = (props) => {
     preventScrollOnSwipe: true,
     trackMouse: true
   });
-  const [open, setState] = useState(false);
-
-  //function that is being called every time the drawer should open or close, the keys tab and shift are excluded so the user can focus between the elements with the keys
-  const toggleDrawer = (open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-    //changes the function state according to the value of open
-    setState(open);
-  };
+ 
 
   return (
   <>
