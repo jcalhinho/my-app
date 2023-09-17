@@ -52,7 +52,9 @@ import Travaux6 from "./components/Travaux6";
 import Travaux7 from "./components/Travaux7";
 import Travaux8 from "./components/Travaux8";
 
-
+export const handleRouteChange = () => {
+    window.scrollTo(0, 0);
+  };
 export function NEXTRoute(param: boolean) {
 
   if (param === true) {
@@ -166,7 +168,7 @@ export default function App() {
   // };
 
   const [open, setState] = useState(false);
-
+handleRouteChange();
   //function that is being called every time the drawer should open or close, the keys tab and shift are excluded so the user can focus between the elements with the keys
   const toggleDrawer = (open) => (event) => {
     if (
